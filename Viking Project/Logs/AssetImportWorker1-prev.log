@@ -15,7 +15,7 @@ D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-51386
+51509
 Successfully changed project path to: D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
 D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [17672] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 2301250473 [EditorId] 2301250473 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9420] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 876703 [EditorId] 876703 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [17672] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 2301250473 [EditorId] 2301250473 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9420] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 876703 [EditorId] 876703 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 14.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 16.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.16f1 (d2c21f0ef2f1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -70,44 +70,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56788
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009010 seconds.
-- Loaded All Assemblies, in  0.360 seconds
+Registered in 0.009583 seconds.
+- Loaded All Assemblies, in  0.374 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.276 seconds
-Domain Reload Profiling: 629ms
-	BeginReloadAssembly (119ms)
+- Finished resetting the current domain, in  0.290 seconds
+Domain Reload Profiling: 658ms
+	BeginReloadAssembly (127ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (71ms)
-	LoadAllAssembliesAndSetupDomain (116ms)
-		LoadAssemblies (112ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (125ms)
+		LoadAssemblies (120ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (114ms)
-			TypeCache.Refresh (113ms)
-				TypeCache.ScanAssembly (102ms)
+		AnalyzeDomain (122ms)
+			TypeCache.Refresh (121ms)
+				TypeCache.ScanAssembly (109ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (276ms)
+	FinalizeReload (291ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (217ms)
+		SetupLoadedEditorAssemblies (229ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
+			InitializePlatformSupportModulesInManaged (11ms)
 			SetLoadedEditorAssemblies (8ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (142ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
+			ProcessInitializeOnLoadAttributes (155ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,56 +115,55 @@ Domain Reload Profiling: 629ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.749 seconds
-Refreshing native plugins compatible for Editor in 7.35 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.706 seconds
+Refreshing native plugins compatible for Editor in 8.40 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.706 seconds
-Domain Reload Profiling: 1443ms
-	BeginReloadAssembly (169ms)
+- Finished resetting the current domain, in  0.689 seconds
+Domain Reload Profiling: 1386ms
+	BeginReloadAssembly (157ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (12ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (462ms)
-		LoadAssemblies (380ms)
+	LoadAllAssembliesAndSetupDomain (444ms)
+		LoadAssemblies (366ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (180ms)
-			TypeCache.Refresh (161ms)
-				TypeCache.ScanAssembly (148ms)
+		AnalyzeDomain (167ms)
+			TypeCache.Refresh (147ms)
+				TypeCache.ScanAssembly (135ms)
 			ScanForSourceGeneratedMonoScriptInfo (14ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (707ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (689ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (559ms)
+		SetupLoadedEditorAssemblies (545ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (96ms)
-			ProcessInitializeOnLoadAttributes (404ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (18ms)
+			BeforeProcessingInitializeOnLoad (99ms)
+			ProcessInitializeOnLoadAttributes (387ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (24ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 8.36 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 8.97 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3225 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 44 unused Assets / (1.3 MB). Loaded Objects now: 3674.
-Memory consumption went from 146.9 MB to 145.6 MB.
-Total: 3.636400 ms (FindLiveObjects: 0.442100 ms CreateObjectMapping: 0.222600 ms MarkObjects: 2.581400 ms  DeleteObjects: 0.389000 ms)
+Memory consumption went from 146.8 MB to 145.5 MB.
+Total: 3.612800 ms (FindLiveObjects: 0.410300 ms CreateObjectMapping: 0.127400 ms MarkObjects: 2.777100 ms  DeleteObjects: 0.296500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -181,585 +180,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 10749.838945 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/Low Poly -RG Nature Mega Pack
-  artifactKey: Guid(1604dc0440df91f49bbc038eb114ebc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly -RG Nature Mega Pack using Guid(1604dc0440df91f49bbc038eb114ebc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82221e8cd2e1b1308ea1c8d1c90e177e') in 0.002596 seconds
+  Time since last request: 10887.772060 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Aztec Jungle Island
+  artifactKey: Guid(8f5d83e7eb929c5438fe90553ca08048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Aztec Jungle Island using Guid(8f5d83e7eb929c5438fe90553ca08048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a08bb78660bc072ba8a39876300eb64') in 0.003055 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 47.995497 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/BananaTree_1 Island.fbx
-  artifactKey: Guid(8e4a3abccd48fea4da4275c22c2a1d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/BananaTree_1 Island.fbx using Guid(8e4a3abccd48fea4da4275c22c2a1d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b806b33022ac23bc862af547e56c9516') in 0.542068 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_2 Island.fbx
-  artifactKey: Guid(d7634442264176740a831f09f4f62186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_2 Island.fbx using Guid(d7634442264176740a831f09f4f62186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7ba1c07792a1f3b6d5bd7ef407e29c') in 0.094078 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_4 Island.fbx
-  artifactKey: Guid(1165dcb502294ba4da1c99b2a17cf291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_4 Island.fbx using Guid(1165dcb502294ba4da1c99b2a17cf291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dfcd322e5913cf4584e320e90e76b6f') in 0.012082 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_3 Island.fbx
-  artifactKey: Guid(3bec7b9d3b9ae684398c1291cf83bec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_3 Island.fbx using Guid(3bec7b9d3b9ae684398c1291cf83bec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a524a804ced3aa1cdcc35c538358a36d') in 0.013156 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_2 Island.fbx
-  artifactKey: Guid(afc3a3b2f247ad94c9687cbc6892c967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_2 Island.fbx using Guid(afc3a3b2f247ad94c9687cbc6892c967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd1196d5c299593a0a9386e9c0d3f30c') in 0.019297 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_2 Island.fbx
-  artifactKey: Guid(7b4b564bcfa087b46aa43cb481b57e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_2 Island.fbx using Guid(7b4b564bcfa087b46aa43cb481b57e7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51f1a6dbb41ea8066644429d37f31e7c') in 0.014668 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_3 Island.fbx
-  artifactKey: Guid(ad86eb7882d71124291d56aba5fe10b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_3 Island.fbx using Guid(ad86eb7882d71124291d56aba5fe10b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b53d701f7991c19517f06e90c5ce34') in 0.012463 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_2 Island.fbx
-  artifactKey: Guid(e855959a397330641ab1d304dc5aff8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_2 Island.fbx using Guid(e855959a397330641ab1d304dc5aff8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f7822c5d36fb67650b10d6b6b4a9a62') in 0.012453 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_Formation_1 Island.fbx
-  artifactKey: Guid(c6dcb3290d5ee174f8663db2969731b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_Formation_1 Island.fbx using Guid(c6dcb3290d5ee174f8663db2969731b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64b3e89ce27281fc84bc00a1320800b2') in 0.011788 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_S_1 Island.fbx
-  artifactKey: Guid(f05a551e424777841a2f084aff5b90bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_S_1 Island.fbx using Guid(f05a551e424777841a2f084aff5b90bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eafe17d61c9df2c818875c99cf82eb3b') in 0.012200 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_S_3 Island.fbx
-  artifactKey: Guid(2452bb43f88aef74f8e72fcda8cab012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_S_3 Island.fbx using Guid(2452bb43f88aef74f8e72fcda8cab012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '202c12939978b6acfc992534e9cd14d4') in 0.010518 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_6 Island.fbx
-  artifactKey: Guid(7c95a0bb02792114e99576c42acd741c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_6 Island.fbx using Guid(7c95a0bb02792114e99576c42acd741c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78d077bcb6d9df822205c5c221330ae1') in 0.011544 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_2 Island.fbx
-  artifactKey: Guid(b33ea43ad98f0d14fb040142c199aeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_2 Island.fbx using Guid(b33ea43ad98f0d14fb040142c199aeac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6deb807b2afd68af145d3e74bc63a96') in 0.012081 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_9 Island.fbx
-  artifactKey: Guid(0821604bf3092f446b9caea51ae8bd08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_9 Island.fbx using Guid(0821604bf3092f446b9caea51ae8bd08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e62f3899b47aac1728c307a7d5aabca') in 0.011751 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_1 Island.fbx
-  artifactKey: Guid(7466d5c82b058bd4b9a503d4f42a8f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_1 Island.fbx using Guid(7466d5c82b058bd4b9a503d4f42a8f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54a2c9c6e845fe7a0d0f0384dc65a97d') in 0.011084 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_1 Island.fbx
-  artifactKey: Guid(a15ee8436f708bb4a87967d018f0e8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_1 Island.fbx using Guid(a15ee8436f708bb4a87967d018f0e8ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb2348d92ec3eb75579b374dbb3b51cb') in 0.011115 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/WaterVase_3 Island.fbx
-  artifactKey: Guid(21870f24ff3991a46a29376e8eb8dfc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/WaterVase_3 Island.fbx using Guid(21870f24ff3991a46a29376e8eb8dfc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b47d808ba9c25d2750d59a9b6f6fd222') in 0.015704 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bones_Torso Island.fbx
-  artifactKey: Guid(b2e9898911e13234ab27f17806fd4f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bones_Torso Island.fbx using Guid(b2e9898911e13234ab27f17806fd4f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d6a300d2a2b776413f2f6bcda3620a4') in 0.012412 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_1 Island.fbx
-  artifactKey: Guid(3fb20404c3384514a853eaf4ce1e3eb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_1 Island.fbx using Guid(3fb20404c3384514a853eaf4ce1e3eb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36095f95b284c7ca6fd8d37adef0a528') in 0.012112 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_L Island.fbx
-  artifactKey: Guid(f1bca630e71acb24ba2880f23c37fb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_L Island.fbx using Guid(f1bca630e71acb24ba2880f23c37fb62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e9ae1fef6b89ec3367036b8cf21bbdc') in 0.013200 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bucket_1 Island.fbx
-  artifactKey: Guid(07186b837f313014db2c0e38ef5f8cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bucket_1 Island.fbx using Guid(07186b837f313014db2c0e38ef5f8cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08bec36dbca82ad6459df06f91eefe00') in 0.010174 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_7 Island.fbx
-  artifactKey: Guid(019aabe5bc98bf1488296e1537e64695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_7 Island.fbx using Guid(019aabe5bc98bf1488296e1537e64695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd65dd3327a2037028d78c6809fcf6104') in 0.010109 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crane_3 Island.fbx
-  artifactKey: Guid(8c002ca7077bd58498b74b52ff61bd9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crane_3 Island.fbx using Guid(8c002ca7077bd58498b74b52ff61bd9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0605ce617c40465c85823f930260e61') in 0.011452 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_3 Island.fbx
-  artifactKey: Guid(d6ff3b85ce995844896ddb9a55f3a620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_3 Island.fbx using Guid(d6ff3b85ce995844896ddb9a55f3a620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4536c8db8b4db951d2b47be4678d79f8') in 0.011115 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_Bridge Island.fbx
-  artifactKey: Guid(817b7f71673b05d469ec64c6645e163c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_Bridge Island.fbx using Guid(817b7f71673b05d469ec64c6645e163c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '742e952b2366e7d42ba7051e8a6a3397') in 0.012684 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Elephant_Statue Island.fbx
-  artifactKey: Guid(508ab614d65fc194cb81f038c6de6cc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Elephant_Statue Island.fbx using Guid(508ab614d65fc194cb81f038c6de6cc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a05788ce8baa41abbded5b4bf66c2d00') in 0.011073 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_2 Island.fbx
-  artifactKey: Guid(8ecdd9d99fe773a4eb50a39f720af6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_2 Island.fbx using Guid(8ecdd9d99fe773a4eb50a39f720af6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4204ba9a993db78333cc4e2441175d9') in 0.010846 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stone_3 Island.fbx
-  artifactKey: Guid(6212619a5f044b840a9df227c9636d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stone_3 Island.fbx using Guid(6212619a5f044b840a9df227c9636d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9488b6d1b036d1181c52c5f0455ad91') in 0.011299 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cart Island.fbx
-  artifactKey: Guid(385db33730e927a4d8ff8e80271802e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cart Island.fbx using Guid(385db33730e927a4d8ff8e80271802e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcdb13c61d8589dfaa0ea57cdb73acce') in 0.012060 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_7 Island.fbx
-  artifactKey: Guid(9a3bb2d1a5c406f43a07e4124f44c42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_7 Island.fbx using Guid(9a3bb2d1a5c406f43a07e4124f44c42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcbe3cf0f54baf5760ba702d3ca4700c') in 0.012055 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_3 Island.fbx
-  artifactKey: Guid(fbb90c3162d8ce345ba5efc136afbabb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_3 Island.fbx using Guid(fbb90c3162d8ce345ba5efc136afbabb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c6af2102eb0a62a5233602c633aba2d') in 0.011369 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_6 Island.fbx
-  artifactKey: Guid(30a70f1dfcb360d47ab170cf1a82c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_6 Island.fbx using Guid(30a70f1dfcb360d47ab170cf1a82c859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8031f31b51bc4ac8104a124d4d35b1a7') in 0.010481 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_3 Island.fbx
-  artifactKey: Guid(af62bea15cf02504fa22feed5056c2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_3 Island.fbx using Guid(af62bea15cf02504fa22feed5056c2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4101233039b9c5df429b40b3652726') in 0.011251 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_1 Island.fbx
-  artifactKey: Guid(9eea516e748d2de4589a0414ee33958b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_L_1 Island.fbx using Guid(9eea516e748d2de4589a0414ee33958b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ee8e2953fe8d0a229f7d20fbd3af796') in 0.010740 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crate_2 Island.fbx
-  artifactKey: Guid(44d255e07591eba42a650077b8e4db89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crate_2 Island.fbx using Guid(44d255e07591eba42a650077b8e4db89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '074aa5d1701e27f2b3ff6e8d691a3363') in 0.010826 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_3 Island.fbx
-  artifactKey: Guid(e42ea56630d349c45b20c4521beeb13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_3 Island.fbx using Guid(e42ea56630d349c45b20c4521beeb13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d44398930bda2f39b93acfb084bd83c') in 0.011802 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_9 Island.fbx
-  artifactKey: Guid(2ba9247b153c28446a22f4123a6cf017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_9 Island.fbx using Guid(2ba9247b153c28446a22f4123a6cf017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a6bb8edf72731adc1ba45847ef86d46') in 0.011628 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_3 Island.fbx
-  artifactKey: Guid(b89111abd475c2e4797e272d182203b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_3 Island.fbx using Guid(b89111abd475c2e4797e272d182203b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3cd42f185470a0cd770425a189e58b3') in 0.012597 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_1 Island.fbx
-  artifactKey: Guid(876ad945da601f34bb528d1488271002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_1 Island.fbx using Guid(876ad945da601f34bb528d1488271002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e07b2ca7727ab3a7a3c04ed8093ab54f') in 0.011359 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_3 Island.fbx
-  artifactKey: Guid(efbc18a4a86007844b8bb27e713e8ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_3 Island.fbx using Guid(efbc18a4a86007844b8bb27e713e8ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f089a80fc1ed99068d17f4a2b0a6ff7') in 0.010573 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_2 Island.fbx
-  artifactKey: Guid(e44020ca7d1c6d64a9e411fcf81c6122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_2 Island.fbx using Guid(e44020ca7d1c6d64a9e411fcf81c6122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9427810a679fc2ba8b4edb5c0a096de') in 0.010075 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_3 Island.fbx
-  artifactKey: Guid(4563e8e80f7baea46839a3ffe8b1941a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_3 Island.fbx using Guid(4563e8e80f7baea46839a3ffe8b1941a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '176a25bdff0db87c6b50ea547f27cceb') in 0.011211 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_1 Island.fbx
-  artifactKey: Guid(a8abff8f4d39b944ba3adad0af7f7142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stall_1 Island.fbx using Guid(a8abff8f4d39b944ba3adad0af7f7142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e140cbbc1f3fafb64c00f42ad7232b36') in 0.012756 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_3 Island.fbx
-  artifactKey: Guid(1653eabaad1166e4aa8690519d4e1dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_3 Island.fbx using Guid(1653eabaad1166e4aa8690519d4e1dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f65b171ac8ff6268b8f16fd90d9f48e') in 0.012146 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_5 Island.fbx
-  artifactKey: Guid(f0c4e8ba6989075488b46dba5e39c6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_5 Island.fbx using Guid(f0c4e8ba6989075488b46dba5e39c6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bf8a6df8fc88ff89da62ce1907a853') in 0.010377 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_4 Island.fbx
-  artifactKey: Guid(705cc77cd066e4043969214c6e6ec74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_4 Island.fbx using Guid(705cc77cd066e4043969214c6e6ec74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ab6f7cc2746b2fca359302e38c8069c') in 0.010515 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_1 Island.fbx
-  artifactKey: Guid(a1c5bcd2989ea3e4194af9a8e3aed2ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_1 Island.fbx using Guid(a1c5bcd2989ea3e4194af9a8e3aed2ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd68c097f4670f01487449e7f58fd4fbc') in 0.012545 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_2 Island.fbx
-  artifactKey: Guid(278e87ed922e9b64d83347638de543fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_2 Island.fbx using Guid(278e87ed922e9b64d83347638de543fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f33c05ad54b5ec622c4aeaa3bb420e7e') in 0.010627 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_8 Island.fbx
-  artifactKey: Guid(42526251eae8dc1408e51bc8cc1a28e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_8 Island.fbx using Guid(42526251eae8dc1408e51bc8cc1a28e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2bd4519d7405be028775b9f1321c5ff') in 0.011027 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_4 Island.fbx
-  artifactKey: Guid(c25e38779f93e4b4faeab28edb3737eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_4 Island.fbx using Guid(c25e38779f93e4b4faeab28edb3737eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f617c7a96bb80bd9e86e0a81ea145e6') in 0.011760 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stone_2 Island.fbx
-  artifactKey: Guid(d3fd03c1ec3062e4f8f937281b46ded7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Stone_2 Island.fbx using Guid(d3fd03c1ec3062e4f8f937281b46ded7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57513fc6201423e857fe5427db82ad52') in 0.010705 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_1 Island.fbx
-  artifactKey: Guid(773422392bab890459ef8930b002a0ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_1 Island.fbx using Guid(773422392bab890459ef8930b002a0ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4df5c0bb44760836a6373bd37ede67') in 0.011282 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_S Island.fbx
-  artifactKey: Guid(228974ae37f4d5340bb04c0da87b311f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_S Island.fbx using Guid(228974ae37f4d5340bb04c0da87b311f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef3573c38be61b70ce235b74090ff2e1') in 0.010448 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_1 Island.fbx
-  artifactKey: Guid(f5ff0ea9968be82489b9190870cb190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_1 Island.fbx using Guid(f5ff0ea9968be82489b9190870cb190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fbd413f603349ea65cbdc3b51bb08b6') in 0.010065 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_2 Island.fbx
-  artifactKey: Guid(07f31229819ed1245ab67a99a5b42275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_2 Island.fbx using Guid(07f31229819ed1245ab67a99a5b42275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ab450a6fbe0685470b45b6c6ceb1e5f') in 0.011244 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_5 Island.fbx
-  artifactKey: Guid(8a9cc76d902915b48a14407711809ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_5 Island.fbx using Guid(8a9cc76d902915b48a14407711809ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fcecac67d4d339e950c99db8a7ccdf2') in 0.010638 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_L_3 Island.fbx
-  artifactKey: Guid(68dd95c2695b6e74e9e9f285d8beff96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_L_3 Island.fbx using Guid(68dd95c2695b6e74e9e9f285d8beff96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d628f53d89ea46f1f38745a8ca8b923') in 0.010417 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_M Island.fbx
-  artifactKey: Guid(218f635712cc4df4b880e58151b26afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Pyramid_M Island.fbx using Guid(218f635712cc4df4b880e58151b26afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc48a4bd0b26f20374eebecebc0faf9e') in 0.010573 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_T Island.fbx
-  artifactKey: Guid(6f4fb77711e290244a38dc4cd52505cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_T Island.fbx using Guid(6f4fb77711e290244a38dc4cd52505cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6380383e516416768b7fa764ff591464') in 0.011399 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_1 Island.fbx
-  artifactKey: Guid(310503fc058374744b0977da8ad5e107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Vase_M_1 Island.fbx using Guid(310503fc058374744b0977da8ad5e107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8692772abb9a84b1ff373288b3689489') in 0.015087 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_3 Island.fbx
-  artifactKey: Guid(5f5ce47825431624eab71236b6320920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_3 Island.fbx using Guid(5f5ce47825431624eab71236b6320920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09b785f1d773a71dd4bd301449bd9862') in 0.010707 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Canon Island.fbx
-  artifactKey: Guid(23befe9f4a38a5c4c89d3be644bbf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Canon Island.fbx using Guid(23befe9f4a38a5c4c89d3be644bbf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541216b04bab442ce08773e18e29fc39') in 0.011805 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_6 Island.fbx
-  artifactKey: Guid(a9f8a4b6570b3634bba788222ac3cbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Rock_6 Island.fbx using Guid(a9f8a4b6570b3634bba788222ac3cbc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e70a02f8026bf3c21b2217a8b01079bd') in 0.011158 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cart_Broken Island.fbx
-  artifactKey: Guid(7b2684c8f4c4c2a47a7ee860d07d3e7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cart_Broken Island.fbx using Guid(7b2684c8f4c4c2a47a7ee860d07d3e7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43a5343b01b3d8da347f4722b43a735c') in 0.011976 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_4 Island.fbx
-  artifactKey: Guid(fd124c1964e6bcf489ac199a87b46992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_4 Island.fbx using Guid(fd124c1964e6bcf489ac199a87b46992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc3911ea7ddd20dff567acaf79add8d') in 0.010729 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_4 Island.fbx
-  artifactKey: Guid(f60a5b3a7a8d16c4d8aa94159957b6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_4 Island.fbx using Guid(f60a5b3a7a8d16c4d8aa94159957b6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a522d182092c3e01b075a14c11f1d1d') in 0.010660 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/WodenLog_2 Island.fbx
-  artifactKey: Guid(f4300f25e7fafc445881ed69cf8cf791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/WodenLog_2 Island.fbx using Guid(f4300f25e7fafc445881ed69cf8cf791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5abdc1876651b2f71abfcb599e5fc36') in 0.010155 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_3 Island.fbx
-  artifactKey: Guid(8b7a771f91a478b4ea3fe3b6ec22300d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Fence_3 Island.fbx using Guid(8b7a771f91a478b4ea3fe3b6ec22300d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e11ebcee18aac6b7b7d690b14a1b334') in 0.010567 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_10 Island.fbx
-  artifactKey: Guid(a320f980c867493459fa83a45ee4f456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_10 Island.fbx using Guid(a320f980c867493459fa83a45ee4f456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b222395acb9ea55ad51afc89ad385927') in 0.011705 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_7 Island.fbx
-  artifactKey: Guid(7c693cc86058c044b8ae66206784b267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_7 Island.fbx using Guid(7c693cc86058c044b8ae66206784b267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c89bb32a1d35e9638440055cb18aa6') in 0.011307 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder_Broken Island.fbx
-  artifactKey: Guid(d4fd3e54701c9fe4b96c18109abdbc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder_Broken Island.fbx using Guid(d4fd3e54701c9fe4b96c18109abdbc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9c4273ce4c1e5fde0438c339a9b17f') in 0.011609 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_8 Island.fbx
-  artifactKey: Guid(60b8299f3d565fa4988dbefe2a4c4526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Tile_8 Island.fbx using Guid(60b8299f3d565fa4988dbefe2a4c4526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8ac39ac3505ef77278a4d3fb5689a0d') in 0.010894 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7

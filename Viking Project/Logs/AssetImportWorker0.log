@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.16f1 (d2c21f0ef2f1) revision 13812255'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16223 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'fi' Physical Memory: 16299 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
+C:/Users/lhelt/Desktop/Koulukansio/Unity/NFT/VikingProject/Viking Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51509
-Successfully changed project path to: D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
-D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
+51574
+Successfully changed project path to: C:/Users/lhelt/Desktop/Koulukansio/Unity/NFT/VikingProject/Viking Project
+C:/Users/lhelt/Desktop/Koulukansio/Unity/NFT/VikingProject/Viking Project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,65 +49,80 @@ D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [19884] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 3226444780 [EditorId] 3226444780 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19256] Host "[IP] 87.100.228.203 [Port] 0 [Flags] 2 [Guid] 4148541342 [EditorId] 4148541342 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N1F8OAP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [19884] Host "[IP] 192.168.1.109 [Port] 0 [Flags] 2 [Guid] 3226444780 [EditorId] 3226444780 [Version] 1048832 [Id] WindowsEditor(7,HP-OMEN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19256] Host "[IP] 87.100.228.203 [Port] 0 [Flags] 2 [Guid] 4148541342 [EditorId] 4148541342 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N1F8OAP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 18.22 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 10.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.16f1 (d2c21f0ef2f1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Ohjelmointi/Videopelit/VikingProject/VikingProject/Viking Project/Assets
+[Subsystems] Discovering subsystems at path C:/Users/lhelt/Desktop/Koulukansio/Unity/NFT/VikingProject/Viking Project/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
     Vendor:   NVIDIA
-    VRAM:     12115 MB
-    Driver:   31.0.15.5134
+    VRAM:     5955 MB
+    Driver:   31.0.15.5161
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009748 seconds.
-- Loaded All Assemblies, in  0.369 seconds
+Registered in 0.015888 seconds.
+- Loaded All Assemblies, in  0.409 seconds
 Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+InvalidOperationException: Cannot start process because a file name has not been provided.
+  at System.Diagnostics.Process.Start () [0x00024] in <0176c56e11184037ab8bba48ad8e5607>:0 
+  at (wrapper remoting-invoke-with-check) System.Diagnostics.Process.Start()
+  at UnityEditor.Android.ProgramAsShellExecute.Start (System.Diagnostics.ProcessStartInfo psi) [0x0000e] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.Command.RunWithShellExecute (System.String command, System.String args, System.String workingdir, System.String errorMsg) [0x0003e] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.ADB.StartServer () [0x00013] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.ADB.Run (System.String[] command, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg) [0x0000b] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x00284] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00039] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00081] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Android.TargetExtension.OnLoad () [0x000ad] in <c3a7a35f684a4e72b8a6533d8c702ad7>:0 
+  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x0009d] in <78fe3e0b66cf40fc8dbec96aa3584483>:0 
+
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.286 seconds
-Domain Reload Profiling: 647ms
-	BeginReloadAssembly (120ms)
+- Finished resetting the current domain, in  0.357 seconds
+Domain Reload Profiling: 763ms
+	BeginReloadAssembly (130ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (74ms)
-	LoadAllAssembliesAndSetupDomain (123ms)
-		LoadAssemblies (113ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (72ms)
+	LoadAllAssembliesAndSetupDomain (153ms)
+		LoadAssemblies (127ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (121ms)
-			TypeCache.Refresh (119ms)
-				TypeCache.ScanAssembly (108ms)
+		AnalyzeDomain (150ms)
+			TypeCache.Refresh (149ms)
+				TypeCache.ScanAssembly (136ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (287ms)
+	FinalizeReload (357ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (223ms)
+		SetupLoadedEditorAssemblies (302ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (138ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (151ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
+			ProcessInitializeOnLoadAttributes (113ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,55 +130,56 @@ Domain Reload Profiling: 647ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.690 seconds
-Refreshing native plugins compatible for Editor in 7.85 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.681 seconds
+Refreshing native plugins compatible for Editor in 4.69 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
+Native extension for Android target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.700 seconds
-Domain Reload Profiling: 1381ms
+- Finished resetting the current domain, in  0.626 seconds
+Domain Reload Profiling: 1302ms
 	BeginReloadAssembly (154ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (59ms)
-	LoadAllAssembliesAndSetupDomain (426ms)
-		LoadAssemblies (349ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (428ms)
+		LoadAssemblies (333ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (161ms)
-			TypeCache.Refresh (141ms)
-				TypeCache.ScanAssembly (129ms)
-			ScanForSourceGeneratedMonoScriptInfo (13ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (166ms)
+				TypeCache.ScanAssembly (149ms)
+			ScanForSourceGeneratedMonoScriptInfo (14ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (701ms)
+	FinalizeReload (626ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (552ms)
+		SetupLoadedEditorAssemblies (454ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
+			InitializePlatformSupportModulesInManaged (50ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (100ms)
-			ProcessInitializeOnLoadAttributes (393ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (18ms)
+			BeforeProcessingInitializeOnLoad (70ms)
+			ProcessInitializeOnLoadAttributes (296ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (12ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 7.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.99 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3225 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 44 unused Assets / (1.3 MB). Loaded Objects now: 3674.
-Memory consumption went from 146.9 MB to 145.6 MB.
-Total: 3.236500 ms (FindLiveObjects: 0.263100 ms CreateObjectMapping: 0.091100 ms MarkObjects: 2.566000 ms  DeleteObjects: 0.314900 ms)
+Unloading 3226 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 44 unused Assets / (1.3 MB). Loaded Objects now: 3678.
+Memory consumption went from 152.1 MB to 150.8 MB.
+Total: 4.583600 ms (FindLiveObjects: 0.500200 ms CreateObjectMapping: 0.101500 ms MarkObjects: 3.443800 ms  DeleteObjects: 0.536100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -178,3 +194,1859 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8866.091798 seconds.
+  path: Assets/Scenes/OGScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/OGScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b0e41601d4182867a4c56f531ad070b') in 0.003277 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.861420 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Axe Variant Village.prefab
+  artifactKey: Guid(8acfa0c30fd6c1c4f865d2bcd8ea2a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Axe Variant Village.prefab using Guid(8acfa0c30fd6c1c4f865d2bcd8ea2a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b5a25bf320f4c1ceb08853dc6dbab5a') in 0.102832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bones Ornament Variant Village.prefab
+  artifactKey: Guid(f5782302358270745b5ea922fb0c87c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bones Ornament Variant Village.prefab using Guid(f5782302358270745b5ea922fb0c87c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1c787404101fc83707bce9c2a94a694') in 0.014100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Barrel Variant Village.prefab
+  artifactKey: Guid(afc5a2f9b9d97fe49972e0f5b20defc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Barrel Variant Village.prefab using Guid(afc5a2f9b9d97fe49972e0f5b20defc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f79d3f38b0f691f93990d98f8698ca12') in 0.013391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bucket Variant Village.prefab
+  artifactKey: Guid(146a467e0cfc2ce4b9f082d2ef40bee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bucket Variant Village.prefab using Guid(146a467e0cfc2ce4b9f082d2ef40bee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3c78c0e969482ae3f91ac4beca538a9') in 0.011434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Chump Variant Village.prefab
+  artifactKey: Guid(08f0c4393146efe458a23c04cc09737a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Chump Variant Village.prefab using Guid(08f0c4393146efe458a23c04cc09737a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90fbc5adef49f5b838894c8405a71b72') in 0.012020 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/CubeLand_2 Variant Village.prefab
+  artifactKey: Guid(31dce7e3a864a65449058c161e16b87c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/CubeLand_2 Variant Village.prefab using Guid(31dce7e3a864a65449058c161e16b87c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2638c29e15654e17d94dcbb1f761c2c3') in 0.024757 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_1_1 Variant Village.prefab
+  artifactKey: Guid(fae6bab7678fb1f4fa3b4fadcaa821a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_1_1 Variant Village.prefab using Guid(fae6bab7678fb1f4fa3b4fadcaa821a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '636899f2711122f72f918311339144c5') in 0.013439 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_1_3 Variant Village.prefab
+  artifactKey: Guid(5a18fd339bd36d144a3b45c028a39c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_1_3 Variant Village.prefab using Guid(5a18fd339bd36d144a3b45c028a39c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bd0b47b28947e963c5a4f82a787b32a') in 0.013169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_2_1 Variant Village.prefab
+  artifactKey: Guid(2356f9850d76f324c913a33bdf16e3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_2_1 Variant Village.prefab using Guid(2356f9850d76f324c913a33bdf16e3a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '405b8ae94f2f7310901b3b829ffb365a') in 0.014227 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_S Variant Village.prefab
+  artifactKey: Guid(2fdb52d96be866d4e9d8ad25a9b0fb13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_S Variant Village.prefab using Guid(2fdb52d96be866d4e9d8ad25a9b0fb13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43d92d935e00230ad08c04b65717ad7c') in 0.011158 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Boat Variant Village.prefab
+  artifactKey: Guid(a89257dccd1d95e40b0df486196d9ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Boat Variant Village.prefab using Guid(a89257dccd1d95e40b0df486196d9ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc5f6abd6cf2cea8ba8229ecc9c00eec') in 0.012328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/DriedFishes-Hang Variant Village.prefab
+  artifactKey: Guid(8d087a0b061b89543aab0461770bd505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/DriedFishes-Hang Variant Village.prefab using Guid(8d087a0b061b89543aab0461770bd505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de431d4961fc6a3c963ae27ad2d77772') in 0.012471 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Grass_1 Variant Village.prefab
+  artifactKey: Guid(5e004107eb2a9e443bb4bcb18e78214a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Grass_1 Variant Village.prefab using Guid(5e004107eb2a9e443bb4bcb18e78214a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '172983fab98539089b4d34e5e553cedb') in 0.010856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hammer Variant Village.prefab
+  artifactKey: Guid(4a3206707137a8b4c91f1b0dcd98659e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hammer Variant Village.prefab using Guid(4a3206707137a8b4c91f1b0dcd98659e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c18eebe48be58ff545a64af01077612') in 0.011698 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hay_2 Variant Village.prefab
+  artifactKey: Guid(f3e02da71b06d7b4caeabf43a94c5f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hay_2 Variant Village.prefab using Guid(f3e02da71b06d7b4caeabf43a94c5f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f5294e246ce8a527ac34513a364f78') in 0.011563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Island_1 Village Variant Village.prefab
+  artifactKey: Guid(8e204900d79b09d48a1c48c6129b1ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Island_1 Village Variant Village.prefab using Guid(8e204900d79b09d48a1c48c6129b1ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8743f3e4bebf59220d1a65dcb8762de0') in 0.011853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Mushroom_1 Variant Village.prefab
+  artifactKey: Guid(e0a8815782152f34db8ef403e395c5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Mushroom_1 Variant Village.prefab using Guid(e0a8815782152f34db8ef403e395c5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c404630e01655bfc6c9dc785afbe1050') in 0.013732 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_Bar_2 Variant Village.prefab
+  artifactKey: Guid(a8abff22a56f190498c15b700d0a3f14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_Bar_2 Variant Village.prefab using Guid(a8abff22a56f190498c15b700d0a3f14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb8dd5f78cecf7ccf9fe6c01fdce05c0') in 0.012965 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_M Variant Village.prefab
+  artifactKey: Guid(fd3d8337e70610c4fa4f188ea31cbf2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_M Variant Village.prefab using Guid(fd3d8337e70610c4fa4f188ea31cbf2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffba384153a5d68a2245948506a2404a') in 0.020195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Footbridge Variant Village.prefab
+  artifactKey: Guid(0148b5f006e8af14c9c10cbc32e65b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Footbridge Variant Village.prefab using Guid(0148b5f006e8af14c9c10cbc32e65b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '319b833b00a766c94566eea2a4d450e5') in 0.012224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bag_2 Variant Village.prefab
+  artifactKey: Guid(4af9528d7fc0ee54da6f75afcc711a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bag_2 Variant Village.prefab using Guid(4af9528d7fc0ee54da6f75afcc711a3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7711f51795f7e7043054486993bb37c5') in 0.019699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_Bar Variant Village.prefab
+  artifactKey: Guid(98c10667ea71453499439e9ad09a77bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Fence_Bar Variant Village.prefab using Guid(98c10667ea71453499439e9ad09a77bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4d68e8107e1aea23630139aadf0a624') in 0.012175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Broom Variant Village.prefab
+  artifactKey: Guid(993648e899406214da7b5d3c317271bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Broom Variant Village.prefab using Guid(993648e899406214da7b5d3c317271bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '459bc68cc7f97199ce170ecd752bd4fc') in 0.014015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bench_2 Variant Village.prefab
+  artifactKey: Guid(8f20fe155de63e541b28fae9b0798ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bench_2 Variant Village.prefab using Guid(8f20fe155de63e541b28fae9b0798ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ceab05974fd633bba8fd9f5d938eb02') in 0.015124 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Battle_Axe Variant Village.prefab
+  artifactKey: Guid(624db28ffb8ce514f8b1955da3471bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Battle_Axe Variant Village.prefab using Guid(624db28ffb8ce514f8b1955da3471bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80ed0739ae2fe1ac0f5fcda3a409b51c') in 0.018014 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Cloud_2 Variant Village.prefab
+  artifactKey: Guid(9d9f686111a0c3c4ab56d244e2cb2051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Cloud_2 Variant Village.prefab using Guid(9d9f686111a0c3c4ab56d244e2cb2051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c845191b7f228a110483cc90c4481248') in 0.011709 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Island_1 Variant Village.prefab
+  artifactKey: Guid(245bd9a596f27e5468eb4b50992d0447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Island_1 Variant Village.prefab using Guid(245bd9a596f27e5468eb4b50992d0447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb64101bde23022da559a52c28b21be2') in 0.014345 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flag_Totem Variant Village.prefab
+  artifactKey: Guid(38c14b595f2985c43b209efbd5cc33ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flag_Totem Variant Village.prefab using Guid(38c14b595f2985c43b209efbd5cc33ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e812e3ecdcfde03912d87f46530723fc') in 0.012911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Gate Variant Village.prefab
+  artifactKey: Guid(1e2ffa8f4e35e7c4fbb1ce685ecbacb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Gate Variant Village.prefab using Guid(1e2ffa8f4e35e7c4fbb1ce685ecbacb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d6f544bb0360590afa15ebc8430f876') in 0.020246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Grass_2 Variant Village.prefab
+  artifactKey: Guid(0e4b4701552154544bd95c037f406c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Grass_2 Variant Village.prefab using Guid(0e4b4701552154544bd95c037f406c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9379c8bc19b60c916ff1ec33f079998c') in 0.011383 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_L Variant Village.prefab
+  artifactKey: Guid(c0dcfdb242087874d8885260a36eb73c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_Wheat_L Variant Village.prefab using Guid(c0dcfdb242087874d8885260a36eb73c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82c269eed572e1cab263afbf1810a18a') in 0.012464 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flat Rock_2 Variant Village.prefab
+  artifactKey: Guid(d344fda67c71a734faf903bed8b74f50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flat Rock_2 Variant Village.prefab using Guid(d344fda67c71a734faf903bed8b74f50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3333ca136c8aa5ff74a5998b3a5a465') in 0.011787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/CubeLand Variant Village.prefab
+  artifactKey: Guid(7364b19764f819a4bbb5ec73d4d55fd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/CubeLand Variant Village.prefab using Guid(7364b19764f819a4bbb5ec73d4d55fd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24b25685ef28c13e671fc88b9d005f71') in 0.014169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Building_2_Wall_Off_1 Variant Village.prefab
+  artifactKey: Guid(29004f11b3c1da740b13b0d2023cdd5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Building_2_Wall_Off_1 Variant Village.prefab using Guid(29004f11b3c1da740b13b0d2023cdd5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99287b2810ff002b6f3b9a52359ce7ce') in 0.015397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bed Variant Village.prefab
+  artifactKey: Guid(fb7b9f49660ba8744a458067d919964a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bed Variant Village.prefab using Guid(fb7b9f49660ba8744a458067d919964a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cfa159d5f52a5fb2ec52c8846182ab4') in 0.014252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bench_1 Variant Village.prefab
+  artifactKey: Guid(7439836b61fd6564387b3d442f8dcbca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Bench_1 Variant Village.prefab using Guid(7439836b61fd6564387b3d442f8dcbca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0559550783f5f1fea0cf9fd3c26515ea') in 0.011952 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flat Rock_1 Variant Village.prefab
+  artifactKey: Guid(6ede566c4b18a9d4d9f7c8df83cdcdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Flat Rock_1 Variant Village.prefab using Guid(6ede566c4b18a9d4d9f7c8df83cdcdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9327946608e4fe7c99c03c996eed455c') in 0.012284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Chest Variant Village.prefab
+  artifactKey: Guid(a4f535320bb5cfa4cbf95f8601f73b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Chest Variant Village.prefab using Guid(a4f535320bb5cfa4cbf95f8601f73b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b50f04e971d1fa4b4dc92d068ac2a5') in 0.018224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 33
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Land_1 Variant Village.prefab
+  artifactKey: Guid(aeadbb45e26bec0468da203f575d05fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Land_1 Variant Village.prefab using Guid(aeadbb45e26bec0468da203f575d05fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98d5cd25f8e99414fa81ad7b5fa8f660') in 0.012372 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hay_1 Variant Village.prefab
+  artifactKey: Guid(0bd1f7caede80a94a829a704f4e31a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Hay_1 Variant Village.prefab using Guid(0bd1f7caede80a94a829a704f4e31a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '031e6642c1a6e0b531f360e7b3d7f40b') in 0.013980 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_M Variant Village.prefab
+  artifactKey: Guid(958b540feaeec9c41913eb02dda411f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Field_M Variant Village.prefab using Guid(958b540feaeec9c41913eb02dda411f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f4d6daf6634875eb749e022e860109b') in 0.010803 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Ladder Variant Village.prefab
+  artifactKey: Guid(b4c7853a02ffc9a42bbd1d7abb0b4bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Ladder Variant Village.prefab using Guid(b4c7853a02ffc9a42bbd1d7abb0b4bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48fac17631bf2df590ac93447171de13') in 0.011364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Building_1_Wall_Off Variant Village.prefab
+  artifactKey: Guid(bc13a13e55d65134f9126246d2329197) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Building_1_Wall_Off Variant Village.prefab using Guid(bc13a13e55d65134f9126246d2329197) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd831453f72dbee861f18304427d84dde') in 0.013717 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.346523 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Mushroom_3 Variant Village.prefab
+  artifactKey: Guid(de37e18303a3f2e46afb98b91492322a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Mushroom_3 Variant Village.prefab using Guid(de37e18303a3f2e46afb98b91492322a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2eed466662ace3fd0186e6382a435e2') in 0.011369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Nail Variant Village.prefab
+  artifactKey: Guid(d4d921e5757031e419eb905d68adf4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Nail Variant Village.prefab using Guid(d4d921e5757031e419eb905d68adf4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62bcceec1c3e5f31d8cf91fa3d0d9ef9') in 0.011683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Pickaxe Variant Village.prefab
+  artifactKey: Guid(bcae0d69dbda0fc42bba00b2c52e94db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Pickaxe Variant Village.prefab using Guid(bcae0d69dbda0fc42bba00b2c52e94db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1970d88342ba5055d5d8dec9ebcf9f5') in 0.012152 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Plank_2 Variant Village.prefab
+  artifactKey: Guid(53f99dd1f49348f4c9ff0b48a00eef68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Plank_2 Variant Village.prefab using Guid(53f99dd1f49348f4c9ff0b48a00eef68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a815cf1b200dff9531e58064498867d') in 0.011496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Pointer Variant Village.prefab
+  artifactKey: Guid(cc5eec654f910f94db6f853dc01242f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Pointer Variant Village.prefab using Guid(cc5eec654f910f94db6f853dc01242f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc5fc5ba378144816a0f16c72573d207') in 0.010649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Reed Variant Village.prefab
+  artifactKey: Guid(7f12b9038cca3164e984acf90e29fae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Reed Variant Village.prefab using Guid(7f12b9038cca3164e984acf90e29fae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0151e678125bf6b4c78e3560350bc7fd') in 0.011625 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock Formation Variant Village.prefab
+  artifactKey: Guid(bd265264f7411bb489e368b59c01b3da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock Formation Variant Village.prefab using Guid(bd265264f7411bb489e368b59c01b3da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7cd955f5a382c6a4fb4b9ebe1647c55') in 0.012445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Plank_1 Variant Village.prefab
+  artifactKey: Guid(f94a5e08f79d78c47b2fa168c3c26b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Plank_1 Variant Village.prefab using Guid(f94a5e08f79d78c47b2fa168c3c26b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '487ebdcfc0d04d99987fd4c5456e414d') in 0.012562 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_3 Variant Village.prefab
+  artifactKey: Guid(a875c74231884f64bb9ae5b47acd6288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_3 Variant Village.prefab using Guid(a875c74231884f64bb9ae5b47acd6288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784bf2be1dcd6f72f461b80a68f6ab3e') in 0.010475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_5 Variant Village.prefab
+  artifactKey: Guid(4fd6124f404e46e41bc4a81611fb40a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_5 Variant Village.prefab using Guid(4fd6124f404e46e41bc4a81611fb40a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '371d82eb816af639ffbf520bbfe9ee62') in 0.011058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/ScareCrow Variant Village.prefab
+  artifactKey: Guid(3ff25246c808376488b21e3d31c9ce2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/ScareCrow Variant Village.prefab using Guid(3ff25246c808376488b21e3d31c9ce2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a76ab889b679bba6740c4085fd4785ff') in 0.013601 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Shield_2 Variant Village.prefab
+  artifactKey: Guid(82afb28d7b0e88f4bac5e04d1d5f6987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Shield_2 Variant Village.prefab using Guid(82afb28d7b0e88f4bac5e04d1d5f6987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28954813f3d40e51ad0912fdc5101a1d') in 0.011712 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Scythe Variant Village.prefab
+  artifactKey: Guid(ca097de35676ffe4099b8439d63a25e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Scythe Variant Village.prefab using Guid(ca097de35676ffe4099b8439d63a25e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64f9b72da56c61da4d96534dc749376c') in 0.013336 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Spikes_1 Variant Village.prefab
+  artifactKey: Guid(b7df7aec3b486d74c869d1baae7c86ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Spikes_1 Variant Village.prefab using Guid(b7df7aec3b486d74c869d1baae7c86ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b3c63033e72c0e425dfcb484e5275ea') in 0.014572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Spikes_3 Variant Village.prefab
+  artifactKey: Guid(315c0504acc5e5d4f9cf71f8d3938b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Spikes_3 Variant Village.prefab using Guid(315c0504acc5e5d4f9cf71f8d3938b26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '521a8fa7fa7c0bba92425165e377c931') in 0.012022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stall Variant Village.prefab
+  artifactKey: Guid(690d8ac156e4ede4e9def63e5de0a6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stall Variant Village.prefab using Guid(690d8ac156e4ede4e9def63e5de0a6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80cfc8a4483e61ad46f7f241e78262dc') in 0.014010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stable Variant Village.prefab
+  artifactKey: Guid(02d999fe779d5bb4c8254d61c0234c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stable Variant Village.prefab using Guid(02d999fe779d5bb4c8254d61c0234c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f439d03d479c22bb6adf08c5d240aef4') in 0.015920 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 23
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tower Variant Village.prefab
+  artifactKey: Guid(f22df424f03370b4ab29f7885cd9965f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tower Variant Village.prefab using Guid(f22df424f03370b4ab29f7885cd9965f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '900aa7e08c74eaa5995560b2ea2d4ae3') in 0.015964 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_3 Variant Village.prefab
+  artifactKey: Guid(ce76ded86363282499c3b4dbaeb38832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_3 Variant Village.prefab using Guid(ce76ded86363282499c3b4dbaeb38832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5086d2c3f216fa4cbc9a9a0514690c') in 0.014302 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_2 Variant Village.prefab
+  artifactKey: Guid(6f5e1bf38d737a04bae55255b75d87ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_2 Variant Village.prefab using Guid(6f5e1bf38d737a04bae55255b75d87ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da25fb389e4a910aa23cd2a9e24ded27') in 0.015394 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_1 Variant Village.prefab
+  artifactKey: Guid(e90ecab6b2a8a4c48a36b0570007df19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_1 Variant Village.prefab using Guid(e90ecab6b2a8a4c48a36b0570007df19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02149f0d53aa2e6dd57647e7b43ebbf7') in 0.013286 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/TreeTrunk_1 Variant Village.prefab
+  artifactKey: Guid(4ebc584ec3a423b45bfc3ef2e43c85c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/TreeTrunk_1 Variant Village.prefab using Guid(4ebc584ec3a423b45bfc3ef2e43c85c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0021db0eb2238c9df20ad5a690604d71') in 0.011624 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_6 Variant Village.prefab
+  artifactKey: Guid(731371765aee5c74698dbc5348f9e050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Tree_6 Variant Village.prefab using Guid(731371765aee5c74698dbc5348f9e050) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b898cddb539b081c4b4ca7302930d8e5') in 0.014460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Trough Variant Village.prefab
+  artifactKey: Guid(487fbb3e694828d4ba19427133dba9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Trough Variant Village.prefab using Guid(487fbb3e694828d4ba19427133dba9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bdf570a09311ce3de76003d76d51f54') in 0.014554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Wheelbarrow Variant Village.prefab
+  artifactKey: Guid(c7811ede88ed3cb45b2156982defc917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Wheelbarrow Variant Village.prefab using Guid(c7811ede88ed3cb45b2156982defc917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '935ba22e6b6ff93c9f76e6ab9858f269') in 0.014436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Wheel Variant Village.prefab
+  artifactKey: Guid(c7ee091c636a7084bb2ce6dd64e971cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Wheel Variant Village.prefab using Guid(c7ee091c636a7084bb2ce6dd64e971cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bf76c9be8036e8c6a0063a4cc671709') in 0.013911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stool Variant Village.prefab
+  artifactKey: Guid(db77c15622d82814799633cc0e768b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stool Variant Village.prefab using Guid(db77c15622d82814799633cc0e768b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9419ceb2ccb832b8918f477223a5cf30') in 0.012040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Shield_5 Variant Village.prefab
+  artifactKey: Guid(2e2c93d1d646fa044aaa3eeea7581717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Shield_5 Variant Village.prefab using Guid(2e2c93d1d646fa044aaa3eeea7581717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0f87e171daacd650ee8a1f3d30c4452') in 0.012459 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stone_2 Variant Village.prefab
+  artifactKey: Guid(ecf1a8e391cb31445b96d47452551fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Stone_2 Variant Village.prefab using Guid(ecf1a8e391cb31445b96d47452551fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c915fbd09fb4cc198ca01844764501a2') in 0.012205 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Reed Multi Variant Village.prefab
+  artifactKey: Guid(2a9b7213b99b19247b4c56f1410f659b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Reed Multi Variant Village.prefab using Guid(2a9b7213b99b19247b4c56f1410f659b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '401bd9204e470508dcf455b0fccb2e1d') in 0.010976 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/WallTorch_2 Variant Village.prefab
+  artifactKey: Guid(2e5dd6ce8ef4c3e4dac5ccd944bb3680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/WallTorch_2 Variant Village.prefab using Guid(2e5dd6ce8ef4c3e4dac5ccd944bb3680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '160c36128d5d257f7f67449d74456dc3') in 0.012753 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_1 Variant Village.prefab
+  artifactKey: Guid(f33f801d7f04229498cbd33d0d25b00c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/Rock_1 Variant Village.prefab using Guid(f33f801d7f04229498cbd33d0d25b00c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa95410565120bec6c45d295a7198dd3') in 0.011428 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/TreeTrunk_4 Variant Village.prefab
+  artifactKey: Guid(c7259187f55383e42a2152c182959487) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Prefabs Village/TreeTrunk_4 Variant Village.prefab using Guid(c7259187f55383e42a2152c182959487) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8e9869c34ccac313b702ded9be0147') in 0.012919 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 6.641940 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Textures Village/Floor Village.png
+  artifactKey: Guid(ddaef7a6fb8bf8b459668b9c9431e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Textures Village/Floor Village.png using Guid(ddaef7a6fb8bf8b459668b9c9431e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa27c8a583b06e736e2220d344dc6668') in 0.031362 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.684974 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Scenes Village/Scene_1 Village/Demo Village/ReflectionProbe-0 Village.exr
+  artifactKey: Guid(ab8a58c87e8d2214889228731327d780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Scenes Village/Scene_1 Village/Demo Village/ReflectionProbe-0 Village.exr using Guid(ab8a58c87e8d2214889228731327d780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e11b1d7f8346f578f9467d7d6adc750') in 0.025117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 2.177332 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Collor Mat Medival Village.mat
+  artifactKey: Guid(9f6dc087a3d620745b29265823e39d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Collor Mat Medival Village.mat using Guid(9f6dc087a3d620745b29265823e39d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d75c8ec6258901138aad1c4036b0ae0') in 0.023427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Wood_2 Village.mat
+  artifactKey: Guid(9125bc8089fcb9b429af64a844397b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Wood_2 Village.mat using Guid(9125bc8089fcb9b429af64a844397b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a597fd0553e1be8a40bda23a1024490') in 0.013605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Ground Village.mat
+  artifactKey: Guid(de52b0cf7d497f1458c227df148addce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Ground Village.mat using Guid(de52b0cf7d497f1458c227df148addce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dfb7d0b0986d3d1edc45ef44aa1979b') in 0.011539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Green_2 Village.mat
+  artifactKey: Guid(0e834428cf6b3be4ba8c9e142053d639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Green_2 Village.mat using Guid(0e834428cf6b3be4ba8c9e142053d639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2b6f76d4b5279191bd1675162f7a5f') in 0.011528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Rock Village.mat
+  artifactKey: Guid(80ed1afb6b1e2a44eb55f2644216cd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Rock Village.mat using Guid(80ed1afb6b1e2a44eb55f2644216cd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e3d32fda71dc2dd62f03e86c3c3b8a8') in 0.013030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Water Village.mat
+  artifactKey: Guid(c1d0cca289302d947adcf49c684f4e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Water Village.mat using Guid(c1d0cca289302d947adcf49c684f4e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d9ae8744c0f7063a065e755b4542f4c') in 0.013708 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Sand Village.mat
+  artifactKey: Guid(3b2262e1b2c36f843879987c00a5367b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Materials Village/Sand Village.mat using Guid(3b2262e1b2c36f843879987c00a5367b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19409ab74c28ed7ad505df7feba36739') in 0.020099 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.606740 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bag Village.fbx
+  artifactKey: Guid(bee345ca0055a984d9c0727980dfc9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bag Village.fbx using Guid(bee345ca0055a984d9c0727980dfc9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2e6f865762d4e6ed805ec5564f2959e') in 0.027484 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Flat Rock_2 Village.fbx
+  artifactKey: Guid(9a30b1098988361458bd5573cd953c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Flat Rock_2 Village.fbx using Guid(9a30b1098988361458bd5573cd953c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77182ca135fc8e299b4588139131d417') in 0.020780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Grass_3 Village.fbx
+  artifactKey: Guid(d30e49ae67ec3cb49b00ee3f8769285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Grass_3 Village.fbx using Guid(d30e49ae67ec3cb49b00ee3f8769285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f67a5873e7f814f712630d95f0dd0bdd') in 0.020143 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Barn_Wood Village.fbx
+  artifactKey: Guid(e4df3919539ca29488003b5fbab65e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Barn_Wood Village.fbx using Guid(e4df3919539ca29488003b5fbab65e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b92a15ad29bb4c7e416b2b1edade73a8') in 0.020252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/CubeLand Village.fbx
+  artifactKey: Guid(4f785c4cca46fb74da3da44f0e941fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/CubeLand Village.fbx using Guid(4f785c4cca46fb74da3da44f0e941fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5c541831db1669e9e97fe146f428a76') in 0.017910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_On_1 Village.fbx
+  artifactKey: Guid(ab5497876c580f9499ae0e61699e3405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_On_1 Village.fbx using Guid(ab5497876c580f9499ae0e61699e3405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e538e76bd33601879cb059234cc960') in 0.041645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/DriedFishes-Hang Village.fbx
+  artifactKey: Guid(1bfc7f7001c747d4fb4c2b10c7941fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/DriedFishes-Hang Village.fbx using Guid(1bfc7f7001c747d4fb4c2b10c7941fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fba71e70878405fa70686c3f5517c8f5') in 0.019212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Chump Village.fbx
+  artifactKey: Guid(48e0b9f8e31689d458bbcf4ae53608ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Chump Village.fbx using Guid(48e0b9f8e31689d458bbcf4ae53608ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fc85bce31095020caa975d7d219c11d') in 0.027195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_Wheat_L Village.fbx
+  artifactKey: Guid(9568ad30c8920ea47ac8dc44358ed520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_Wheat_L Village.fbx using Guid(9568ad30c8920ea47ac8dc44358ed520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0404da53f888e361d9a06cee02d072bb') in 0.022366 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_Off_1 Village.fbx
+  artifactKey: Guid(dd3caaccee25fcc4db65e68f76ed4371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_Off_1 Village.fbx using Guid(dd3caaccee25fcc4db65e68f76ed4371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37abcd2dceeeb43f606ed79d969b334') in 0.022465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Battle_Axe Village.fbx
+  artifactKey: Guid(63d8bc1eef52cf842ad636154312e0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Battle_Axe Village.fbx using Guid(63d8bc1eef52cf842ad636154312e0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9724a4418bbf2396aa1dffa7969ce75a') in 0.014786 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_2_1 Village.fbx
+  artifactKey: Guid(9508c022d5462e2429e0ed8fab7615cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_2_1 Village.fbx using Guid(9508c022d5462e2429e0ed8fab7615cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8df28fc472c48eb4ac8a4dbcc163cfee') in 0.016263 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_M Village.fbx
+  artifactKey: Guid(5faee6a7357650f4f93920d0e4651f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_M Village.fbx using Guid(5faee6a7357650f4f93920d0e4651f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecdd16b74fb73751eaf0d0d09d659370') in 0.016019 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bed Village.fbx
+  artifactKey: Guid(51f1c5a18b001334e8c03d8fc804ee1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bed Village.fbx using Guid(51f1c5a18b001334e8c03d8fc804ee1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4ebe38d6009b8ce0c2ca15b9f44943c') in 0.016385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_Wheat_M Village.fbx
+  artifactKey: Guid(2aae338f3e594364087fe108c059bfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Field_Wheat_M Village.fbx using Guid(2aae338f3e594364087fe108c059bfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ec3473634657c9310074cc650ced50') in 0.015452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_Bar Village.fbx
+  artifactKey: Guid(2486f1adf673fd34cba860c62a614438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_Bar Village.fbx using Guid(2486f1adf673fd34cba860c62a614438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f7a2cca9dd72fba5cefd46730610400') in 0.014215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Grass_4 Village.fbx
+  artifactKey: Guid(31d28e51e2fcc4c45b15d33fa4151b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Grass_4 Village.fbx using Guid(31d28e51e2fcc4c45b15d33fa4151b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fa65a95cf3957e0846a01bb0d8655ae') in 0.015781 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Mushroom_1 Village.fbx
+  artifactKey: Guid(161fbcc46ca58164daec2f6be60ea368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Mushroom_1 Village.fbx using Guid(161fbcc46ca58164daec2f6be60ea368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f40a7b9d2d465e7260db01f25179a5dc') in 0.012217 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Boat_2 Village.fbx
+  artifactKey: Guid(91f1271dc2a0668429fcf2b031bbd2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Boat_2 Village.fbx using Guid(91f1271dc2a0668429fcf2b031bbd2de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342d6d6659276f40715623d881618bbe') in 0.014565 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bones Ornament Village.fbx
+  artifactKey: Guid(1cb316cdf0461564397ceab01475091f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Bones Ornament Village.fbx using Guid(1cb316cdf0461564397ceab01475091f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db39ba7ce78f6b2b53af9b9bfad667d5') in 0.015611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Hay_2 Village.fbx
+  artifactKey: Guid(0269e2323f2004e4d85e4cd14a3f7425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Hay_2 Village.fbx using Guid(0269e2323f2004e4d85e4cd14a3f7425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5316ce966301e38e1c9c94e0370ece1') in 0.014681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_1_1 Village.fbx
+  artifactKey: Guid(cfb5b1eb9bac33545be837a224f9c7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Fence_1_1 Village.fbx using Guid(cfb5b1eb9bac33545be837a224f9c7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d79432d6942a316fb704f440e96c92d') in 0.014860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_On_2 Village.fbx
+  artifactKey: Guid(b8c95f8595ade7241bf24df761328332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Building_2_Wall_On_2 Village.fbx using Guid(b8c95f8595ade7241bf24df761328332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9b80d595e2913ed42d509683d8579ac') in 0.014140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.415471 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Nail Village.fbx
+  artifactKey: Guid(3fcdeb73bf956b047bdb9f195bb556e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Nail Village.fbx using Guid(3fcdeb73bf956b047bdb9f195bb556e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '344f15eee3747359b6f2ef94f22368ec') in 0.014134 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Reed Village.fbx
+  artifactKey: Guid(bef64828112cd55438c628b58652cfd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Reed Village.fbx using Guid(bef64828112cd55438c628b58652cfd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32eced6af0cf483e9b62a05f68f770ab') in 0.014383 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rock_2 Village.fbx
+  artifactKey: Guid(343fdd010ed75264290f7c857be42eea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rock_2 Village.fbx using Guid(343fdd010ed75264290f7c857be42eea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b089fbe64befaed34908f3965d5df4') in 0.014283 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Road_Mud_3 Village.fbx
+  artifactKey: Guid(bfbcab88519c8e247899bba2c87f7100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Road_Mud_3 Village.fbx using Guid(bfbcab88519c8e247899bba2c87f7100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd6a0cea24d6ee0b5700cbc39b5a971') in 0.014384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Road_Mud_1 Village.fbx
+  artifactKey: Guid(426ad563678849c4fb994cac90bc5ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Road_Mud_1 Village.fbx using Guid(426ad563678849c4fb994cac90bc5ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe5b9c4ef6ef1f88763849c32caa0c5') in 0.015927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.019487 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rock_4 Village.fbx
+  artifactKey: Guid(4cdbf8b93518ab245bf019d2545b0e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rock_4 Village.fbx using Guid(4cdbf8b93518ab245bf019d2545b0e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e7f6d9c32f45c2ff6a4a0291a0c0b30') in 0.014116 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rope_1 Village.fbx
+  artifactKey: Guid(1cd3f6f2f454adb4db59021851589b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Rope_1 Village.fbx using Guid(1cd3f6f2f454adb4db59021851589b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66de6ca3cad4dbbd2107b91fb7a21552') in 0.014851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Spikes_3 Village.fbx
+  artifactKey: Guid(0983ca7179f23e74d82fd13388f9827b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Spikes_3 Village.fbx using Guid(0983ca7179f23e74d82fd13388f9827b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c167339b952057ef7ac99c8118b0a2fe') in 0.015584 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Sickle Village.fbx
+  artifactKey: Guid(48a04cfd5bd15c04aa1e8d34aa06917c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Sickle Village.fbx using Guid(48a04cfd5bd15c04aa1e8d34aa06917c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '962799a06ab149511f662065787a86e3') in 0.014249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/ScareCrow Village.fbx
+  artifactKey: Guid(b2be82601e00b4941b2fdbb7c450d387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/ScareCrow Village.fbx using Guid(b2be82601e00b4941b2fdbb7c450d387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ab9ff1863947b2431d5f545a1ce9d26') in 0.014131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_1 Village.fbx
+  artifactKey: Guid(a55ec040d58dc7a4eb8c4a39cfa9f0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_1 Village.fbx using Guid(a55ec040d58dc7a4eb8c4a39cfa9f0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69c347195a0d64b46d5c5881e6bb10bb') in 0.015162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Totem_Bones Village.fbx
+  artifactKey: Guid(ccc7aa978f658304690f40e3b45f12b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Totem_Bones Village.fbx using Guid(ccc7aa978f658304690f40e3b45f12b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97b75174ffb86eed058737bf6e61837') in 0.014597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Stable Village.fbx
+  artifactKey: Guid(ac8d7234cb097b94db803a4f7e46b2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Stable Village.fbx using Guid(ac8d7234cb097b94db803a4f7e46b2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12b819b1198ea7161b090c7bbb057986') in 0.014057 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Stall Village.fbx
+  artifactKey: Guid(54df924b48dcfec41b9815fa7cff7621) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Stall Village.fbx using Guid(54df924b48dcfec41b9815fa7cff7621) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1b9bf57fb0155afef4f7b42abe546f9') in 0.016230 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_3 Village.fbx
+  artifactKey: Guid(be7830cd2ddfe5f48b05cc7b914989aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_3 Village.fbx using Guid(be7830cd2ddfe5f48b05cc7b914989aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f809263f0463f5f02435aa149a64f11a') in 0.014724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Shield_4 Village.fbx
+  artifactKey: Guid(bd8e1ffe4dfdaaf4e9439d422ec1f86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Shield_4 Village.fbx using Guid(bd8e1ffe4dfdaaf4e9439d422ec1f86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8baf6d5532c1c3ff5e0274922b03052') in 0.014606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Trough_Water Village.fbx
+  artifactKey: Guid(2d48fbd6ffa061444ab9d0ece4a4dcad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Trough_Water Village.fbx using Guid(2d48fbd6ffa061444ab9d0ece4a4dcad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6feab938c32177a7a8e3befa16e1600') in 0.015671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/WallTorch_2 Village.fbx
+  artifactKey: Guid(214ef207fe79bb0468d45c2d36acd777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/WallTorch_2 Village.fbx using Guid(214ef207fe79bb0468d45c2d36acd777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d844d2d942b72c5caa01d6564b1fda') in 0.015231 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/TreeTrunk_4 Village.fbx
+  artifactKey: Guid(549ad00e8f8cbb640a567616b91110cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/TreeTrunk_4 Village.fbx using Guid(549ad00e8f8cbb640a567616b91110cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9135d183cfc31a73d312f4cd06a8a7d4') in 0.014789 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_6 Village.fbx
+  artifactKey: Guid(4d7294a11c0d1c64b9248a807d9b671d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Tree_6 Village.fbx using Guid(4d7294a11c0d1c64b9248a807d9b671d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2dba79295fedebe0ff897f18b950b21') in 0.013978 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Windmill Village.fbx
+  artifactKey: Guid(56ccb24c40989524ab6cfb48fe8be715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly - RG Medieval Village/Meshesh Village/Windmill Village.fbx using Guid(56ccb24c40989524ab6cfb48fe8be715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9197248659c99798b2ed75f754729a72') in 0.021140 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 4.788926 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/BananaTree_2 Variant Island.prefab
+  artifactKey: Guid(2d9e954e709315d468437a42116076ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/BananaTree_2 Variant Island.prefab using Guid(2d9e954e709315d468437a42116076ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f39e908d109354ee8a19548bccec9d28') in 0.230798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Block_L_2 Variant Island.prefab
+  artifactKey: Guid(ad361770045a67441b1ce401763a55fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Block_L_2 Variant Island.prefab using Guid(ad361770045a67441b1ce401763a55fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffe84aa87193075da34ab61f11712eec') in 0.011971 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Column_V1_1 Variant Island.prefab
+  artifactKey: Guid(4351ebd2ccbca8349b9a431c6117c960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Column_V1_1 Variant Island.prefab using Guid(4351ebd2ccbca8349b9a431c6117c960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '230f7db546d8ed848d893c398cf59e25') in 0.013370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Barrel_2 Variant_1  Island.prefab
+  artifactKey: Guid(0f07717e5d4a70e458def73c8dfa7af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Barrel_2 Variant_1  Island.prefab using Guid(0f07717e5d4a70e458def73c8dfa7af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c1df959085369790cfa929b0c165cf0') in 0.012201 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Island_3 Variant Island.prefab
+  artifactKey: Guid(6cd454f0ece55104e92173f709a32cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Island_3 Variant Island.prefab using Guid(6cd454f0ece55104e92173f709a32cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f2892cca96b6082278cafe62ffb69ba') in 0.010940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_1 Variant Island.prefab
+  artifactKey: Guid(518a5c2e5dacc6e458a2398cab70679b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_1 Variant Island.prefab using Guid(518a5c2e5dacc6e458a2398cab70679b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0c51b7b6f3c0ab6445f2f2876333244') in 0.012688 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_2 Variant Island.prefab
+  artifactKey: Guid(16a414836d0d2c0408dce5be8470001f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_2 Variant Island.prefab using Guid(16a414836d0d2c0408dce5be8470001f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66798df2b256a623aeea59439a84abaa') in 0.014199 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bucket_2 Variant Island.prefab
+  artifactKey: Guid(87157aa43d3c5e24cbfe349e4ef7caa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bucket_2 Variant Island.prefab using Guid(87157aa43d3c5e24cbfe349e4ef7caa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386be1c8bee3fdeb5f805c4a6fed8242') in 0.012375 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bones_Skull Island.prefab
+  artifactKey: Guid(21a416d0b4c099b4d85416113f727c70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bones_Skull Island.prefab using Guid(21a416d0b4c099b4d85416113f727c70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '978204e4890915d2b61f8c182ecb42fa') in 0.037713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_1 Variant Island.prefab
+  artifactKey: Guid(4ab68a9d2bc2e0946a248d871672441a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_1 Variant Island.prefab using Guid(4ab68a9d2bc2e0946a248d871672441a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2972a05cee4c380f0409a5aa1ae3498e') in 0.013860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Block_S_1 Variant Island.prefab
+  artifactKey: Guid(46f5f6d9560e2934c9f8ab79360580a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Block_S_1 Variant Island.prefab using Guid(46f5f6d9560e2934c9f8ab79360580a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73fb2d71e7732b8434da6337af88e3f9') in 0.013363 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bones_Torso Island.prefab
+  artifactKey: Guid(72cf4847d7cf36441b23126987170865) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Bones_Torso Island.prefab using Guid(72cf4847d7cf36441b23126987170865) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80908e6164092ce96131615f720b58a0') in 0.013474 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Barrel_1 Variant_1  Island.prefab
+  artifactKey: Guid(b7437249197333d498d8411ed74b801f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Barrel_1 Variant_1  Island.prefab using Guid(b7437249197333d498d8411ed74b801f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '828a7b643598ab69c05d5a9414c387b0') in 0.014642 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Cart_Broken Variant Island.prefab
+  artifactKey: Guid(636b5aa10f582164ea11efe4df6b7183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Cart_Broken Variant Island.prefab using Guid(636b5aa10f582164ea11efe4df6b7183) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '423b6a695ac3c6621a5cec963dcffa57') in 0.017643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Column_V1_2 Variant Island.prefab
+  artifactKey: Guid(e0437d6e272a71b4b9b38cd45154bdbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Column_V1_2 Variant Island.prefab using Guid(e0437d6e272a71b4b9b38cd45154bdbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8c667315b730f5b11ea7098c9a1761d') in 0.012255 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_2 Island.fbx
+  artifactKey: Guid(d7634442264176740a831f09f4f62186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_S_2 Island.fbx using Guid(d7634442264176740a831f09f4f62186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e91e12f32190c898a4b107365c6fe933') in 0.018425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_1 Island.fbx
+  artifactKey: Guid(b19d742bdd0c78348a2f1a8a674bc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V2_1 Island.fbx using Guid(b19d742bdd0c78348a2f1a8a674bc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd79b1bd9f377301c3d781515533402ca') in 0.013665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_4 Island.fbx
+  artifactKey: Guid(1165dcb502294ba4da1c99b2a17cf291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_4 Island.fbx using Guid(1165dcb502294ba4da1c99b2a17cf291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a1b81e32fc10891c168c96dfddc2967') in 0.014603 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_1 Island.fbx
+  artifactKey: Guid(7466d5c82b058bd4b9a503d4f42a8f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_1 Island.fbx using Guid(7466d5c82b058bd4b9a503d4f42a8f47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcc764c911513a863f6c89cec11b89d6') in 0.014939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder Island.fbx
+  artifactKey: Guid(97f7b5a3dd196a0458b5498528a3492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder Island.fbx using Guid(97f7b5a3dd196a0458b5498528a3492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20debf2b2d0ff606b45eb1cb81765d94') in 0.015816 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_2 Island.fbx
+  artifactKey: Guid(8ecdd9d99fe773a4eb50a39f720af6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_2 Island.fbx using Guid(8ecdd9d99fe773a4eb50a39f720af6ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94b79d60469aeb1021623fdd6b3a66de') in 0.015272 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_L_1 Island.fbx
+  artifactKey: Guid(efe282c09dffb6f4d9516447cefbf4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Block_L_1 Island.fbx using Guid(efe282c09dffb6f4d9516447cefbf4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15e14ede594e9204d2fba2c446f5d51') in 0.014113 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Footbridge Island.fbx
+  artifactKey: Guid(c9ee3d404827fa34890e9fa83f5ee72f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Footbridge Island.fbx using Guid(c9ee3d404827fa34890e9fa83f5ee72f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffb0da8f4274038c7d8151971268f9fc') in 0.014680 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crane_1 Island.fbx
+  artifactKey: Guid(415cc30727f46394b8b9cc9e6ea2f69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crane_1 Island.fbx using Guid(415cc30727f46394b8b9cc9e6ea2f69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9869ac368e0a122dc8f56eddc8a517f7') in 0.014251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bridge Island.fbx
+  artifactKey: Guid(cabef2a036ca34c41abb96e0e2f593e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Bridge Island.fbx using Guid(cabef2a036ca34c41abb96e0e2f593e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11f2ff93ab6070dc1ad43b8bfb9c39cf') in 0.018322 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Fence_1 Variant Island.prefab
+  artifactKey: Guid(bc850445cf0af1244b6e8a15e4e299ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Fence_1 Variant Island.prefab using Guid(bc850445cf0af1244b6e8a15e4e299ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2572098bc62d9f0c34b5856e3576a957') in 0.013295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_2 Variant_2 Island.prefab
+  artifactKey: Guid(6c00c028e27323a4892d3171ca841d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_2 Variant_2 Island.prefab using Guid(6c00c028e27323a4892d3171ca841d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05b3020460f3bdb847ebac38785bae59') in 0.014310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crab.fbx
+  artifactKey: Guid(1c56a252f69d51c4789b93167368c161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Crab.fbx using Guid(1c56a252f69d51c4789b93167368c161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf1540ee67e25a323fb348ce227c96bd') in 0.014438 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_1 Island.fbx
+  artifactKey: Guid(876ad945da601f34bb528d1488271002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_V1_1 Island.fbx using Guid(876ad945da601f34bb528d1488271002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4712e70858940247ee13459eb9a932fe') in 0.016367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_7 Island.fbx
+  artifactKey: Guid(702024a6499f46a4c8e0d7005941f789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Plant_7 Island.fbx using Guid(702024a6499f46a4c8e0d7005941f789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6abe9a6f4e00fcf9fae254417741aef') in 0.015075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_8 Island.fbx
+  artifactKey: Guid(afac5ef47ba567a429340947cc534889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_8 Island.fbx using Guid(afac5ef47ba567a429340947cc534889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09450c279612c7dfa3e642d3fcb899a5') in 0.014158 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_Egypt_2 Island.fbx
+  artifactKey: Guid(fcf6b5eb494e53443b7e45f8fdb7641a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Column_Egypt_2 Island.fbx using Guid(fcf6b5eb494e53443b7e45f8fdb7641a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd00806f07b9697e02ba8b3800ad2259') in 0.016085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/BananaTree_1 Island.fbx
+  artifactKey: Guid(8e4a3abccd48fea4da4275c22c2a1d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/BananaTree_1 Island.fbx using Guid(8e4a3abccd48fea4da4275c22c2a1d0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1840da6a8c68071b92c6f6511152583f') in 0.014792 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_6 Island.fbx
+  artifactKey: Guid(b3b14a3ab8d3100489a45d75bb0e52a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Palm_6 Island.fbx using Guid(b3b14a3ab8d3100489a45d75bb0e52a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee3b52d072e8233000f63d8ddc823ed8') in 0.014790 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cage.fbx
+  artifactKey: Guid(d609cf3a42069de499e6d3c290fdca03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Cage.fbx using Guid(d609cf3a42069de499e6d3c290fdca03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdc8aa7893c02e7a045e48a5bfcba8a8') in 0.054224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_3 Island.fbx
+  artifactKey: Guid(5f5ce47825431624eab71236b6320920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Island_3 Island.fbx using Guid(5f5ce47825431624eab71236b6320920) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcdd05fc24e0f0ed82ff70bbe0cbf7a5') in 0.013555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Island_2 Variant_2 Island.prefab
+  artifactKey: Guid(c3283183b5d79604f8a68fb274e70d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Island_2 Variant_2 Island.prefab using Guid(c3283183b5d79604f8a68fb274e70d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa7a8e7277553e76e5bbaa8240c27d62') in 0.013229 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Canon Island.fbx
+  artifactKey: Guid(23befe9f4a38a5c4c89d3be644bbf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Canon Island.fbx using Guid(23befe9f4a38a5c4c89d3be644bbf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3bbefa0cd8486ebee48f725dd3571ae') in 0.014755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Footbridge Variant_3 Island.prefab
+  artifactKey: Guid(d77ece98bcc0e074eaee2af9b1df7b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Footbridge Variant_3 Island.prefab using Guid(d77ece98bcc0e074eaee2af9b1df7b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8692d267654236f403b9d0b048848581') in 0.011884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Anchor.fbx
+  artifactKey: Guid(53ac461b236aecc49b93e319205a23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Anchor.fbx using Guid(53ac461b236aecc49b93e319205a23a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb8c37d3d5f0bdf773e768f64c13fccb') in 0.016217 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_3 Variant Island.prefab
+  artifactKey: Guid(d9e51b156373ca44baa948b7a8ae4282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Crane_3 Variant Island.prefab using Guid(d9e51b156373ca44baa948b7a8ae4282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e82c9e967f61fa4b231079880f3dd6c1') in 0.012195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Footbridge Variant_2 Island.prefab
+  artifactKey: Guid(a1c82c968507dc04485f1ec368d28943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Footbridge Variant_2 Island.prefab using Guid(a1c82c968507dc04485f1ec368d28943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef069c821b305ae744e4fb44a7d3c23') in 0.012226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder_Broken Island.fbx
+  artifactKey: Guid(d4fd3e54701c9fe4b96c18109abdbc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Models Island/Ladder_Broken Island.fbx using Guid(d4fd3e54701c9fe4b96c18109abdbc63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91270983ff143e34b094c6e2b54c3c1d') in 0.014874 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.825458 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_5 Variant Island.prefab
+  artifactKey: Guid(a654c6b412986fa4c9242c469c7d0c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_5 Variant Island.prefab using Guid(a654c6b412986fa4c9242c469c7d0c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d33e00cc4380c0ffa8787fe968183d') in 0.012418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_8 Variant Island.prefab
+  artifactKey: Guid(d3ad6e0da3e20894cbd4d4ec014df578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Palm_8 Variant Island.prefab using Guid(d3ad6e0da3e20894cbd4d4ec014df578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552e789bd1e8383566f638491aa421bb') in 0.012220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_1 Variant Island.prefab
+  artifactKey: Guid(4b91a7d3254c88d45a973a5af476eb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_1 Variant Island.prefab using Guid(4b91a7d3254c88d45a973a5af476eb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbd26ea9d36fe72fac2293c9c201b1cf') in 0.012065 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.002067 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_4 Variant Island.prefab
+  artifactKey: Guid(99e3cea6e9033aa47bfb555c3a053c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_4 Variant Island.prefab using Guid(99e3cea6e9033aa47bfb555c3a053c84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d19f0b6ca54720baddf45b91729c3ad') in 0.011255 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.001843 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_7 Variant Island.prefab
+  artifactKey: Guid(0b2c7e9945b530847b32e58666b14a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_7 Variant Island.prefab using Guid(0b2c7e9945b530847b32e58666b14a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b445512fe282a4432917e6de18c5c14') in 0.011364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.002746 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_10 Variant Island.prefab
+  artifactKey: Guid(a79e51ec471d6784a8e553d0ee706581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Plant_10 Variant Island.prefab using Guid(a79e51ec471d6784a8e553d0ee706581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8790ee5cd857188708dd2de0b981d684') in 0.010941 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.003451 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Pyramid_M Variant Island.prefab
+  artifactKey: Guid(39e8a5191ff16e1498145a9b6cbb1f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Pyramid_M Variant Island.prefab using Guid(39e8a5191ff16e1498145a9b6cbb1f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cbe29179e5688fe85db600a9704e8e4') in 0.011535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.002177 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_2 Variant Island.prefab
+  artifactKey: Guid(199828505f2b9a640b37b998934c1634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_2 Variant Island.prefab using Guid(199828505f2b9a640b37b998934c1634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acfd7595ed84f1c75c84819b67ef7e4a') in 0.012182 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000991 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_5 Variant Island.prefab
+  artifactKey: Guid(bb3129fcc70934f4c9873df906845dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_5 Variant Island.prefab using Guid(bb3129fcc70934f4c9873df906845dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e95bacb070bad6cb500d5349ff6fe20') in 0.011513 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.002230 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_8 Variant Island.prefab
+  artifactKey: Guid(f70bd144aba7374408146df837b62c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_8 Variant Island.prefab using Guid(f70bd144aba7374408146df837b62c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3de928d171281f42a6605c06356eeba') in 0.011196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.002322 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_Formation_1 Variant Island.prefab
+  artifactKey: Guid(01f966b76bfd67145a365ad86e85eeef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Rock_Formation_1 Variant Island.prefab using Guid(01f966b76bfd67145a365ad86e85eeef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ff0fa2495a9225abecfa7b00ee2e27') in 0.011887 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.002380 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Spear Variant_1 Island.prefab
+  artifactKey: Guid(145adb1f0f790a94cbc47d074807e8c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Spear Variant_1 Island.prefab using Guid(145adb1f0f790a94cbc47d074807e8c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad2994661c35cd909fcfbcd328fa1265') in 0.014110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stall_1 Variant Island.prefab
+  artifactKey: Guid(2f0e3c89740d07440b5fed1944cb71ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stall_1 Variant Island.prefab using Guid(2f0e3c89740d07440b5fed1944cb71ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e55cfa9a376a252e3b012f3bcbf11ec') in 0.013719 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stall_2 Variant_2 Island.prefab
+  artifactKey: Guid(3d0952a5abdb73d4f974a8648f4591be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stall_2 Variant_2 Island.prefab using Guid(3d0952a5abdb73d4f974a8648f4591be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ab2c8db1ad3a54bdd69090786080f6') in 0.012643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stone_1 Variant Island.prefab
+  artifactKey: Guid(791f89068ce5d9c468b68ae86fe77036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Stone_1 Variant Island.prefab using Guid(791f89068ce5d9c468b68ae86fe77036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c95678e664d104f104ca51581747e729') in 0.011994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000950 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tent_1 Variant Island.prefab
+  artifactKey: Guid(b2b81aae4f6eb0641a85d93b655f608a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tent_1 Variant Island.prefab using Guid(b2b81aae4f6eb0641a85d93b655f608a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a55c540ccf5e7b61715c1c6a3eb056d') in 0.012161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.001345 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tent_3 Variant_2 Island.prefab
+  artifactKey: Guid(4b759ec7047e5044991c84fbe677eaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tent_3 Variant_2 Island.prefab using Guid(4b759ec7047e5044991c84fbe677eaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02cb456448548bf795f83d567edf026f') in 0.010788 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.002642 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_2 Variant Island.prefab
+  artifactKey: Guid(7305696da2cc36d42b82db465df67ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_2 Variant Island.prefab using Guid(7305696da2cc36d42b82db465df67ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45771d990a9d1c9e5f117692997281b') in 0.012510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.003014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_5 Variant Island.prefab
+  artifactKey: Guid(7d9236b604ac15946896db50dfbcd6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_5 Variant Island.prefab using Guid(7d9236b604ac15946896db50dfbcd6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede0d6358e971d12ff07b9c63c22be4c') in 0.010190 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.003067 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_8 Variant Island.prefab
+  artifactKey: Guid(7fb2dec1045ad7540bb98ed8ded5ae6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Tile_8 Variant Island.prefab using Guid(7fb2dec1045ad7540bb98ed8ded5ae6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5a118cbb1fd4fd9a003b464d0c45ae1') in 0.012241 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000931 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Treasure_Chest Variant_3 Island.prefab
+  artifactKey: Guid(ba918337de632c44a8c042d8f9667595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Treasure_Chest Variant_3 Island.prefab using Guid(ba918337de632c44a8c042d8f9667595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afb4b19235405c50df31d68e964aa7d3') in 0.012062 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.002609 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_L_3 Variant Island.prefab
+  artifactKey: Guid(262d2cdd7bc1ea8409147f0c59465aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_L_3 Variant Island.prefab using Guid(262d2cdd7bc1ea8409147f0c59465aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48620286ea80e76faafe431651d23866') in 0.012634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.001653 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_M_3 Variant Island.prefab
+  artifactKey: Guid(95c69dfe7017fa0478c08ac22cffad08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_M_3 Variant Island.prefab using Guid(95c69dfe7017fa0478c08ac22cffad08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9203b4ba4775008f3a48e4e07680e307') in 0.012663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.010672 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_S_3 Variant Island.prefab
+  artifactKey: Guid(82572688689f2e244bb80e8200783189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Vase_S_3 Variant Island.prefab using Guid(82572688689f2e244bb80e8200783189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71308591679388f1815377a433f86540') in 0.013920 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/WaterVase_3 Variant Island.prefab
+  artifactKey: Guid(9efca78796a36f745a4c04efc568b2ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/WaterVase_3 Variant Island.prefab using Guid(9efca78796a36f745a4c04efc568b2ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca2c8f0af6bf72ffde74482e5659498c') in 0.012013 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Wooden_Box Variant Island.prefab
+  artifactKey: Guid(e917baa523ece7f4fa7b0e5f3ad362ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/RG-PolyIslandPack/Prefabs Island/Wooden_Box Variant Island.prefab using Guid(e917baa523ece7f4fa7b0e5f3ad362ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91d3b1d8905e9191b42387f023328a9d') in 0.012159 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 7.820328 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Characters Asia/Farmer H Variant Asia.prefab
+  artifactKey: Guid(b4bf60106e5e4f94097e56aabd2a21ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Characters Asia/Farmer H Variant Asia.prefab using Guid(b4bf60106e5e4f94097e56aabd2a21ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '047927a57d9669a1aac460a006a59719') in 0.179271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 158
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Characters Asia/Village Woman Variant Asia.prefab
+  artifactKey: Guid(7b43de5a7cacedf4d9497990ff11cc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Characters Asia/Village Woman Variant Asia.prefab using Guid(7b43de5a7cacedf4d9497990ff11cc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3dea297df3fc9af7e7a38608eb82ce') in 0.020839 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 158
+========================================================================
+Received Import Request.
+  Time since last request: 5.797281 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Asia CH Texture.png
+  artifactKey: Guid(ea16469c7840cc0488b95fb5413a6dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Asia CH Texture.png using Guid(ea16469c7840cc0488b95fb5413a6dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b4a785bcb038ad5392fca65af78bb29') in 0.021000 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/WALL.png
+  artifactKey: Guid(312dc38a45d71694a8fea8f955a8b600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/WALL.png using Guid(312dc38a45d71694a8fea8f955a8b600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f1031b13e765de2d8265634f495d709') in 0.026428 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Roof Tiles Red.png
+  artifactKey: Guid(b58d2ed4593fa2342909df2fcb7fa8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Roof Tiles Red.png using Guid(b58d2ed4593fa2342909df2fcb7fa8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb4ab79c1a4b0a63878388e2a601819a') in 0.020762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Roof Normal Map.png
+  artifactKey: Guid(e4c678625448b0c4d858f9e9d6606947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/Roof Normal Map.png using Guid(e4c678625448b0c4d858f9e9d6606947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b7fa751177c8865038b59613a3ffd1e') in 0.025457 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/PLANKS.png
+  artifactKey: Guid(350556e9be69067448fca98900aa285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Textures Asia/PLANKS.png using Guid(350556e9be69067448fca98900aa285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43320be5051912cbbfed665d298db66b') in 0.032672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.817848 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Arena_YingYang Asia.fbx
+  artifactKey: Guid(4393b47b83c334f4ab0cb76ee7b8fee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Arena_YingYang Asia.fbx using Guid(4393b47b83c334f4ab0cb76ee7b8fee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3b4b2584d36dd91eb647eb4e8e935d') in 0.015279 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_9 Asia.fbx
+  artifactKey: Guid(485140a62f64560448bbddd1175ac59c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_9 Asia.fbx using Guid(485140a62f64560448bbddd1175ac59c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b15d655040a2187314593123cd744d66') in 0.020138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_detai_1 Asia.fbx
+  artifactKey: Guid(8b6b76ffa09e3354b8e500d20ed89a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_detai_1 Asia.fbx using Guid(8b6b76ffa09e3354b8e500d20ed89a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a081697e8aa29c4d303667eb9d6e760') in 0.014585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_6_1  Asia.fbx
+  artifactKey: Guid(4ed8012d1372cac4581edd6847509b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_6_1  Asia.fbx using Guid(4ed8012d1372cac4581edd6847509b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9593b18ce84bfc8ab84808c907a0d068') in 0.014846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Cart_1  Asia.fbx
+  artifactKey: Guid(be3defa71851d5548bc53da5ac88fa5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Cart_1  Asia.fbx using Guid(be3defa71851d5548bc53da5ac88fa5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09074bf3fed693eac3d43725e451290b') in 0.014396 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bambo_2 Asia.fbx
+  artifactKey: Guid(4cb0f916021019d47b6e5bb1e4b2a7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bambo_2 Asia.fbx using Guid(4cb0f916021019d47b6e5bb1e4b2a7bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6681a715276e4608e2b44dcd228a206f') in 0.015374 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BBQ Place Asia.fbx
+  artifactKey: Guid(1fbb1d2b866774144b73430714fadab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BBQ Place Asia.fbx using Guid(1fbb1d2b866774144b73430714fadab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37475e7da6f39b91862f892995ef3c33') in 0.016196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_1 Asia.fbx
+  artifactKey: Guid(2e8a081553f7ade45b3a17c36ad5c494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_1 Asia.fbx using Guid(2e8a081553f7ade45b3a17c36ad5c494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf5b0f3da070b0a5f79a6e958acbcee') in 0.014518 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_Pagoda Asia.fbx
+  artifactKey: Guid(fb9f955463dca3f4682fdb079deee19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_Pagoda Asia.fbx using Guid(fb9f955463dca3f4682fdb079deee19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7545ae51e3dfdab3e1e8c25c19feab52') in 0.015884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bridge_1_2 Asia.fbx
+  artifactKey: Guid(e11fd1e76b53f6941a098a2387f4daf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bridge_1_2 Asia.fbx using Guid(e11fd1e76b53f6941a098a2387f4daf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e85fe9e152a16a26c2962caf2f0045') in 0.016061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Lid_Destroyed_2 Asia.fbx
+  artifactKey: Guid(2ddb320360accea42b163da558fcd6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Lid_Destroyed_2 Asia.fbx using Guid(2ddb320360accea42b163da558fcd6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0446b2ec3d8e06f19240937bd3e2ac79') in 0.017611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Lid Asia.fbx
+  artifactKey: Guid(cbed138f88f4d86449cda588b46d9309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Lid Asia.fbx using Guid(cbed138f88f4d86449cda588b46d9309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e802f5877d89f28b375bcc0f1244b72e') in 0.015868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_6_2  Asia.fbx
+  artifactKey: Guid(13ab4c0fcf231c0459ba540b4ed38bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_6_2  Asia.fbx using Guid(13ab4c0fcf231c0459ba540b4ed38bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b32029bfcbc457435b305e57b21d7f3b') in 0.021361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bowl_2 Asia.fbx
+  artifactKey: Guid(fb3b5ac53396f7c47b814a916a3baf6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bowl_2 Asia.fbx using Guid(fb3b5ac53396f7c47b814a916a3baf6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e035c56f6298db6c4b5620db52e5e603') in 0.017209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_8_1  Asia.fbx
+  artifactKey: Guid(d09f00d07e53d204e94a0cdb6587ae25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_8_1  Asia.fbx using Guid(d09f00d07e53d204e94a0cdb6587ae25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f8bbd69d756df5b13e6a0b8a949ea6') in 0.016076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bucket Asia.fbx
+  artifactKey: Guid(ea9e31117da444d4aad3b2a7df40a564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Bucket Asia.fbx using Guid(ea9e31117da444d4aad3b2a7df40a564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '812f24c5b89de6e426cd84c835306478') in 0.017490 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_3_1  Asia.fbx
+  artifactKey: Guid(c1cd83aaade3e0848aad04d2542301a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_3_1  Asia.fbx using Guid(c1cd83aaade3e0848aad04d2542301a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '391f2607829637f41900fda583024b73') in 0.017316 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_12 Asia.fbx
+  artifactKey: Guid(4c3bf74d925f87a4cbe8263aa3add4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_12 Asia.fbx using Guid(4c3bf74d925f87a4cbe8263aa3add4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea47d52b1c4bebd5891d08e6c56bd3a6') in 0.016788 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Destroyed Asia.fbx
+  artifactKey: Guid(945012b655313dc499e6234402d510c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Barrel_Destroyed Asia.fbx using Guid(945012b655313dc499e6234402d510c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91be723a5a45771496a3476bf1531aa1') in 0.015299 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_10 Asia.fbx
+  artifactKey: Guid(10cc1527e6dd0f847a5054f20d2b4f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_10 Asia.fbx using Guid(10cc1527e6dd0f847a5054f20d2b4f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a967311a17f20e5de26f97c9030f3af') in 0.016585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_2_1 Asia.fbx
+  artifactKey: Guid(f304a315b92802e428eb1ed1bf1ab2ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/BuildingWall_2_1 Asia.fbx using Guid(f304a315b92802e428eb1ed1bf1ab2ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a5592b15c3c3cbc2a9d5e50a1a04017') in 0.014915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Clif_1  Asia.fbx
+  artifactKey: Guid(06ef56f4bcf5c3445b148edd723415d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Clif_1  Asia.fbx using Guid(06ef56f4bcf5c3445b148edd723415d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57acae78c4ab3e1cf02540551d29a763') in 0.016714 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_11 Asia.fbx
+  artifactKey: Guid(c6532db881253544f8db1c94057d6988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Meshes Asia/Building_11 Asia.fbx using Guid(c6532db881253544f8db1c94057d6988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f029812e6357810161f560d795f70760') in 0.016205 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.678462 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Katana_Sheath Variant.prefab
+  artifactKey: Guid(7e30f52436fde5a45be4dedf5a35efb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Katana_Sheath Variant.prefab using Guid(7e30f52436fde5a45be4dedf5a35efb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee374262e75eceac8b0be9de2c34eb85') in 0.011730 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000850 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Kunai_Double Variant.prefab
+  artifactKey: Guid(4c97e3e858a75a24e959d5ed1d0f7099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Kunai_Double Variant.prefab using Guid(4c97e3e858a75a24e959d5ed1d0f7099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164adb81fdd465ecf84c9ab9a862f7b1') in 0.012741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000683 seconds.
+  path: Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Weapon_2 Variant.prefab
+  artifactKey: Guid(4045f769a94a2df4fb95fae5f60f9e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Ultimate Mega Pack/Low Poly Asia Mega Pack - RG/Prefabs Asia/Weapons Asia/Weapon_2 Variant.prefab using Guid(4045f769a94a2df4fb95fae5f60f9e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6343a2cb9f127cb52f0ac55522e240fc') in 0.012251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
