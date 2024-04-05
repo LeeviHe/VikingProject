@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
 
-public class Player : MonoBehaviour {
+public class OldPlayer : MonoBehaviour {
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameInput gameInput;
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public float attackCooldown = 0.5f; // Adjust as needed
     private float nextAttackTime = 0f;
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
+    public bool isBlocking;
     public float damageCooldown = 1f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     //Reference to player animator
@@ -36,18 +37,16 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-
         if (Input.GetKey("q")) {
-            TakeDamage(25); //Test damage amount
+            TakeDamage(50);
         }
-
-        if (gameInput.IsAttacking() && Time.time >= nextAttackTime) {
-            currentState = PlayerState.Attacking;
+        // Check for player input and cooldown before allowing an attack
+        if (gameInput.IsAttacking()) {
+            Attack();
             nextAttackTime = Time.time + attackCooldown; // Set the next allowed attack time
-        } else if (gameInput.IsBlocking()) {
-            currentState = PlayerState.Blocking;
-        } else {
-            currentState = PlayerState.Idle;
+        }
+        if (gameInput.IsBlocking()) {
+            Block();
         }
 
         // Get normalized input vector
@@ -100,39 +99,14 @@ public class Player : MonoBehaviour {
             weaponObject.transform.rotation = weaponHoldingPoint.rotation;
         }
 
-        HandleState();
     }
-    private void HandleState() {
-        // Handle logic based on current state
-        switch (currentState) {
-            case PlayerState.Idle:
-                // Handle idle state
-                break;
-            case PlayerState.Walking:
-                // Handle walking state
-                break;
-            case PlayerState.Attacking:
-                // Handle attacking state
-                Attack();
-                break;
-            case PlayerState.Blocking:
-                // Handle blocking state
-                Block();
-                break;
-            default:
-                break;
-        }
-    }
-    public void TakeDamage( int damage ) {
+    public void TakeDamage(int damage) {
         //Check if cooldown has passed
         if (Time.time - lastDamageTime >= damageCooldown) {
-            if (currentState == PlayerState.Blocking) {
-                
+            if (isBlocking) {
                 damage /= 2;
-                Debug.Log("blocked");
             }
             damage = damage - playerArmor;
-            Debug.Log("took " + damage + " dmg");
             currentHealth -= damage;
             UpdateHealthUI();
             Debug.Log(currentHealth);
@@ -149,17 +123,19 @@ public class Player : MonoBehaviour {
 
         // Detect enemies in attack range
         Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, attackRange, enemyLayer);
-        if (hitEnemies.Length > 0) {
-            Debug.Log("Hit!");
-        } else {
-            Debug.Log("Miss");
-        }
+
         //Apply damage to EACH enemy hit
         foreach (Collider enemy in hitEnemies) {
+            if (hitEnemies.Length > 0) {
+                Debug.Log("Hit " + enemy + "!");
+            } else { 
+                Debug.Log("Miss");
+            }
+
             if (enemy.GetComponent<EnemyHealth>() == null) {
                 Debug.Log("No script!");
-            } else {
-                enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+            } else { 
+               enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
             }
         }
     }
@@ -169,13 +145,15 @@ public class Player : MonoBehaviour {
         Gizmos.DrawWireSphere(weaponHoldingPoint.position, attackRange);
     }
     public void Block() {
-        //Any blocking logic
+        isBlocking = true;
+        Debug.Log("Blocking");
+        // Block incoming damage
     }
 
-    void UpdateHealthUI() {
+    void UpdateHealthUI() { 
         // UI element update
     }
-    void Die() {
-        Destroy(gameObject);
+    void Die() { 
+        // Game over
     }
 }
