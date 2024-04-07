@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Crystal
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
@@ -19,6 +21,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -77,6 +80,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.9405583, b: 0.3066038, a: 1}
-    - _EmissionColor: {r: 0.5943396, g: 0.06811942, b: 0, a: 1}
+    - _Color: {r: 0.9056604, g: 0.2007832, b: 0.22865961, a: 1}
+    - _EmissionColor: {r: 0, g: 0.13022362, b: 0.59607846, a: 1}
   m_BuildTextureStacks: []
