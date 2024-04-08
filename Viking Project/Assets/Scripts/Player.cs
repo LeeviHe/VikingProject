@@ -23,11 +23,11 @@ public class Player : MonoBehaviour {
     public float damageCooldown = 1f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     //Reference to player animator
-    //Animator animator;
+    Animator animator;
 
 
     private void Start() {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         GameObject weaponInstance = Instantiate(weaponObject, weaponHoldingPoint.position, weaponHoldingPoint.rotation);
 
@@ -102,27 +102,41 @@ public class Player : MonoBehaviour {
 
         HandleState();
     }
-    private void HandleState() {
+    private void HandleState()
+    {
         // Handle logic based on current state
-        switch (currentState) {
+        switch (currentState)
+        {
             case PlayerState.Idle:
-                // Handle idle state
+                // Trigger idle animation
+                animator.SetTrigger("Running");
+                animator.ResetTrigger("Attack");
+                animator.ResetTrigger("Block");
                 break;
             case PlayerState.Walking:
-                // Handle walking state
+                // Trigger walking animation
+                animator.SetTrigger("Running");
+                animator.ResetTrigger("Attack");
+                animator.ResetTrigger("Block");
                 break;
             case PlayerState.Attacking:
-                // Handle attacking state
-                Attack();
+                // Trigger attacking animation
+                animator.SetTrigger("Attack");
+                animator.ResetTrigger("Running");
+                animator.ResetTrigger("Block");
                 break;
             case PlayerState.Blocking:
-                // Handle blocking state
-                Block();
+                // Trigger blocking animation
+                animator.SetTrigger("Block");
+                animator.ResetTrigger("Running");
+                animator.ResetTrigger("Attack");
                 break;
             default:
                 break;
         }
     }
+
+
     public void TakeDamage( int damage ) {
         //Check if cooldown has passed
         if (Time.time - lastDamageTime >= damageCooldown) {
