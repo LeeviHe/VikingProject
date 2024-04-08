@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -11,19 +12,22 @@ public class Player : MonoBehaviour {
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private GameObject weaponObject;
     private PlayerState currentState;
-    public int maxHealth = 100;
-    public int playerArmor = 5;
-    private int currentHealth;
-    public int minAttackDamage = 8;
-    public int maxAttackDamage = 11;
-    public float attackRange = 1f;
-    public float attackCooldown = 0.5f; // Adjust as needed
+    public float maxHealth;
+    public float playerArmor;
+    private float currentHealth;
+    public int minAttackDamage;
+    public int maxAttackDamage;
+    public float attackRange;
+    public float attackCooldown; // Adjust as needed
     private float nextAttackTime = 0f;
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
     public float damageCooldown = 1f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     //Reference to player animator
     Animator animator;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Slider easeHealthSlider;
+    private float lerpSpeed = 0.01f;
 
 
     private void Start() {
@@ -36,6 +40,8 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
+
+        UpdateHealthUI();
 
         if (Input.GetKey("q")) {
             TakeDamage(25); //Test damage amount
@@ -124,12 +130,14 @@ public class Player : MonoBehaviour {
                 animator.SetTrigger("Attack");
                 animator.ResetTrigger("Running");
                 animator.ResetTrigger("Block");
+                Attack();
                 break;
             case PlayerState.Blocking:
                 // Trigger blocking animation
                 animator.SetTrigger("Block");
                 animator.ResetTrigger("Running");
                 animator.ResetTrigger("Attack");
+                Block();
                 break;
             default:
                 break;
@@ -137,7 +145,7 @@ public class Player : MonoBehaviour {
     }
 
 
-    public void TakeDamage( int damage ) {
+    public void TakeDamage( float damage ) {
         //Check if cooldown has passed
         if (Time.time - lastDamageTime >= damageCooldown) {
             if (currentState == PlayerState.Blocking) {
@@ -148,7 +156,6 @@ public class Player : MonoBehaviour {
             damage = damage - playerArmor;
             Debug.Log("took " + damage + " dmg");
             currentHealth -= damage;
-            UpdateHealthUI();
             Debug.Log(currentHealth);
             if (currentHealth <= 0) {
                 Die();
@@ -187,7 +194,12 @@ public class Player : MonoBehaviour {
     }
 
     void UpdateHealthUI() {
-        // UI element update
+        if (healthSlider.value != currentHealth) {
+            healthSlider.value = currentHealth;
+        }
+        if (healthSlider.value != easeHealthSlider.value) {
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, lerpSpeed);
+        }
     }
     void Die() {
         Destroy(gameObject);
