@@ -19,18 +19,19 @@ public class Weapon : MonoBehaviour {
         return weaponSO;
     }
     public void SetWeaponParent( IWeaponParent weaponParent ) {
+        // Would clear weapon from table (old parent)
         if (this.weaponParent != null) {
             this.weaponParent.ClearWeapon();
         }
 
         this.weaponParent = weaponParent;
-
         if (weaponParent.HasWeapon()) {
             Debug.LogError("IWeaponParent already has a WeaponParent");
+        } else { 
+            weaponParent.SetWeapon(this);
+            transform.parent = weaponParent.GetWeaponFollowTransform();
+            transform.localPosition = Vector3.zero;
         }
-        weaponParent.SetWeapon(this);
-        transform.parent = weaponParent.GetWeaponFollowTransform();
-        transform.localPosition = Vector3.zero;
     }
 
     public IWeaponParent GetWeaponParent() {
@@ -48,7 +49,6 @@ public class Weapon : MonoBehaviour {
         Weapon weapon = weaponTransform.GetComponent<Weapon>();
 
         weapon.SetWeaponParent(weaponParent);
-
         return weapon;
     }
 }

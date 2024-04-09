@@ -222,7 +222,7 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
 
     public void ClearWeapon() {
-        weapon = null;
+        this.weapon = null;
     }
 
     public bool HasWeapon() {

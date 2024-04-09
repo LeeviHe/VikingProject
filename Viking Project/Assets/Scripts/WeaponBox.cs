@@ -8,12 +8,24 @@ public class WeaponBox : MonoBehaviour, IWeaponParent, IInteractable {
     [SerializeField] private WeaponSO weaponSO;
 
     private Weapon weapon;
-    private void InteractWeaponBox( Player player ) {
-        Debug.Log("Interacted with weapon box");
-        if (!player.HasWeapon()) {
-            Weapon.SpawnWeapon(weaponSO, player);
-        } 
+
+    private void Start() {
+        Weapon.SpawnWeapon(weaponSO, this);
     }
+
+    private void InteractWeaponBox( Player player ) {
+        if (HasWeapon()) {
+            //Player is carrying weapon
+            if (player.HasWeapon()) {
+                //Clear old weapon
+                player.GetWeapon().DestroySelf();
+            }
+        // Spawn weapon on player
+        Weapon.SpawnWeapon(weaponSO, player);
+        }
+        Debug.Log("Spawned weapon: " + weaponSO);
+    }
+
     public void ClearWeapon() {
         weapon = null;
     }
