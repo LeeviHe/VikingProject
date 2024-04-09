@@ -5,20 +5,17 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IWeaponParent {
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private GameObject weaponObject;
+    private Weapon weapon;
     private PlayerState currentState;
     public float maxHealth;
     public float playerArmor;
     private float currentHealth;
-    public int minAttackDamage;
-    public int maxAttackDamage;
-    public float attackRange;
-    public float attackCooldown; // Adjust as needed
     private float nextAttackTime = 0f;
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
     public float damageCooldown = 1f; // Cooldown duration in seconds
@@ -33,10 +30,10 @@ public class Player : MonoBehaviour {
     private void Start() {
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        GameObject weaponInstance = Instantiate(weaponObject, weaponHoldingPoint.position, weaponHoldingPoint.rotation);
+        //GameObject weaponInstance = Instantiate(weaponObject, weaponHoldingPoint.position, weaponHoldingPoint.rotation);
 
         // Make the weapon instance a child of the hand to keep it attached
-        weaponInstance.transform.parent = weaponHoldingPoint;
+        //weaponInstance.transform.parent = weaponHoldingPoint;
     }
 
     private void Update() {
@@ -47,12 +44,14 @@ public class Player : MonoBehaviour {
             TakeDamage(25); //Test damage amount
         }
 
-        if (gameInput.IsAttacking() && Time.time >= nextAttackTime) {
+        if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
             currentState = PlayerState.Attacking;
-            nextAttackTime = Time.time + attackCooldown; // Set the next allowed attack time
+            nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
         } else if (gameInput.IsBlocking()) {
             currentState = PlayerState.Blocking;
-        } else {
+        } else  if (gameInput.IsMoving()){
+            currentState = PlayerState.Walking;
+        }   else {
             currentState = PlayerState.Idle;
         }
 
@@ -82,6 +81,7 @@ public class Player : MonoBehaviour {
             if (canMove) {
                 // Can move only on the X axis
                 moveDir = moveDirX;
+
             } else {
                 // Attempt only Z movement
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z);
@@ -90,6 +90,7 @@ public class Player : MonoBehaviour {
                     // Can move only on the Z axis
                     moveDir = moveDirZ;
                 } else {
+                    currentState = PlayerState.Idle;
                     // Cannot move in any direction
                 }
             }
@@ -115,7 +116,7 @@ public class Player : MonoBehaviour {
         {
             case PlayerState.Idle:
                 // Trigger idle animation
-                animator.SetTrigger("Running");
+                animator.ResetTrigger("Running");
                 animator.ResetTrigger("Attack");
                 animator.ResetTrigger("Block");
                 break;
@@ -164,30 +165,37 @@ public class Player : MonoBehaviour {
             lastDamageTime = Time.time;
         }
     }
-    public void Attack() {
-        int damage = Random.Range(minAttackDamage, maxAttackDamage + 1);
-        //animator.SetTrigger("Attack");
+    public void Attack( ) {
+        if (weapon != null) {
+            int damage = Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+            //animator.SetTrigger("Attack");
 
-        // Detect enemies in attack range
-        Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, attackRange, enemyLayer);
-        if (hitEnemies.Length > 0) {
-            Debug.Log("Hit!");
-        } else {
-            Debug.Log("Miss");
-        }
-        //Apply damage to EACH enemy hit
-        foreach (Collider enemy in hitEnemies) {
-            if (enemy.GetComponent<EnemyHealth>() == null) {
-                Debug.Log("No script!");
+            // Detect enemies in attack range
+            Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
+            if (hitEnemies.Length > 0) {
+                Debug.Log("Hit!");
             } else {
-                enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+                Debug.Log("Miss");
             }
+            //Apply damage to EACH enemy hit
+            foreach (Collider enemy in hitEnemies) {
+                if (enemy.GetComponent<EnemyHealth>() == null) {
+                    Debug.Log("No script!");
+                } else {
+                    enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+                }
+            }
+        } else {
+            Debug.Log("No weapon equipped");
         }
     }
     //Visualizing the attack range in the scene view
     void OnDrawGizmosSelected() {
+        if (weapon != null) {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(weaponHoldingPoint.position, attackRange);
+        Gizmos.DrawWireSphere(weaponHoldingPoint.position, weapon.hitRange); 
+        }
+        
     }
     public void Block() {
         //Any blocking logic
@@ -203,5 +211,25 @@ public class Player : MonoBehaviour {
     }
     void Die() {
         Destroy(gameObject);
+    }
+
+    public Transform GetWeaponFollowTransform() {
+        return weaponHoldingPoint;
+    }
+
+    public void SetWeapon( Weapon weapon ) {
+        this.weapon = weapon;
+    }
+
+    public void ClearWeapon() {
+        weapon = null;
+    }
+
+    public bool HasWeapon() {
+        return weapon != null;
+    }
+
+    public Weapon GetWeapon() {
+        return weapon;
     }
 }

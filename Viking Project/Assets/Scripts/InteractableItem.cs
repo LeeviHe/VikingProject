@@ -10,7 +10,7 @@ public class InteractableItem : MonoBehaviour, IInteractable {
         return "Interact with item";
     }
 
-    public void Interact() {
+    public void Interact( Player player ) {
         InteractWithItem();
     }
 

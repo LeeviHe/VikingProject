@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableNPC : MonoBehaviour, IInteractable {
     [SerializeField] private string interactText;
-    public void Interact() {
+    public void Interact(Player player) {
         Debug.Log("Hello there!");
     }
 

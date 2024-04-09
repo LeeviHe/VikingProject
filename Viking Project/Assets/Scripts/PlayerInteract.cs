@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
+    [SerializeField] private GameObject playerObject;
     public LayerMask interactableLayer;
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             IInteractable interactable = GetInteractableObject();
             if (interactable != null) { 
-                interactable.Interact();
+                interactable.Interact(playerObject.GetComponent<Player>());
             }
         }
     }

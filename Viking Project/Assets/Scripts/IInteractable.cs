@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IInteractable {
 
-    void Interact();
+    // Consider if Player player parameter is useful or an issue
+    void Interact(Player player);
     string GetInteractText();
 
     Transform GetTransform();

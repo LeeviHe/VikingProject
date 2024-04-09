@@ -15,6 +15,10 @@ public class GameInput : MonoBehaviour {
         inputVector = inputVector.normalized;
         return inputVector;
     }
+    public bool IsMoving() {
+        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        return inputVector.magnitude > 0; // Check if magnitude of input vector is greater than 0
+    }
     public bool IsAttacking() {
         return playerInputActions.Player.Attack.triggered;
     }
