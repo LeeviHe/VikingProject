@@ -5,10 +5,10 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     [SerializeField] private WeaponSO weaponSO;
     private IWeaponParent weaponParent;
-    public int minDamage;
-    public int maxDamage;
-    public float hitRange;
-    public float attackSpeed;
+    [HideInInspector] public int minDamage;
+    [HideInInspector] public int maxDamage;
+    [HideInInspector] public float hitRange;
+    [HideInInspector] public float attackSpeed;
     private void Awake() {
         minDamage = weaponSO.minDamage;
         maxDamage = weaponSO.maxDamage;

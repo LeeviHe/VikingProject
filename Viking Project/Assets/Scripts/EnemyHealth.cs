@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour {
+public class EnemyHealth : QuestItem {
     private int maxHealth = 100;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
@@ -38,5 +38,6 @@ public class EnemyHealth : MonoBehaviour {
     void Die() {
         // Handle enemy death
         Destroy(gameObject);
+        ObjectiveInteraction();
     }
 }

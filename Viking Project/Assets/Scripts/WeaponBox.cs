@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponBox : MonoBehaviour, IWeaponParent, IInteractable {
+public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
 
     [SerializeField] private Transform boxHoldingPoint;
     [SerializeField] private WeaponSO weaponSO;
@@ -14,6 +14,7 @@ public class WeaponBox : MonoBehaviour, IWeaponParent, IInteractable {
     }
 
     private void InteractWeaponBox( Player player ) {
+        ObjectiveInteraction();
         if (HasWeapon()) {
             //Player is carrying weapon
             if (player.HasWeapon()) {

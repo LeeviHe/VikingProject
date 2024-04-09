@@ -26,6 +26,9 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private Slider easeHealthSlider;
     private float lerpSpeed = 0.01f;
 
+    public QuestSO currentQuest;
+    public List<QuestSO> openQuests;
+
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -211,6 +214,43 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
     void Die() {
         Destroy(gameObject);
+    }
+
+    public void ReceiveNewQuest(QuestSO quest) { 
+        openQuests.Add(quest);
+        quest.active = true;
+        currentQuest = quest;
+
+        quest.OnQuestCompleted += RemoveCompletedQuest;
+    }
+
+    void RemoveCompletedQuest( QuestSO quest ) {
+        if (currentQuest == quest) {
+            currentQuest = null;
+        }
+
+        quest.OnQuestCompleted -= RemoveCompletedQuest;
+        openQuests.Remove(quest);
+
+        if (openQuests.Count > 0) { 
+            currentQuest = openQuests[0];
+        }
+    }
+
+    private void OnEnable() {
+        for (int i = openQuests.Count - 1; i >= 0; i--) {
+            if (openQuests[i].QuestCompleted) {
+                RemoveCompletedQuest(openQuests[i]);
+            } else {
+                openQuests[i].OnQuestCompleted += RemoveCompletedQuest;
+            }
+        }
+    }
+
+    void OnDisable() {
+        foreach (QuestSO quest in openQuests) { 
+            quest.OnQuestCompleted -= RemoveCompletedQuest;
+        }
     }
 
     public Transform GetWeaponFollowTransform() {
