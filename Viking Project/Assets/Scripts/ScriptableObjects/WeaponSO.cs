@@ -10,4 +10,5 @@ public class WeaponSO : ScriptableObject {
     public int maxDamage;
     public float attackSpeed;
     public float hitRange;
+    public float blockingPower;
 }

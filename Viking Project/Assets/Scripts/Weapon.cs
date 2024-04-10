@@ -9,11 +9,13 @@ public class Weapon : MonoBehaviour {
     [HideInInspector] public int maxDamage;
     [HideInInspector] public float hitRange;
     [HideInInspector] public float attackSpeed;
+    [HideInInspector] public float blockingPower;
     private void Awake() {
         minDamage = weaponSO.minDamage;
         maxDamage = weaponSO.maxDamage;
         hitRange = weaponSO.hitRange;
         attackSpeed = weaponSO.attackSpeed;
+        blockingPower = weaponSO.blockingPower;
     }
     public WeaponSO GetWeaponSO() { 
         return weaponSO;

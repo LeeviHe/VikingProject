@@ -7,18 +7,16 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IWeaponParent {
 
-    [SerializeField] private float moveSpeed;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private GameObject weaponObject;
+    public PlayerStatsSO stats;
     private Weapon weapon;
     private PlayerState currentState;
-    public float maxHealth;
-    public float playerArmor;
     private float currentHealth;
     private float nextAttackTime = 0f;
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
-    public float damageCooldown = 1f; // Cooldown duration in seconds
+    public float damageCooldown = 3f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     //Reference to player animator
     Animator animator;
@@ -32,7 +30,7 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     private void Start() {
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        currentHealth = stats.maxHealth;
         //GameObject weaponInstance = Instantiate(weaponObject, weaponHoldingPoint.position, weaponHoldingPoint.rotation);
 
         // Make the weapon instance a child of the hand to keep it attached
@@ -68,7 +66,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         // Calculate movement direction in world space
         Vector3 moveDir = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
 
-        float moveDistance = moveSpeed * Time.deltaTime;
+        float moveDistance = stats.movementSpeed * Time.deltaTime;
         float playerRadius = .5f;
         float playerHeight = 1f;
 
@@ -152,12 +150,13 @@ public class Player : MonoBehaviour, IWeaponParent {
     public void TakeDamage( float damage ) {
         //Check if cooldown has passed
         if (Time.time - lastDamageTime >= damageCooldown) {
+            Debug.Log("Damage cooldown passed");
             if (currentState == PlayerState.Blocking) {
                 
-                damage /= 2;
+                damage /= weapon.blockingPower;
                 Debug.Log("blocked");
             }
-            damage = damage - playerArmor;
+            damage = damage - stats.armor;
             Debug.Log("took " + damage + " dmg");
             currentHealth -= damage;
             Debug.Log(currentHealth);
@@ -182,10 +181,10 @@ public class Player : MonoBehaviour, IWeaponParent {
             }
             //Apply damage to EACH enemy hit
             foreach (Collider enemy in hitEnemies) {
-                if (enemy.GetComponent<EnemyHealth>() == null) {
+                if (enemy.GetComponent<EnemyNpc>() == null) {
                     Debug.Log("No script!");
                 } else {
-                    enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
                 }
             }
         } else {

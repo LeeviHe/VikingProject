@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5197496849111507633}
   - component: {fileID: 6787076003892969108}
-  m_Layer: 0
+  - component: {fileID: 5765979232068986132}
+  - component: {fileID: 4327159868321537886}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,22 +50,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97afc4093c6cdea43bd0415d49c5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
   gameInput: {fileID: 0}
   weaponHoldingPoint: {fileID: 0}
   weaponObject: {fileID: 0}
-  maxHealth: 100
-  playerArmor: 5
-  minAttackDamage: 8
-  maxAttackDamage: 11
-  attackRange: 1
-  attackCooldown: 0.5
+  stats: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   damageCooldown: 1
   healthSlider: {fileID: 0}
   easeHealthSlider: {fileID: 0}
+  currentQuest: {fileID: 0}
+  openQuests: []
+--- !u!136 &5765979232068986132
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401893661265041759}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &4327159868321537886
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401893661265041759}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: dbb948c2485e7ea43ba988573bb73e6e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 81bec0a5154af8346b91ad8c08f39c0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1848983252932771584
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +339,6 @@ GameObject:
   - component: {fileID: 5286183013959530974}
   - component: {fileID: 8927845159409329806}
   - component: {fileID: 4892174964203156126}
-  - component: {fileID: 238955415440804509}
   m_Layer: 0
   m_Name: PlayerCapsule
   m_TagString: Untagged
@@ -370,26 +411,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &238955415440804509
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6239221211553914795}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
