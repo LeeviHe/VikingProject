@@ -11,14 +11,21 @@ public class ObjectiveSO : ScriptableObject {
     [TextArea]
     public string description;
 
+    //Function for completing a single objective
     public void CompleteObjective () {
         Debug.Log("Objective completed");
+        //Set Completed value of objective to true 
         Completed = true;
+        // If objective is set to a quest
         if (parentQuest != null) {
+            //Perform quest completion check in QuestSO
             parentQuest.TryEndQuest();
+        } else {
+            Debug.LogError("Objective not set to a quest");
         }
     }
 
+    //Assign Quest for the objective
     public void AssignParentQuest( QuestSO quest ) { 
         parentQuest = quest;
     }

@@ -5,23 +5,28 @@ using UnityEngine;
 public class GameInput : MonoBehaviour {
 
     private PlayerInputActions playerInputActions;
+    //Enable new input system
     private void Awake() {
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
     }
+    //Get movement values and normalize them
     public Vector2 GetMovementVectorNormalized() {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
 
         inputVector = inputVector.normalized;
         return inputVector;
     }
+    //Set IsMoving as true while player is moving
     public bool IsMoving() {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
         return inputVector.magnitude > 0; // Check if magnitude of input vector is greater than 0
     }
+    //Set IsAttacking as true if player attacks
     public bool IsAttacking() {
         return playerInputActions.Player.Attack.triggered;
     }
+    //Set IsBlocking while block input is being pressed
     public bool IsBlocking() {
         float blockInput = playerInputActions.Player.Block.ReadValue<float>();
         return blockInput > 0.5f; // Adjust the threshold as needed

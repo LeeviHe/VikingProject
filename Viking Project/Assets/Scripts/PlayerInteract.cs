@@ -4,69 +4,52 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
     [SerializeField] private GameObject playerObject;
-    public LayerMask interactableLayer;
-    private void Update() {
+    //!!!POLISH!!! Change interact input to new input system
+    void Update() {
+        // Check for input to interact with objects
         if (Input.GetKeyDown(KeyCode.E)) {
+            // Get the interactable object within range
             IInteractable interactable = GetInteractableObject();
-            if (interactable != null) { 
+            // If there is an interactable object
+            if (interactable != null) {
+                // Call the Interact method of the interactable object, passing the player object
                 interactable.Interact(playerObject.GetComponent<Player>());
             }
         }
     }
 
 
+    // Find and return the interactable object within range
     public IInteractable GetInteractableObject() {
+        // List to store all nearby interactable objects
         List<IInteractable> interactableList = new List<IInteractable>();
+        // Define the range within which to search for interactable objects
         float interactRange = 2f;
+        // Find all colliders within the specified range
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-
+        // Iterate through each collider found within the range
         foreach (Collider collider in colliderArray) {
+            // Check if the collider has an IInteractable component
             if (collider.TryGetComponent(out IInteractable interactable)) {
+                // Add the interactable object to the list
                 interactableList.Add(interactable);
             }
         }
-
-        //Getting the closest npc so the UI doesn't freak out
+        // Determine the closest interactable object to the player
         IInteractable closestInteractable = null;
         foreach (IInteractable interactable in interactableList) {
-            // If no closest npc, set it as the next one
+            // If no closest interactable is set yet, set it to the current one
             if (closestInteractable == null) {
                 closestInteractable = interactable;
             } else {
-                //If the distance to an NPC is shorter than the previous closest one, set it as the new closest NPC
+                // If the distance to the current interactable is shorter than the previous closest one, set it as the new closest one
                 if (Vector3.Distance(transform.position, interactable.GetTransform().position) <
                     Vector3.Distance(transform.position, closestInteractable.GetTransform().position)) {
-                    // 
                     closestInteractable = interactable;
                 }
             }
         }
+        // Return the closest interactable object
         return closestInteractable;
     }
 }
-/*
- using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerInteract : MonoBehaviour {
-    public LayerMask interactableLayer;
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.E)) { 
-            float interactRange = 2f;
-            Collider[] colliders = Physics.OverlapSphere(transform.position, interactRange, interactableLayer);
-
-            foreach (Collider collider in colliders) {
-                IInteractable interactable = collider.GetComponent<IInteractable>();
-                if (interactable != null) 
-                {
-                    if (collider.TryGetComponent(out InteractableNPC interactableNPC)) {
-                        interactableNPC.Interact();
-                    }
-                }
-            }
-        }
-    }
-}
-
- */

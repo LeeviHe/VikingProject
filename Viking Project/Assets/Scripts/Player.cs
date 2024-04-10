@@ -10,23 +10,24 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private GameObject weaponObject;
-    public PlayerStatsSO stats;
-    private Weapon weapon;
-    private PlayerState currentState;
-    private float currentHealth;
-    private float nextAttackTime = 0f;
-    public LayerMask enemyLayer; // Define the layer for enemy NPCs
-    public float damageCooldown = 3f; // Cooldown duration in seconds
-    private float lastDamageTime; // Time when player last took damage
-    //Reference to player animator
-    Animator animator;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
-    private float lerpSpeed = 0.01f;
+    
 
-    public QuestSO currentQuest;
-    public List<QuestSO> openQuests;
+    private Weapon weapon; //Weapon of player
+    private PlayerState currentState; //Current state of player action
 
+    private float currentHealth; //Handle player's health
+    private float nextAttackTime = 0f; //Time when next attack is allowed
+    private float damageCooldown = 3f; // Cooldown duration in seconds
+    private float lastDamageTime; // Time when player last took damage
+    private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
+
+    public LayerMask enemyLayer; // Define the layer for enemy NPCs
+    public QuestSO currentQuest; // Active quest for player
+    public List<QuestSO> openQuests; //List of all quest set for player
+    public PlayerStatsSO stats; //Player stats
+    Animator animator; //Player animator
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -41,9 +42,7 @@ public class Player : MonoBehaviour, IWeaponParent {
 
         UpdateHealthUI();
 
-        if (Input.GetKey("q")) {
-            TakeDamage(25); //Test damage amount
-        }
+        //Check input for changing player state
 
         if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
             currentState = PlayerState.Attacking;
@@ -55,6 +54,8 @@ public class Player : MonoBehaviour, IWeaponParent {
         }   else {
             currentState = PlayerState.Idle;
         }
+
+        //!!!POLISH!!! Might need to cleanup movement handling
 
         // Get normalized input vector
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
@@ -148,18 +149,19 @@ public class Player : MonoBehaviour, IWeaponParent {
 
 
     public void TakeDamage( float damage ) {
-        //Check if cooldown has passed
+        //Check if cooldown for taking damage has passed
         if (Time.time - lastDamageTime >= damageCooldown) {
-            Debug.Log("Damage cooldown passed");
+            //If player is blocking change the damage value based on player weapon blocking power
             if (currentState == PlayerState.Blocking) {
-                
                 damage /= weapon.blockingPower;
-                Debug.Log("blocked");
+                Debug.Log("Blocked");
             }
+            //Substract armor value from damage
             damage = damage - stats.armor;
-            Debug.Log("took " + damage + " dmg");
+            Debug.Log("Player took " + damage + " dmg");
             currentHealth -= damage;
             Debug.Log(currentHealth);
+            //Perform death when health is depleted
             if (currentHealth <= 0) {
                 Die();
             }
@@ -168,10 +170,10 @@ public class Player : MonoBehaviour, IWeaponParent {
         }
     }
     public void Attack( ) {
+        //Check if player has weapon
         if (weapon != null) {
+            //Damage dealt is randomly set on each hit, defined between weapon's damage stats
             int damage = Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-            //animator.SetTrigger("Attack");
-
             // Detect enemies in attack range
             Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
             if (hitEnemies.Length > 0) {
@@ -203,54 +205,76 @@ public class Player : MonoBehaviour, IWeaponParent {
         //Any blocking logic
     }
 
+    //Function to update health bars
     void UpdateHealthUI() {
+        //If health value changes, update healthslider to new value
         if (healthSlider.value != currentHealth) {
             healthSlider.value = currentHealth;
         }
+        //For nice animation
         if (healthSlider.value != easeHealthSlider.value) {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, lerpSpeed);
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, healthLerpSpeed);
         }
     }
+    //Handle death
     void Die() {
         Destroy(gameObject);
     }
 
+    // Method for the player to receive a new quest.
     public void ReceiveNewQuest(QuestSO quest) { 
+        // Add the quest to the list of open quests.
         openQuests.Add(quest);
+        // Activate the quest.
         quest.active = true;
+        // Set the current quest to the received quest.
         currentQuest = quest;
 
+        // Subscribe to the OnQuestCompleted event of the received quest.
         quest.OnQuestCompleted += RemoveCompletedQuest;
     }
 
-    void RemoveCompletedQuest( QuestSO quest ) {
+    // Removes a completed quest from the list of open quests.
+    void RemoveCompletedQuest(QuestSO quest) {
+        // Check if the completed quest is the current quest.
         if (currentQuest == quest) {
+            // Reset the current quest to null.
             currentQuest = null;
         }
 
+        // Unsubscribe from the OnQuestCompleted event of the completed quest.
         quest.OnQuestCompleted -= RemoveCompletedQuest;
+        // Remove the completed quest from the list of open quests.
         openQuests.Remove(quest);
 
+        // If there are remaining open quests, set the current quest to the first one in the list.
         if (openQuests.Count > 0) { 
             currentQuest = openQuests[0];
         }
     }
 
+    // Called automatically by Unity when the script instance is enabled.
     private void OnEnable() {
+        // Loop through the list of open quests in reverse order.
         for (int i = openQuests.Count - 1; i >= 0; i--) {
+            // Check if the current quest is completed.
             if (openQuests[i].QuestCompleted) {
+                // If completed, remove it from the list of open quests.
                 RemoveCompletedQuest(openQuests[i]);
             } else {
+                // If not completed, subscribe to its OnQuestCompleted event.
                 openQuests[i].OnQuestCompleted += RemoveCompletedQuest;
             }
         }
     }
 
+    // Called automatically by Unity when the script instance is disabled.
     void OnDisable() {
+        // Unsubscribe from the OnQuestCompleted event of all open quests.
         foreach (QuestSO quest in openQuests) { 
             quest.OnQuestCompleted -= RemoveCompletedQuest;
         }
-    }
+}
 
     public Transform GetWeaponFollowTransform() {
         return weaponHoldingPoint;
