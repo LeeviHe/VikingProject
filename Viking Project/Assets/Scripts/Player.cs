@@ -7,7 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour, IWeaponParent {
-
+    public float timeBetweenHitDetections;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private Slider healthSlider;
@@ -172,26 +172,54 @@ public class Player : MonoBehaviour, IWeaponParent {
     public void Attack( ) {
         //Check if player has weapon
         if (weapon != null) {
-            //Damage dealt is randomly set on each hit, defined between weapon's damage stats
-            int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-            // Detect enemies in attack range
-            Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-            if (hitEnemies.Length > 0) {
-                Debug.Log("Hit!");
-            } else {
-                Debug.Log("Miss");
-            }
-            //Apply damage to EACH enemy hit
-            foreach (Collider enemy in hitEnemies) {
-                if (enemy.GetComponent<EnemyNpc>() == null) {
-                    Debug.Log("No script!");
-                } else {
-                    enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
-                }
-            }
+            StartCoroutine(DelayedAttack());
         } else {
             Debug.Log("No weapon equipped");
         }
+    }
+    private IEnumerator DelayedAttack() {
+        yield return new WaitForSeconds(0.2f);
+        StartCoroutine(PerformAttack());
+    }
+    private IEnumerator PerformAttack() {
+        HashSet<Collider> hitEnemies = new HashSet<Collider>();
+        while (IsAttackAnimationPlaying(animator)) {
+            Debug.Log("animator is playing");
+            //Damage dealt is randomly set on each hit, defined between weapon's damage stats
+            int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+            // Detect enemies in attack range
+            Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
+            // Filter out enemies that have already been hit during this attack
+            List<Collider> newHitEnemies = new List<Collider>();
+            foreach (Collider enemy in potentialHitEnemies) {
+                if (!hitEnemies.Contains(enemy)) {
+                    newHitEnemies.Add(enemy);
+                    hitEnemies.Add(enemy);
+                }
+            }
+
+            // If new enemies are hit, apply damage to each enemy
+            if (potentialHitEnemies.Length > 0) {
+                Debug.Log("Hit!");
+                //Apply damage to EACH enemy hit
+                foreach (Collider enemy in newHitEnemies) {
+                    if (enemy.GetComponent<EnemyNpc>() != null) {
+                        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
+                    }
+                }
+            } else {
+                Debug.Log("Miss");
+            }
+            yield return new WaitForSeconds(timeBetweenHitDetections);
+        }
+    }
+    private bool IsAttackAnimationPlaying( Animator animator ) {
+        // Get the current state of the animator
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Assuming the attack animation is in layer 0
+        bool isPlaying = stateInfo.IsName("Attack");
+        // Check if the animation named "Attack" is still playing
+        Debug.Log("Attack animation playing: " + isPlaying);
+        return isPlaying;
     }
     //Visualizing the attack range in the scene view
     void OnDrawGizmosSelected() {
