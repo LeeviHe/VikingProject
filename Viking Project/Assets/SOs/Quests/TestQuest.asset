@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestQuest
   m_EditorClassIdentifier: 
   active: 0
-  questDescription: Test Quest, Kill enemy and interact with weapon box
+  questDescription: Kill the skeleton and the slime!
   objectives:
-  - {fileID: 11400000, guid: 7bef27038de4cbb41850f705112a06cb, type: 2}
   - {fileID: 11400000, guid: 99745c67462174e4e972eebb8c689d5f, type: 2}
+  - {fileID: 11400000, guid: b04a7d43e1f64c84cb15f3b03deda7b9, type: 2}

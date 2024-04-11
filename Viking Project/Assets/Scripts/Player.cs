@@ -9,7 +9,6 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform weaponHoldingPoint;
-    [SerializeField] private GameObject weaponObject;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
     
@@ -32,10 +31,6 @@ public class Player : MonoBehaviour, IWeaponParent {
     private void Start() {
         animator = GetComponent<Animator>();
         currentHealth = stats.maxHealth;
-        //GameObject weaponInstance = Instantiate(weaponObject, weaponHoldingPoint.position, weaponHoldingPoint.rotation);
-
-        // Make the weapon instance a child of the hand to keep it attached
-        //weaponInstance.transform.parent = weaponHoldingPoint;
     }
 
     private void Update() {
@@ -47,7 +42,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
             currentState = PlayerState.Attacking;
             nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
-        } else if (gameInput.IsBlocking()) {
+        } else if (gameInput.IsBlocking() && weapon != null) {
             currentState = PlayerState.Blocking;
         } else  if (gameInput.IsMoving()){
             currentState = PlayerState.Walking;
@@ -101,12 +96,6 @@ public class Player : MonoBehaviour, IWeaponParent {
         // Move the player if movement is allowed
         if (canMove) {
             transform.position += moveDir * moveDistance;
-        }
-
-        //Weapon holding
-        if (weaponHoldingPoint != null && weaponObject != null) {
-            weaponObject.transform.position = weaponHoldingPoint.position;
-            weaponObject.transform.rotation = weaponHoldingPoint.rotation;
         }
 
         HandleState();
