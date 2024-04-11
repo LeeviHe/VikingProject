@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.XR;
 using UnityEngine.UI;
+using System;
+using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour, IWeaponParent {
 
@@ -11,7 +12,8 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
-    
+
+    public static event Action OnPlayerDeath;
 
     private Weapon weapon; //Weapon of player
     private PlayerState currentState; //Current state of player action
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour, IWeaponParent {
     private float damageCooldown = 3f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
+    private bool playerAlive = true;
 
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
     public QuestSO currentQuest; // Active quest for player
@@ -31,10 +34,11 @@ public class Player : MonoBehaviour, IWeaponParent {
     private void Start() {
         animator = GetComponent<Animator>();
         currentHealth = stats.maxHealth;
+        currentState = PlayerState.Idle;
     }
 
+    private Vector3 moveDir;
     private void Update() {
-
         UpdateHealthUI();
 
         //Check input for changing player state
@@ -44,12 +48,11 @@ public class Player : MonoBehaviour, IWeaponParent {
             nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
         } else if (gameInput.IsBlocking() && weapon != null) {
             currentState = PlayerState.Blocking;
-        } else  if (gameInput.IsMoving()){
+        } else if (gameInput.IsMoving()) {
             currentState = PlayerState.Walking;
-        }   else {
+        } else {
             currentState = PlayerState.Idle;
         }
-
         //!!!POLISH!!! Might need to cleanup movement handling
 
         // Get normalized input vector
@@ -60,11 +63,12 @@ public class Player : MonoBehaviour, IWeaponParent {
         var skewedInput = matrix.MultiplyPoint3x4(new Vector3(inputVector.x, 0f, inputVector.y));
 
         // Calculate movement direction in world space
-        Vector3 moveDir = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
+        moveDir = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
 
         float moveDistance = stats.movementSpeed * Time.deltaTime;
         float playerRadius = .5f;
         float playerHeight = 1f;
+        float rotationSpeed = 15f;
 
         // Check if the player can move in the desired direction
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
@@ -95,7 +99,13 @@ public class Player : MonoBehaviour, IWeaponParent {
 
         // Move the player if movement is allowed
         if (canMove) {
-            transform.position += moveDir * moveDistance;
+            if (moveDir != Vector3.zero) {
+                Quaternion targetRotation = Quaternion.LookRotation(-moveDir, Vector3.up);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            }
+            // Apply rotation
+            //transform.position += moveDir * moveDistance;
+            transform.Translate(moveDir * stats.movementSpeed * Time.deltaTime, Space.World);
         }
 
         HandleState();
@@ -126,43 +136,44 @@ public class Player : MonoBehaviour, IWeaponParent {
                 break;
             case PlayerState.Blocking:
                 // Trigger blocking animation
-                animator.SetTrigger("Block");
-                animator.ResetTrigger("Running");
-                animator.ResetTrigger("Attack");
                 Block();
-                break;
-            default:
                 break;
         }
     }
 
 
     public void TakeDamage( float damage ) {
-        //Check if cooldown for taking damage has passed
-        if (Time.time - lastDamageTime >= damageCooldown) {
-            //If player is blocking change the damage value based on player weapon blocking power
-            if (currentState == PlayerState.Blocking) {
-                damage /= weapon.blockingPower;
-                Debug.Log("Blocked");
+        if (playerAlive) {
+            //Check if cooldown for taking damage has passed
+            if (Time.time - lastDamageTime >= damageCooldown) {
+                //If player is blocking change the damage value based on player weapon blocking power
+                if (currentState == PlayerState.Blocking) {
+                    damage /= weapon.blockingPower;
+                    Debug.Log("Blocked");
+                }
+                //Substract armor value from damage
+                damage = damage - stats.armor;
+                Debug.Log("Player took " + damage + " dmg");
+                currentHealth -= damage;
+                Debug.Log(currentHealth);
+                //Perform death when health is depleted
+                if (currentHealth <= 0) {
+                    Die();
+                } else {
+                    animator.SetTrigger("Damage");
+                }
+                //Update last damage time
+                lastDamageTime = Time.time;
             }
-            //Substract armor value from damage
-            damage = damage - stats.armor;
-            Debug.Log("Player took " + damage + " dmg");
-            currentHealth -= damage;
-            Debug.Log(currentHealth);
-            //Perform death when health is depleted
-            if (currentHealth <= 0) {
-                Die();
-            }
-            //Update last damage time
-            lastDamageTime = Time.time;
+        } else {
+            Debug.Log("Player already dead");
         }
     }
     public void Attack( ) {
         //Check if player has weapon
         if (weapon != null) {
             //Damage dealt is randomly set on each hit, defined between weapon's damage stats
-            int damage = Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+            int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
             // Detect enemies in attack range
             Collider[] hitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
             if (hitEnemies.Length > 0) {
@@ -191,7 +202,9 @@ public class Player : MonoBehaviour, IWeaponParent {
         
     }
     public void Block() {
-        //Any blocking logic
+        animator.SetTrigger("Block");
+        animator.ResetTrigger("Running");
+        animator.ResetTrigger("Attack");
     }
 
     //Function to update health bars
@@ -205,9 +218,20 @@ public class Player : MonoBehaviour, IWeaponParent {
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, healthLerpSpeed);
         }
     }
+
+
     //Handle death
-    void Die() {
-        Destroy(gameObject);
+    public void Die() {
+        // Trigger the death event
+        //OnPlayerDeath?.Invoke();
+        Debug.Log("Death invoked");
+        HandleDeath();
+    }
+    void HandleDeath() {
+        playerAlive = false;
+        gameInput.DisableInput();
+        animator.SetTrigger("Dying");
+        Debug.Log("Player dies, game ends");
     }
 
     // Method for the player to receive a new quest.
