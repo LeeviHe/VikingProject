@@ -26,12 +26,15 @@ public class GameInput : MonoBehaviour {
         return inputVector.magnitude > 0; // Check if magnitude of input vector is greater than 0
     }
     //Set IsAttacking as true if player attacks
-    public bool IsAttacking() {
+    public bool AttackInput() {
         return playerInputActions.Player.Attack.triggered;
     }
     //Set IsBlocking while block input is being pressed
     public bool IsBlocking() {
         float blockInput = playerInputActions.Player.Block.ReadValue<float>();
         return blockInput > 0.5f; // Adjust the threshold as needed
+    }
+    public bool IsIdle() {
+        return !IsMoving() && !AttackInput() && !IsBlocking();
     }
 }

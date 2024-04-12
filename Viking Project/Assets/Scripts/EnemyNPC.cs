@@ -33,6 +33,7 @@ public class EnemyNpc : QuestItem {
         navAgent = GetComponent<NavMeshAgent>();
         currentHealth = enemyStats.maxHealth;
         navAgent.speed = enemyStats.movementSpeed;
+        UpdateHealthUI();
     }
 
     //FixedUpdate or normal update? Check performance
@@ -101,8 +102,6 @@ public class EnemyNpc : QuestItem {
                 hitPlayers.Add(playerCollider);
             }
         }
-        
-        yield return new WaitForSeconds(1f);
     }
 
     void OnDrawGizmosSelected() {
@@ -112,6 +111,8 @@ public class EnemyNpc : QuestItem {
 
     //Function to update health bars
     void UpdateHealthUI() {
+        healthSlider.maxValue = enemyStats.maxHealth;
+        easeHealthSlider.maxValue = enemyStats.maxHealth;
         //If health value changes, update healthslider to new value
         if (healthSlider.value != currentHealth) {
             healthSlider.value = currentHealth;

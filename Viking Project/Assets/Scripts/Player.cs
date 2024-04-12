@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Player : MonoBehaviour, IWeaponParent {
     public float timeBetweenHitDetections;
@@ -35,21 +36,20 @@ public class Player : MonoBehaviour, IWeaponParent {
         animator = GetComponent<Animator>();
         currentHealth = stats.maxHealth;
         currentState = PlayerState.Idle;
+        UpdateHealthUI();
     }
 
     private Vector3 moveDir;
     private void Update() {
         UpdateHealthUI();
-            //Check input for changing player state
-
-        if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
-            currentState = PlayerState.Attacking;
-            nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
-        } else if (gameInput.IsBlocking() && weapon != null) {
+        //Check input for changing player state
+        if (gameInput.IsBlocking() && weapon != null) {
             currentState = PlayerState.Blocking;
+        } else if (gameInput.AttackInput() && Time.time >= nextAttackTime && weapon != null) {
+            currentState = PlayerState.Attacking;
         } else if (gameInput.IsMoving()) {
             currentState = PlayerState.Walking;
-        } else {
+        } else if (gameInput.IsIdle()) {
             currentState = PlayerState.Idle;
         }
         //!!!POLISH!!! Might need to cleanup movement handling
@@ -126,13 +126,12 @@ public class Player : MonoBehaviour, IWeaponParent {
                 animator.ResetTrigger("Attack");
                 animator.ResetTrigger("Block");
                 break;
-            case PlayerState.Attacking:
-                // Trigger attacking animation
-                Attack();
-                break;
             case PlayerState.Blocking:
                 // Trigger blocking animation
                 Block();
+                break;
+            case PlayerState.Attacking:
+                Attack();
                 break;
         }
     }
@@ -167,42 +166,45 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
     public void Attack( ) {
         //Check if player has weapon
-        if (weapon != null) {
+        if (weapon != null && !IsAttackAnimationPlaying(animator)) {
             animator.SetTrigger("Attack");
-            //animator.ResetTrigger("Running");
-            animator.ResetTrigger("Block");
             StartCoroutine(PerformAttack());
-        } else {
-            Debug.Log("No weapon equipped");
         }
     }
     private IEnumerator PerformAttack() {
-        HashSet<Collider> hitEnemies = new HashSet<Collider>();
-        yield return new WaitForSeconds(1f);
-        while (IsAttackAnimationPlaying(animator)) {
-            //Damage dealt is randomly set on each hit, defined between weapon's damage stats
-            int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-            // Detect enemies in attack range
-            Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-            // Filter out enemies that have already been hit during this attack
-            List<Collider> newHitEnemies = new List<Collider>();
-            foreach (Collider enemy in potentialHitEnemies) {
-                if (!hitEnemies.Contains(enemy)) {
-                    newHitEnemies.Add(enemy);
-                    hitEnemies.Add(enemy);
-                }
-            }
-            // If new enemies are hit, apply damage to each enemy
-            if (potentialHitEnemies.Length > 0) {
-                //Apply damage to EACH enemy hit
-                foreach (Collider enemy in newHitEnemies) {
-                    if (enemy.GetComponent<EnemyNpc>() != null) {
-                        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log(IsAttackAnimationPlaying(animator));
+            // Track enemies hit during the entire attack animation
+            List <Collider> allHitEnemies = new List<Collider>();
+
+            while (IsAttackAnimationPlaying(animator)) {
+                // Damage dealt is randomly set on each hit, defined between weapon's damage stats
+                int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+                // Detect enemies in attack range
+                Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
+                List<Collider> newHitEnemies = new List<Collider>();
+
+                // Filter out enemies that have already been hit during this attack
+                foreach (Collider enemy in potentialHitEnemies) {
+                    if (!allHitEnemies.Contains(enemy)) {
+                        newHitEnemies.Add(enemy);
                     }
                 }
+
+                // If new enemies are hit, apply damage to each enemy
+                if (newHitEnemies.Count > 0) {
+                    // Apply damage to EACH enemy hit
+                    foreach (Collider enemy in newHitEnemies) {
+                        if (enemy.GetComponent<EnemyNpc>() != null) {
+                            Debug.Log("applied " + damage + "to " + enemy);
+                            enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
+                            allHitEnemies.Add(enemy);
+                        }
+                    }
+                }
+                // Wait for the next frame
+                yield return new WaitForSeconds(0.2f);
             }
-            yield return new WaitForSeconds(1f);
-        }
     }
     private bool IsAttackAnimationPlaying( Animator animator ) {
         // Get the current state of the animator
@@ -226,6 +228,8 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     //Function to update health bars
     void UpdateHealthUI() {
+        healthSlider.maxValue = stats.maxHealth;
+        easeHealthSlider.maxValue = stats.maxHealth;
         //If health value changes, update healthslider to new value
         if (healthSlider.value != currentHealth) {
             healthSlider.value = currentHealth;
