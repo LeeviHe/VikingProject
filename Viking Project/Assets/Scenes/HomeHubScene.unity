@@ -585,7 +585,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4819827805231618734, guid: 13776e73159614d4491c9170bd9a3a1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -709,7 +710,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -771,7 +773,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -833,7 +836,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -990,7 +994,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1126,7 +1131,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_2 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457776239951185577, guid: b965f52aa2103f24fadfd7c9ec23fb09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1188,7 +1194,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1312,7 +1319,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7051433136332703314, guid: 8a7160969bfd1384894010df5087104f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1374,7 +1382,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1436,7 +1445,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1746,7 +1756,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1808,7 +1819,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1992,7 +2004,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2128,7 +2141,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2190,7 +2204,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7051433136332703314, guid: 8a7160969bfd1384894010df5087104f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2318,7 +2333,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2468,75 +2484,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4325909481816139790, guid: 61dc82dfe4729fa43b20dcaba90b22ac, type: 3}
   m_PrefabInstance: {fileID: 244601593}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &249917056
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1401893661265041759, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804175370345829358, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.1237245
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804175370345829358, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.9999995
-      objectReference: {fileID: 0}
-    - target: {fileID: 1804175370345829358, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.123726
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -44.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197496849111507633, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 20464c95e1725734d941fa1665ff2d57, type: 3}
 --- !u!1001 &251963875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2733,7 +2680,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2981,7 +2929,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3065,6 +3014,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4536246304362202840, guid: c98617a8afd7bf9458f1be4eebc82dd9, type: 3}
   m_PrefabInstance: {fileID: 322266129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &331198655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 924187633830806058, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924187633830806058, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507574720319617894, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188252749849657488, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188252749849657488, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755380429699766067, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 262.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755380429699766067, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 38.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755380429699766067, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 129.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660959057372432640, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81dd0d77fae090f4188865225a09da79, type: 3}
 --- !u!1001 &339497178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3293,11 +3327,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -5
-  far clip plane: 1000
+  near clip plane: -1
+  far clip plane: 500
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3321,8 +3355,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366590892}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -12.093724, y: 6.1799994, z: -50.373726}
+  m_LocalRotation: {x: 0.23911761, y: 0.36964384, z: -0.09904575, w: 0.89239913}
+  m_LocalPosition: {x: -13.129998, y: 6.47, z: -49.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3380,7 +3414,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_12 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7578077094963969677, guid: aa94cbd5dfc188a40b0b33ebc9870deb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3442,7 +3477,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3504,7 +3540,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_1 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8030863515413855699, guid: 350e7f9057011884b920c9acc82d2a6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3690,7 +3727,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3752,7 +3790,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3814,7 +3853,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4188,7 +4228,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4386,7 +4427,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_2 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457776239951185577, guid: b965f52aa2103f24fadfd7c9ec23fb09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4814,7 +4856,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5000,7 +5043,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_1 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8030863515413855699, guid: 350e7f9057011884b920c9acc82d2a6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5602,7 +5646,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5664,7 +5709,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5726,7 +5772,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5955,7 +6002,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6219,7 +6267,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6405,7 +6454,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6467,7 +6517,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6591,7 +6642,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6933,7 +6985,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7119,7 +7172,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7226,7 +7280,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7362,7 +7417,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8026,7 +8082,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_2 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457776239951185577, guid: b965f52aa2103f24fadfd7c9ec23fb09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8088,7 +8145,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8212,7 +8270,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8576,7 +8635,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_2 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457776239951185577, guid: b965f52aa2103f24fadfd7c9ec23fb09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9062,7 +9122,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9124,7 +9185,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9536,7 +9598,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9660,7 +9723,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9722,7 +9786,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10106,7 +10171,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10680,7 +10746,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11465,7 +11532,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_12 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7578077094963969677, guid: aa94cbd5dfc188a40b0b33ebc9870deb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11669,7 +11737,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11797,7 +11866,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11999,7 +12069,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12061,7 +12132,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12123,7 +12195,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12247,7 +12320,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12437,7 +12511,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7051433136332703314, guid: 8a7160969bfd1384894010df5087104f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12499,7 +12574,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12561,7 +12637,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12685,7 +12762,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12801,7 +12879,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12925,7 +13004,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_13 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3441157014088499070, guid: bfec70bf0b09cab48b8ab9fc36fa4160, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12987,7 +13067,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13123,7 +13204,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8422119672363684217, guid: c462ef0c33d84d347b48840528568051, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13185,7 +13267,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13539,7 +13622,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13601,7 +13685,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_2 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457776239951185577, guid: b965f52aa2103f24fadfd7c9ec23fb09, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13725,7 +13810,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13861,7 +13947,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13923,7 +14010,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14109,7 +14197,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14171,7 +14260,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14233,7 +14323,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_1 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8030863515413855699, guid: 350e7f9057011884b920c9acc82d2a6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14369,7 +14460,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14493,7 +14585,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14617,7 +14710,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_1 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8030863515413855699, guid: 350e7f9057011884b920c9acc82d2a6d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14679,7 +14773,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14803,7 +14898,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14939,7 +15035,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15011,6 +15108,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1491377575138212692, guid: e917baa523ece7f4fa7b0e5f3ad362ec, type: 3}
   m_PrefabInstance: {fileID: 1802595301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1808308793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1808308797}
+  - component: {fileID: 1808308796}
+  - component: {fileID: 1808308795}
+  - component: {fileID: 1808308794}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1808308794
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808308793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1808308795
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808308793}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1808308796
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808308793}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1808308797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808308793}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0057562115, y: 0.00007580388, z: 0.013167736, w: 0.9998967}
+  m_LocalPosition: {x: -39.24, y: 1.244, z: -42.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -0.66, y: 0, z: 1.509}
 --- !u!1001 &1814473741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15232,7 +15435,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15456,7 +15660,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2578507514864763937, guid: d71c2a10727367342bae63bbddac158e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15736,7 +15941,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15798,7 +16004,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15984,7 +16191,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16046,7 +16254,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16108,7 +16317,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16170,7 +16380,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16310,7 +16521,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16404,7 +16616,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4881455884430128386, guid: 7320cf8867d304e41be91c2ed71cc4ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16540,7 +16753,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16664,7 +16878,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7 Variant Aztec (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2293608541161525199, guid: d72062ec644ef3440877b6a3412c7796, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16974,7 +17189,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5900399118784346562, guid: 96ff2c28a234b9d40b546592d39d9e49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17172,7 +17388,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_8 Variant Aztec (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6814403831349922439, guid: c5608fbfdecb14342b219ab58edc3141, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17296,7 +17513,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8303111795201056878, guid: 409e37bae7c1cc4439033facd7ad1c61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17518,5 +17736,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 366590896}
   - {fileID: 697420192}
-  - {fileID: 249917056}
   - {fileID: 5108647}
+  - {fileID: 331198655}
+  - {fileID: 1808308797}
