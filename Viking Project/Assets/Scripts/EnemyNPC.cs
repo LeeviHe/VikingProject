@@ -1,41 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
+using System;
+using UnityEngine.AI;
+using UnityEngine.EventSystems;
+
 
 //Take QuestItem interaction to use here, 
 //!!!POLISH!!! Make new IEnemy for use here
 public class EnemyNpc : QuestItem {
-
+    public float timeBetweenHitDetections;
     public LayerMask aggroLayerMask;
     public NPCStatsSO enemyStats;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
+    [SerializeField] private Transform weaponHoldingPoint;
     private NavMeshAgent navAgent;
     private Player player;
     private Collider[] withinAggroColliders;
     private float lerpSpeed = 0.01f;
+    private bool npcAlive = true;
     float currentHealth;
+    [SerializeField] private Animator animator;
+    EnemyState currentState;
+
+    private bool isAttacking = false;
 
     //Assign navAgent to be NavMeshAgent component of this enemy instance, and assign NPC stats
     void Start() {
+        currentState = EnemyState.Idle;
         navAgent = GetComponent<NavMeshAgent>();
         currentHealth = enemyStats.maxHealth;
         navAgent.speed = enemyStats.movementSpeed;
     }
 
     //FixedUpdate or normal update? Check performance
-    public void FixedUpdate() {
+    public void Update() {
         //Set Aggro area with NPC aggro value and layer that is to be aggroed (player)
         withinAggroColliders = Physics.OverlapSphere(transform.position, enemyStats.aggroRange, aggroLayerMask);
         //If any aggroLayer object is within range perform ChasePlayer function
         //Only 1 object that is the player is supposed to be detectable as within range
         if (withinAggroColliders.Length > 0) {
             ChasePlayer(withinAggroColliders[0].GetComponent<Player>());
+        } else {
+            currentState = EnemyState.Idle;
         }
         UpdateHealthUI();
+
+        HandleState();
+    }
+
+    private void HandleState() {
+        // Handle logic based on current state
+        switch (currentState) {
+            case EnemyState.Idle:
+                // Trigger idle animation
+                animator.ResetTrigger("Running");
+                break;
+            case EnemyState.Walking:
+                // Trigger walking animation
+                animator.SetTrigger("Running");
+                break;
+        }
     }
 
     //NPC takes damage, armor value is substracted and then damage is dealt. Perform death function after no more health
@@ -48,8 +75,41 @@ public class EnemyNpc : QuestItem {
     }
 
     //Deal damage to player with NPC stat value
-    public void PerformAttack() {
-        player.TakeDamage(enemyStats.damage);
+    public void EnemyAttack() {
+        StartCoroutine(PerformEnemyAttack());
+    }
+
+    private void EndAttackMode() {
+        isAttacking = false;
+    }
+
+    private bool IsAttacking() {
+        return isAttacking;
+    }
+    private IEnumerator PerformEnemyAttack() {
+        animator.SetTrigger("Attack");
+        HashSet<Collider> hitPlayers = new HashSet<Collider>();
+        yield return new WaitForSeconds(0.5f); // Delay before attacking
+        while (isAttacking) {
+            //Damage dealt is randomly set on each hit, defined between weapon's damage stats
+            int damage = UnityEngine.Random.Range(enemyStats.minDamage, enemyStats.maxDamage + 1);
+            // Detect enemies in attack range
+            Collider[] potentialHitPlayers = Physics.OverlapSphere(weaponHoldingPoint.position, enemyStats.attackRange, aggroLayerMask);
+            // Check if player has been hit already
+            foreach (Collider playerCollider in potentialHitPlayers) {
+                if (!hitPlayers.Contains(playerCollider)) {
+                    // If player hasn't been hit, apply damage and mark as hit
+                    playerCollider.GetComponent<Player>().TakeDamage(damage);
+                    hitPlayers.Add(playerCollider);
+                }
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(weaponHoldingPoint.position, enemyStats.attackRange);
     }
 
     //Function to update health bars
@@ -69,20 +129,25 @@ public class EnemyNpc : QuestItem {
         this.player = player;
         //Set destination of NPC to player's position
         navAgent.SetDestination(player.transform.position);
+        currentState = EnemyState.Walking;
         // Check if NPC close enough to player, then perform attacks between NPC stat attackCooldown intervals, otherwise stop performing attack
         //!!!POLISH!!! See if there is a cleaner and more fitting way to do this
         if (navAgent.remainingDistance <= navAgent.stoppingDistance) {
-            if (!IsInvoking("PerformAttack")) {
-                InvokeRepeating("PerformAttack", .5f, enemyStats.attackCooldown);
+            if (!IsInvoking("EnemyAttack")) {
+                isAttacking = true;
+                InvokeRepeating("EnemyAttack", .1f, enemyStats.attackCooldown);
             }
         } else {
+            EndAttackMode();
             CancelInvoke();
         }
     }
     
     // Handle enemy death
     void Die() {
-        Destroy(gameObject);
+        npcAlive = false;
+        //navAgent.enabled = false;
+        animator.SetTrigger("Dying");
         // If NPC death is objective perform interaction with objective
         if (objective) { 
             ObjectiveInteraction();

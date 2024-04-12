@@ -695,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4240104581372197423}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7007266, z: -0, w: 0.7134299}
+  m_LocalRotation: {x: 0, y: -0.7007288, z: 0, w: 0.7134278}
   m_LocalPosition: {x: 5.90221, y: 0.058998108, z: 6.415951}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
@@ -719,12 +719,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objective: {fileID: 0}
+  timeBetweenHitDetections: 0
   aggroLayerMask:
     serializedVersion: 2
     m_Bits: 128
   enemyStats: {fileID: 11400000, guid: 668b8d36cb4e0ef41a373176c1320810, type: 2}
   healthSlider: {fileID: 7825515496280023664}
   easeHealthSlider: {fileID: 2548413904107545786}
+  weaponHoldingPoint: {fileID: 3832247900965202389}
+  animator: {fileID: 2987219212307597384}
 --- !u!95 &2987219212307597384
 Animator:
   serializedVersion: 5
@@ -779,17 +782,17 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 6
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!1 &4313048510500728995
 GameObject:

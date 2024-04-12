@@ -5,8 +5,9 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class NPCStatsSO : ScriptableObject {
     public float maxHealth;
-    public float armor;
-    public float damage;
+    public int armor;
+    public int minDamage;
+    public int maxDamage;
     public float movementSpeed;
     public float attackCooldown;
     public float attackRange;

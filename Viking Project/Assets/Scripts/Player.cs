@@ -20,7 +20,7 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     private float currentHealth; //Handle player's health
     private float nextAttackTime = 0f; //Time when next attack is allowed
-    private float damageCooldown = 3f; // Cooldown duration in seconds
+    private float damageCooldown = 2f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
     private bool playerAlive = true;
@@ -40,10 +40,9 @@ public class Player : MonoBehaviour, IWeaponParent {
     private Vector3 moveDir;
     private void Update() {
         UpdateHealthUI();
+            //Check input for changing player state
 
-        //Check input for changing player state
-
-        if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
+            if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
             currentState = PlayerState.Attacking;
             nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
         } else if (gameInput.IsBlocking() && weapon != null) {
@@ -158,7 +157,7 @@ public class Player : MonoBehaviour, IWeaponParent {
                 Debug.Log(currentHealth);
                 //Perform death when health is depleted
                 if (currentHealth <= 0) {
-                    Die();
+                    HandleDeath();
                 } else {
                     animator.SetTrigger("Damage");
                 }
@@ -184,7 +183,6 @@ public class Player : MonoBehaviour, IWeaponParent {
     private IEnumerator PerformAttack() {
         HashSet<Collider> hitEnemies = new HashSet<Collider>();
         while (IsAttackAnimationPlaying(animator)) {
-            Debug.Log("animator is playing");
             //Damage dealt is randomly set on each hit, defined between weapon's damage stats
             int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
             // Detect enemies in attack range
@@ -197,20 +195,16 @@ public class Player : MonoBehaviour, IWeaponParent {
                     hitEnemies.Add(enemy);
                 }
             }
-
             // If new enemies are hit, apply damage to each enemy
             if (potentialHitEnemies.Length > 0) {
-                Debug.Log("Hit!");
                 //Apply damage to EACH enemy hit
                 foreach (Collider enemy in newHitEnemies) {
                     if (enemy.GetComponent<EnemyNpc>() != null) {
                         enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
                     }
                 }
-            } else {
-                Debug.Log("Miss");
             }
-            yield return new WaitForSeconds(timeBetweenHitDetections);
+            yield return new WaitForSeconds(0);
         }
     }
     private bool IsAttackAnimationPlaying( Animator animator ) {
@@ -227,7 +221,6 @@ public class Player : MonoBehaviour, IWeaponParent {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(weaponHoldingPoint.position, weapon.hitRange); 
         }
-        
     }
     public void Block() {
         animator.SetTrigger("Block");
@@ -249,12 +242,6 @@ public class Player : MonoBehaviour, IWeaponParent {
 
 
     //Handle death
-    public void Die() {
-        // Trigger the death event
-        //OnPlayerDeath?.Invoke();
-        Debug.Log("Death invoked");
-        HandleDeath();
-    }
     void HandleDeath() {
         playerAlive = false;
         gameInput.DisableInput();

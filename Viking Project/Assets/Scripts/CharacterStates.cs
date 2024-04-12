@@ -8,3 +8,10 @@ public enum PlayerState {
     Attacking,
     Blocking
 }
+
+public enum EnemyState { 
+    
+    Idle, 
+    Walking, 
+    Attacking
+}

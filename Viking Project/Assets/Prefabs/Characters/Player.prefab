@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97afc4093c6cdea43bd0415d49c5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenHitDetections: 0.2
   gameInput: {fileID: 284135867957438730}
   weaponHoldingPoint: {fileID: 3969176304804098552}
   healthSlider: {fileID: 1779399742127566120}

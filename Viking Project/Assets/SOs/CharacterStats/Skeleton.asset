@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   armor: 5
-  damage: 30
+  minDamage: 20
+  maxDamage: 25
   movementSpeed: 6
   attackCooldown: 3
   attackRange: 1.5
