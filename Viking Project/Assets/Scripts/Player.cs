@@ -42,7 +42,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         UpdateHealthUI();
             //Check input for changing player state
 
-            if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
+        if (gameInput.IsAttacking() && Time.time >= nextAttackTime && weapon != null) {
             currentState = PlayerState.Attacking;
             nextAttackTime = Time.time + weapon.attackSpeed; // Set the next allowed attack time
         } else if (gameInput.IsBlocking() && weapon != null) {
@@ -128,9 +128,6 @@ public class Player : MonoBehaviour, IWeaponParent {
                 break;
             case PlayerState.Attacking:
                 // Trigger attacking animation
-                animator.SetTrigger("Attack");
-                animator.ResetTrigger("Running");
-                animator.ResetTrigger("Block");
                 Attack();
                 break;
             case PlayerState.Blocking:
@@ -171,17 +168,17 @@ public class Player : MonoBehaviour, IWeaponParent {
     public void Attack( ) {
         //Check if player has weapon
         if (weapon != null) {
-            StartCoroutine(DelayedAttack());
+            animator.SetTrigger("Attack");
+            //animator.ResetTrigger("Running");
+            animator.ResetTrigger("Block");
+            StartCoroutine(PerformAttack());
         } else {
             Debug.Log("No weapon equipped");
         }
     }
-    private IEnumerator DelayedAttack() {
-        yield return new WaitForSeconds(0.2f);
-        StartCoroutine(PerformAttack());
-    }
     private IEnumerator PerformAttack() {
         HashSet<Collider> hitEnemies = new HashSet<Collider>();
+        yield return new WaitForSeconds(1f);
         while (IsAttackAnimationPlaying(animator)) {
             //Damage dealt is randomly set on each hit, defined between weapon's damage stats
             int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
@@ -204,7 +201,7 @@ public class Player : MonoBehaviour, IWeaponParent {
                     }
                 }
             }
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(1f);
         }
     }
     private bool IsAttackAnimationPlaying( Animator animator ) {
@@ -212,7 +209,6 @@ public class Player : MonoBehaviour, IWeaponParent {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Assuming the attack animation is in layer 0
         bool isPlaying = stateInfo.IsName("Attack");
         // Check if the animation named "Attack" is still playing
-        Debug.Log("Attack animation playing: " + isPlaying);
         return isPlaying;
     }
     //Visualizing the attack range in the scene view
