@@ -81,7 +81,7 @@ public class EnemyNpc : QuestItem {
 
     //Deal damage to player with NPC stat value
     public void EnemyAttack() {
-        Debug.Log("Attack performed");
+        //Debug.Log("Attack performed");
         StartCoroutine(PerformEnemyAttack());
     }
 

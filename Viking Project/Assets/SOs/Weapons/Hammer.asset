@@ -16,6 +16,6 @@ MonoBehaviour:
   objectName: Hammer
   minDamage: 15
   maxDamage: 20
-  attackSpeed: 0.5
+  attackSpeed: 2
   hitRange: 2
   blockingPower: 1.5

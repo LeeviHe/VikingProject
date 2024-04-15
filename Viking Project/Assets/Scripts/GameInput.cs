@@ -13,6 +13,9 @@ public class GameInput : MonoBehaviour {
     public void DisableInput() {
         playerInputActions.Player.Disable();
     }
+    public void EnableInput() {
+        playerInputActions.Player.Enable();
+    }
     //Get movement values and normalize them
     public Vector2 GetMovementVectorNormalized() {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
