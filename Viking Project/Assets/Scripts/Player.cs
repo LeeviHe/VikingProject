@@ -14,17 +14,19 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
 
-    public static event Action OnPlayerDeath;
+    //public static event Action OnPlayerDeath;
 
     private Weapon weapon; //Weapon of player
     private PlayerState currentState; //Current state of player action
 
     private float currentHealth; //Handle player's health
     private float nextAttackTime = 0f; //Time when next attack is allowed
+    private float attackDefaultCooldown = 2f;
     private float damageCooldown = 2f; // Cooldown duration in seconds
     private float lastDamageTime; // Time when player last took damage
     private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
     private bool playerAlive = true;
+    private float attackDuration;
 
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
     public QuestSO currentQuest; // Active quest for player
@@ -32,8 +34,10 @@ public class Player : MonoBehaviour, IWeaponParent {
     public PlayerStatsSO stats; //Player stats
     Animator animator; //Player animator
 
-    private void Start() {
+    private void Awake() {
         animator = GetComponent<Animator>();
+    }
+    private void Start() {
         currentHealth = stats.maxHealth;
         currentState = PlayerState.Idle;
         UpdateHealthUI();
@@ -41,19 +45,55 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     private Vector3 moveDir;
     private void Update() {
+        //Debug.Log(currentState);
         UpdateHealthUI();
         //Check input for changing player state
         if (gameInput.IsBlocking() && weapon != null) {
             currentState = PlayerState.Blocking;
-        } else if (gameInput.AttackInput() && Time.time >= nextAttackTime && weapon != null) {
+        } else if (gameInput.AttackInput() && weapon != null) {
+            nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
+            attackDuration = (nextAttackTime - Time.time);
             currentState = PlayerState.Attacking;
         } else if (gameInput.IsMoving()) {
             currentState = PlayerState.Walking;
         } else if (gameInput.IsIdle()) {
             currentState = PlayerState.Idle;
         }
-        //!!!POLISH!!! Might need to cleanup movement handling
+        if (playerAlive) { 
+            HandleState();
+        }
+        
+    }
+    private void HandleState() {
+        // Handle logic based on current state
+        switch (currentState) {
+            case PlayerState.Idle:
+                // Trigger idle animation
+                animator.ResetTrigger("Running");
+                animator.ResetTrigger("Block");;
+                break;
+            case PlayerState.Walking:
+                // Trigger walking animation
+                animator.SetTrigger("Running");
+                animator.ResetTrigger("Block");
+                playerMovement();
+                break;
+            case PlayerState.Blocking:
+                // Trigger blocking animation
+                animator.SetTrigger("Block");
+                animator.ResetTrigger("Running");
+                break;
+            case PlayerState.Attacking:
+                Attack();
+                break;
+            default:
+                Debug.Log("unhandled state");
+                break;
+        }
+    }
 
+
+    private void playerMovement() {
         // Get normalized input vector
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
@@ -65,77 +105,15 @@ public class Player : MonoBehaviour, IWeaponParent {
         moveDir = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
 
         float moveDistance = stats.movementSpeed * Time.deltaTime;
-        float playerRadius = .5f;
-        float playerHeight = 1f;
         float rotationSpeed = 15f;
 
-        // Check if the player can move in the desired direction
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
 
-        if (!canMove) {
-            // If can't move in the desired direction, try moving along X or Z axis
-
-            // Attempt only X movement
-            Vector3 moveDirX = new Vector3(moveDir.x, 0, 0);
-            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
-            if (canMove) {
-                // Can move only on the X axis
-                moveDir = moveDirX;
-
-            } else {
-                // Attempt only Z movement
-                Vector3 moveDirZ = new Vector3(0, 0, moveDir.z);
-                canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
-                if (canMove) {
-                    // Can move only on the Z axis
-                    moveDir = moveDirZ;
-                } else {
-                    currentState = PlayerState.Idle;
-                    // Cannot move in any direction
-                }
-            }
-        }
-
-        // Move the player if movement is allowed
-        if (canMove) {
-            if (moveDir != Vector3.zero) {
-                Quaternion targetRotation = Quaternion.LookRotation(-moveDir, Vector3.up);
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            }
-            // Apply rotation
-            //transform.position += moveDir * moveDistance;
-            transform.Translate(moveDir * stats.movementSpeed * Time.deltaTime, Space.World);
-        }
-
-        HandleState();
-    }
-    private void HandleState()
-    {
-        // Handle logic based on current state
-        switch (currentState)
-        {
-            case PlayerState.Idle:
-                // Trigger idle animation
-                animator.ResetTrigger("Running");
-                animator.ResetTrigger("Attack");
-                animator.ResetTrigger("Block");
-                break;
-            case PlayerState.Walking:
-                // Trigger walking animation
-                animator.SetTrigger("Running");
-                animator.ResetTrigger("Attack");
-                animator.ResetTrigger("Block");
-                break;
-            case PlayerState.Blocking:
-                // Trigger blocking animation
-                Block();
-                break;
-            case PlayerState.Attacking:
-                Attack();
-                break;
+        if (moveDir != Vector3.zero) {
+            Quaternion targetRotation = Quaternion.LookRotation(-moveDir, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            transform.Translate(moveDir * moveDistance, Space.World);
         }
     }
-
 
     public void TakeDamage( float damage ) {
         if (playerAlive) {
@@ -164,54 +142,47 @@ public class Player : MonoBehaviour, IWeaponParent {
             Debug.Log("Player already dead");
         }
     }
-    public void Attack( ) {
-        //Check if player has weapon
-        if (weapon != null && !IsAttackAnimationPlaying(animator)) {
-            animator.SetTrigger("Attack");
-            StartCoroutine(PerformAttack());
-        }
+    public void Attack() {
+        StartCoroutine(PerformAttack());
     }
+
     private IEnumerator PerformAttack() {
-            yield return new WaitForSeconds(0.5f);
-            Debug.Log(IsAttackAnimationPlaying(animator));
-            // Track enemies hit during the entire attack animation
-            List <Collider> allHitEnemies = new List<Collider>();
-
-            while (IsAttackAnimationPlaying(animator)) {
-                // Damage dealt is randomly set on each hit, defined between weapon's damage stats
-                int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-                // Detect enemies in attack range
-                Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-                List<Collider> newHitEnemies = new List<Collider>();
-
-                // Filter out enemies that have already been hit during this attack
-                foreach (Collider enemy in potentialHitEnemies) {
-                    if (!allHitEnemies.Contains(enemy)) {
-                        newHitEnemies.Add(enemy);
+        gameInput.DisableInput();
+        animator.speed = 1.0f / attackDuration;
+        //Debug.Log("attack will take : " + attackDuration);
+        animator.ResetTrigger("AttackStopped");
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(attackDuration * 0.8f);
+        // Track enemies hit during the entire attack animation
+        List<Collider> allHitEnemies = new List<Collider>();
+        Debug.Log("start detection");
+        while (attackDuration > 0) {
+            currentState = PlayerState.Attacking;
+            // Detect enemies in attack range
+            Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
+            //Debug.Log(potentialHitEnemies.Length);
+            foreach (Collider enemy in potentialHitEnemies) {
+                if (!allHitEnemies.Contains(enemy)) {
+                    // Apply damage to the enemy
+                    if (enemy.GetComponent<EnemyNpc>() != null) {
+                        // Damage dealt is randomly set on each hit, defined between weapon's damage stats
+                        int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+                        Debug.Log("Applied " + damage + " to " + enemy);
+                        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
+                        allHitEnemies.Add(enemy);
                     }
                 }
-
-                // If new enemies are hit, apply damage to each enemy
-                if (newHitEnemies.Count > 0) {
-                    // Apply damage to EACH enemy hit
-                    foreach (Collider enemy in newHitEnemies) {
-                        if (enemy.GetComponent<EnemyNpc>() != null) {
-                            Debug.Log("applied " + damage + "to " + enemy);
-                            enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
-                            allHitEnemies.Add(enemy);
-                        }
-                    }
-                }
-                // Wait for the next frame
-                yield return new WaitForSeconds(0.2f);
             }
-    }
-    private bool IsAttackAnimationPlaying( Animator animator ) {
-        // Get the current state of the animator
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Assuming the attack animation is in layer 0
-        bool isPlaying = stateInfo.IsName("Attack");
-        // Check if the animation named "Attack" is still playing
-        return isPlaying;
+            attackDuration -= Time.deltaTime;
+            // Wait for the next frame
+            yield return null;
+        }
+        Debug.Log("Stop detection");
+        animator.speed = 1f;
+        //These 2 together
+        //Switch animation to idle and allow input
+        gameInput.EnableInput();
+        animator.SetTrigger("AttackStopped");
     }
     //Visualizing the attack range in the scene view
     void OnDrawGizmosSelected() {
