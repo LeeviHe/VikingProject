@@ -58,13 +58,15 @@ public class Weapon : MonoBehaviour {
     }
 
     // Spawn a new weapon based on the provided WeaponSO and parent
-    public static Weapon SpawnWeapon( WeaponSO weaponSO, IWeaponParent weaponParent ) {
+    public static Weapon SpawnWeapon( WeaponSO weaponSO, IWeaponParent weaponParent, Quaternion rotation) {
         // Instantiate the weapon prefab
         Transform weaponTransform = Instantiate(weaponSO.prefab);
         // Get the Weapon component from the instantiated object
         Weapon weapon = weaponTransform.GetComponent<Weapon>();
         // Set the weapon's parent
         weapon.SetWeaponParent(weaponParent);
+
+        weaponTransform.localRotation = rotation;
         return weapon;
     }
 }

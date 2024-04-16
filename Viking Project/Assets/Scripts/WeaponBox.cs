@@ -6,12 +6,13 @@ public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
 
     [SerializeField] private Transform boxHoldingPoint; // The transform where the weapon is set on the object
     [SerializeField] private WeaponSO weaponSO; // The ScriptableObject representing the weapon properties
-
     private Weapon weapon; //Reference to the spawned weapon
+    Quaternion spawnRotation;
 
     //Spawn the weapon on the boxholdingpoint on initialize
     private void Start() {
-        Weapon.SpawnWeapon(weaponSO, this);
+        spawnRotation = weaponSO.prefab.transform.rotation;
+        Weapon.SpawnWeapon(weaponSO, this, spawnRotation);
     }
 
     private void InteractWeaponBox( Player player ) {
@@ -27,7 +28,7 @@ public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
                 player.GetWeapon().DestroySelf();
             }
         // Spawn weapon on player
-        Weapon.SpawnWeapon(weaponSO, player);
+        Weapon.SpawnWeapon(weaponSO, player, spawnRotation);
         }
     }
 
