@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0769114d78463d4998df397c9a34743, type: 3}
-  m_Name: Enemy
+  m_Name: PickUpVase
   m_EditorClassIdentifier: 
-  parentQuest: {fileID: 11400000, guid: 048fa3b83d8a593448e9564ff88f176e, type: 2}
+  parentQuest: {fileID: 0}
   required: 1
   waypoint: {fileID: 0}
-  description: Kill enemy
+  description: Loot a vase

@@ -17,9 +17,10 @@ public class QuestOwner : MonoBehaviour {
         // Loop through the quest items
         for (int i = 0; i < questItem.Count; i++) {
             // Check if the current quest item has a corresponding objective in the quest
-            if (i < myQuest.objectives.Count) {
+            if (i < myQuest.clonedObjectives.Count) {
                 // Set the objective for the quest item
-                questItem[i].SetObjective(myQuest.objectives[i]);
+                questItem[i].SetObjective(myQuest.clonedObjectives[i]);
+                Debug.Log("Add cloned objective " + myQuest.clonedObjectives[i] + " to " + questItem[i]);
             } else {
                 // Log a warning if there are not enough objectives in the quest for all quest items
                 Debug.LogWarning("Not enough objectives in the quest for all quest items.");

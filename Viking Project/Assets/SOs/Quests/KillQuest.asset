@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b34def55f1bbeed4d887f12d7cc3bd61, type: 3}
-  m_Name: TestQuest
+  m_Name: KillQuest
   m_EditorClassIdentifier: 
   active: 0
-  questDescription: Kill the skeleton and the slime!
+  questDescription: Kill 2 enemies!
   objectives:
-  - {fileID: 11400000, guid: 99745c67462174e4e972eebb8c689d5f, type: 2}
-  - {fileID: 11400000, guid: b04a7d43e1f64c84cb15f3b03deda7b9, type: 2}
+  - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
+  - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
+  clonedObjectives:
+  - {fileID: 0}
+  - {fileID: 0}
