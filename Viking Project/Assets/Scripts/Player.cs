@@ -16,6 +16,7 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     public static event Action OnPlayerDeath;
     public static event Action OnPlayerWin;
+    public static event Action OnQuestActivated;
 
     private Weapon weapon; //Weapon of player
     private PlayerState currentState; //Current state of player action
@@ -228,6 +229,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         openQuests.Add(quest);
         // Activate the quest.
         quest.active = true;
+        OnQuestActivated?.Invoke();
         // Set the current quest to the received quest.
         currentQuest = quest;
 
