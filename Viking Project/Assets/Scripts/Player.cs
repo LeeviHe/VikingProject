@@ -6,6 +6,7 @@ using System;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using static UnityEngine.EventSystems.EventTrigger;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour, IWeaponParent {
     public float timeBetweenHitDetections;
@@ -13,10 +14,10 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private Transform weaponHoldingPoint;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
-
     public static event Action OnPlayerDeath;
     public static event Action OnPlayerWin;
     public static event Action OnQuestActivated;
+    public static event Action OnReadyToLeave;
 
     private Weapon weapon; //Weapon of player
     private PlayerState currentState; //Current state of player action
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         animator = GetComponent<Animator>();
     }
     private void Start() {
+        playerAlive = true;
         currentHealth = stats.maxHealth;
         currentState = PlayerState.Idle;
         UpdateHealthUI();
@@ -222,9 +224,16 @@ public class Player : MonoBehaviour, IWeaponParent {
         gameInput.DisableInput();
         Debug.Log("Player dies, game ends");
     }
-
+    private void OnTriggerEnter( Collider other ) {
+        if (other.gameObject.CompareTag("Finish")) {
+            OnPlayerWin?.Invoke();
+            //gameObject.SetActive(false);
+        } else {
+            Debug.Log("Empty trigger");
+        }
+    }
     // Method for the player to receive a new quest.
-    public void ReceiveNewQuest(QuestSO quest) { 
+    public void ReceiveNewQuest( QuestSO quest ) {
         // Add the quest to the list of open quests.
         openQuests.Add(quest);
         // Activate the quest.
@@ -249,7 +258,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         quest.OnQuestCompleted -= RemoveCompletedQuest;
         // Remove the completed quest from the list of open quests.
         openQuests.Remove(quest);
-        OnPlayerWin?.Invoke();
+        OnReadyToLeave?.Invoke();
 
         // If there are remaining open quests, set the current quest to the first one in the list.
         if (openQuests.Count > 0) { 

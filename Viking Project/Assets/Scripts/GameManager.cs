@@ -6,33 +6,77 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+    private enum GameState { 
+        Default,
+        QuestActive,
+        ReadyToLeave,
+        GameOver,
+        GameWon
+    }
     [SerializeField] private GameObject deathScreenUI;
     [SerializeField] private GameObject winScreenUI;
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private Toggle toggleUI;
+    [SerializeField] private GameObject portal;
+    GameState gameState;
+    public float screenDelay;
+    
 
-    public float screenDelay = 2f;
+    private void Start() {
+        gameState = GameState.Default;
+    }
+    private void Update() {
+        HandleGameState();
+    }
 
+
+    private void HandleGameState() {
+        // Handle logic based on current state
+        switch (gameState) {
+            case GameState.Default:
+                //Cursor.visible = false;
+                break;
+            case GameState.QuestActive:
+                toggleUI.gameObject.SetActive(true);
+                break;
+            case GameState.ReadyToLeave:
+                toggleUI.isOn = true;
+                portal.gameObject.SetActive(true);
+                break;
+            case GameState.GameOver:
+                screenDelay = 2f;
+                Invoke("ShowDeathScreen", screenDelay);
+                break;
+            case GameState.GameWon:
+                screenDelay = 0.5f;
+                Invoke("ShowWinScreen", screenDelay);
+                break;
+        }
+    }
     private void OnEnable() {
         Player.OnPlayerDeath += OnPlayerDeath;
         Player.OnPlayerWin += OnPlayerWin;
         Player.OnQuestActivated += OnQuestActivated;
+        Player.OnReadyToLeave += OnReadyToLeave;
     }
 
     private void OnDestroy() {
         Player.OnPlayerDeath -= OnPlayerDeath;
         Player.OnPlayerWin -= OnPlayerWin;
         Player.OnQuestActivated -= OnQuestActivated;
+        Player.OnReadyToLeave -= OnReadyToLeave;
     }
     void OnPlayerDeath() {
-        Invoke("ShowDeathScreen", screenDelay);
+        gameState = GameState.GameOver;
     }
-    void OnQuestActivated() { 
-        toggleUI.gameObject.SetActive(true);
+    void OnQuestActivated() {
+        gameState = GameState.QuestActive;
     }
     void OnPlayerWin() {
-        screenDelay = 0;
-        Invoke("ShowWinScreen", screenDelay);
+        gameState = GameState.GameWon;
+    }
+    void OnReadyToLeave() {
+        gameState = GameState.ReadyToLeave;
     }
     private void ShowDeathScreen() {
         Time.timeScale = 0f;
@@ -44,14 +88,13 @@ public class GameManager : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
     }
     private void ShowWinScreen() {
-        toggleUI.isOn = true;
-        /*Time.timeScale = 0f;
+        Time.timeScale = 0f;
         winScreenUI.SetActive(true);
         playerHUD.SetActive(false);
 
         // You can add additional logic here, such as pausing the game or showing relevant information
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;*/
+        Cursor.lockState = CursorLockMode.None;
     }
     public void RestartButtonClicked() {
         // Unpause the game
