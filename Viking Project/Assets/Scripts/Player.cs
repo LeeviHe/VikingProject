@@ -14,7 +14,8 @@ public class Player : MonoBehaviour, IWeaponParent {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
 
-    //public static event Action OnPlayerDeath;
+    public static event Action OnPlayerDeath;
+    public static event Action OnPlayerWin;
 
     private Weapon weapon; //Weapon of player
     private PlayerState currentState; //Current state of player action
@@ -214,9 +215,10 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     //Handle death
     void HandleDeath() {
+        animator.SetTrigger("Dying");
+        OnPlayerDeath?.Invoke();
         playerAlive = false;
         gameInput.DisableInput();
-        animator.SetTrigger("Dying");
         Debug.Log("Player dies, game ends");
     }
 
@@ -245,6 +247,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         quest.OnQuestCompleted -= RemoveCompletedQuest;
         // Remove the completed quest from the list of open quests.
         openQuests.Remove(quest);
+        OnPlayerWin?.Invoke();
 
         // If there are remaining open quests, set the current quest to the first one in the list.
         if (openQuests.Count > 0) { 
