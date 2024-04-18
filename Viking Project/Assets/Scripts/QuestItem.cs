@@ -10,9 +10,20 @@ public class QuestItem : MonoBehaviour {
     public void SetObjective( ObjectiveSO newObjective ) {
         // Assign the new objective
         objective = newObjective;
+
+        // Set the parent quest of the objective to the quest associated with this quest item's owner (if available)
+        if (objective != null && transform.parent != null) {
+            QuestOwner questOwner = transform.parent.GetComponent<QuestOwner>();
+            if (questOwner != null && questOwner.myQuest != null) {
+                objective.parentQuest = questOwner.myQuest;
+            }
+        }
+
         // Mark the new objective as incomplete
-        newObjective.Completed = false;
-        Debug.Log("State : " + newObjective.Completed);
+        if (objective != null) {
+            objective.Completed = false;
+        }
+
         // If the objective and its waypoint are defined, assign the waypoint to this object's transform
         if (objective != null && objective.waypoint != null) {
             objective.waypoint = transform;
