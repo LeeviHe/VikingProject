@@ -17,6 +17,6 @@ MonoBehaviour:
   minDamage: 25
   maxDamage: 30
   movementSpeed: 3
-  attackCooldown: 5
+  attackCooldown: 4
   attackRange: 2
   aggroRange: 10

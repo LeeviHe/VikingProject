@@ -122,26 +122,31 @@ public class Player : MonoBehaviour, IWeaponParent {
     public void TakeDamage( float damage ) {
         if (playerAlive) {
             //Check if cooldown for taking damage has passed
+
+            //If player is blocking change the damage value based on player weapon blocking power
+            if (currentState == PlayerState.Blocking) {
+                damage /= weapon.blockingPower;
+                Debug.Log("Blocked");
+            }
+            //Substract armor value from damage
+            damage = damage - stats.armor;
+            Debug.Log("Player took " + damage + " dmg");
+
+            //Perform death when health is depleted
             if (Time.time - lastDamageTime >= damageCooldown) {
-                //If player is blocking change the damage value based on player weapon blocking power
-                if (currentState == PlayerState.Blocking) {
-                    damage /= weapon.blockingPower;
-                    Debug.Log("Blocked");
-                }
-                //Substract armor value from damage
-                damage = damage - stats.armor;
-                Debug.Log("Player took " + damage + " dmg");
                 currentHealth -= damage;
                 Debug.Log(currentHealth);
-                //Perform death when health is depleted
-                if (currentHealth <= 0) {
-                    HandleDeath();
-                } else {
-                    animator.SetTrigger("Damage");
-                }
-                //Update last damage time
-                lastDamageTime = Time.time;
+            } else {
+                damage *= 0.2f;
+                currentHealth -= damage;
             }
+            if (currentHealth <= 0) {
+                HandleDeath();
+            } else {
+                animator.SetTrigger("Damage");
+            }
+            //Update last damage time
+            lastDamageTime = Time.time;
         } else {
             Debug.Log("Player already dead");
         }

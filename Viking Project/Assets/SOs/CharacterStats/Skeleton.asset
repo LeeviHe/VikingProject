@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c11d0dd99248440a710e364ee0626f, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 100
   armor: 5
   minDamage: 20
   maxDamage: 25
-  movementSpeed: 6
+  movementSpeed: 4
   attackCooldown: 3
   attackRange: 1.5
   aggroRange: 7
