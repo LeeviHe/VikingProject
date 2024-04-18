@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7096e86fe0d743647825734bf9153f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myQuest: {fileID: 0}
-  questItem: []
-  interactText: Talk with NPC
+  myQuest: {fileID: 11400000, guid: 175c640107d95ed41a4e4eec01198522, type: 2}
+  questItems: []
+  questItemPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  interactText: Take Quest
 --- !u!136 &4456972257735924654
 CapsuleCollider:
   m_ObjectHideFlags: 0

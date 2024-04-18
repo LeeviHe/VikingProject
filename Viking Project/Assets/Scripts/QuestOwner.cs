@@ -6,26 +6,29 @@ public class QuestOwner : MonoBehaviour {
     // The quest associated with this quest owner
     public QuestSO myQuest;
 
-    // List of quest items owned by this quest owner
-    public List<QuestItem> questItem = new List<QuestItem>();
+    // List of pre-assigned quest items for this NPC's quest
+    public List<QuestItem> questItems = new List<QuestItem>();
+    public GameObject questItemPrefab;
+    public Transform spawnPoint;
 
-    // Give the quest to the player
-    public void GiveQuest( Player player ) {
+    // Give the quest to the player and initialize quest items
+    public void GiveQuestToPlayer( Player player ) {
         // Pass the quest to the player to start tracking
         player.ReceiveNewQuest(myQuest);
-
-        // Loop through the quest items
-        for (int i = 0; i < questItem.Count; i++) {
-            // Check if the current quest item has a corresponding objective in the quest
-            if (i < myQuest.clonedObjectives.Count) {
-                // Set the objective for the quest item
-                questItem[i].SetObjective(myQuest.clonedObjectives[i]);
-                Debug.Log("Add cloned objective " + myQuest.clonedObjectives[i] + " to " + questItem[i]);
-            } else {
-                // Log a warning if there are not enough objectives in the quest for all quest items
-                Debug.LogWarning("Not enough objectives in the quest for all quest items.");
-                break;
-            }
+        // Initialize quest items if they haven't been initialized yet
+        questItems.Clear();
+        // Initialize quest items
+        foreach (ObjectiveSO objective in myQuest.objectives) {
+            // Instantiate a new GameObject for each quest objective
+            GameObject questItemGO = Instantiate(questItemPrefab, spawnPoint.position, Quaternion.identity);
+            questItemGO.transform.SetParent(transform);
+            // Get the QuestItem component attached to the newly instantiated GameObject
+            QuestItem questItem = questItemGO.GetComponent<QuestItem>();
+            // Set the objective for the QuestItem
+            questItem.SetObjective(objective);
+            // Add the QuestItem to the list of quest items owned by this quest owner
+            questItems.Add(questItem);
+            Debug.Log("Add quest item " + questItemGO.name + " to NPC's quest");
         }
     }
 }

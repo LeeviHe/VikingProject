@@ -11,11 +11,6 @@ public class ObjectiveSO : ScriptableObject {
     [TextArea]
     public string description;
 
-    // Counter to keep track of the iteration count
-    private static int cloneCounter = 1;
-    void OnEnable() {
-        cloneCounter = 1;
-    }
     //Function for completing a single objective
 
     public void CompleteObjective() {
@@ -29,17 +24,5 @@ public class ObjectiveSO : ScriptableObject {
         } else {
             Debug.LogError("Objective not set to a quest");
         }
-    }
-    public ObjectiveSO Clone() {
-        // Create a new instance of ObjectiveSO
-        ObjectiveSO clone = ScriptableObject.CreateInstance<ObjectiveSO>();
-        // Copy properties from the original ObjectiveSO to the clone
-        clone.required = required;
-        clone.waypoint = waypoint;
-        // Append the iteration count to the description of the clone
-        clone.description = description + " (Clone " + cloneCounter + ")";
-        // Increment the clone counter for the next clone
-        cloneCounter++;
-        return clone;
     }
 }

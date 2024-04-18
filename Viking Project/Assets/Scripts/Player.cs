@@ -258,12 +258,12 @@ public class Player : MonoBehaviour, IWeaponParent {
             // Reset the current quest to null.
             currentQuest = null;
         }
-
+        OnReadyToLeave?.Invoke();
         // Unsubscribe from the OnQuestCompleted event of the completed quest.
         quest.OnQuestCompleted -= RemoveCompletedQuest;
         // Remove the completed quest from the list of open quests.
         openQuests.Remove(quest);
-        OnReadyToLeave?.Invoke();
+        
 
         // If there are remaining open quests, set the current quest to the first one in the list.
         if (openQuests.Count > 0) { 
