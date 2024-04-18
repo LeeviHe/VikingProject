@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     public float screenDelay;
     
 
-    private void Awake() {
+    private void Start() {
         gameState = GameState.Default;
     }
     private void Update() {

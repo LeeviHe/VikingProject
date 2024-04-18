@@ -12,7 +12,7 @@ public class InteractableNPC : QuestOwner, IInteractable {
             //Give quest
             //!!!POLISH!!! Maybe clear NPC myQuest, so the NPC cannot give the same quest multiple times
             Debug.Log("Quest Given");
-            GiveQuestToPlayer(player);
+            GiveQuest(player);
         }
         //Interaction events here
         Debug.Log("Hello there!");
