@@ -53,6 +53,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7660959057372432640}
+  - component: {fileID: 6189994990319373825}
+  - component: {fileID: 1689767482997328312}
   - component: {fileID: -199063091410215100}
   - component: {fileID: 7864305396702981775}
   - component: {fileID: 5685947664758473136}
@@ -85,6 +87,32 @@ Transform:
   - {fileID: 4494274606926571505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6189994990319373825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507574720319617894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d0531ee189f7440b8349d8342f519d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 3057917693017445781}
+--- !u!114 &1689767482997328312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507574720319617894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1a2e3e10c02704a89ffd8fdc817182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: -199063091410215100}
 --- !u!114 &-199063091410215100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97afc4093c6cdea43bd0415d49c5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1689767482997328312}
+  playerAnimations: {fileID: 6189994990319373825}
+  stats: {fileID: 11400000, guid: c713c5a0390e3b94bac837b30a323aed, type: 2}
   timeBetweenHitDetections: 0.2
   gameInput: {fileID: 284135867957438730}
   weaponHoldingPoint: {fileID: 8033730305092556532}
@@ -107,8 +138,6 @@ MonoBehaviour:
     m_Bits: 8
   currentQuest: {fileID: 0}
   openQuests: []
-  stats: {fileID: 11400000, guid: c713c5a0390e3b94bac837b30a323aed, type: 2}
-  playerAnimator: {fileID: 3057917693017445781}
   movementSmoothingSpeed: 7
 --- !u!114 &7864305396702981775
 MonoBehaviour:
@@ -152,7 +181,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -199063091410215100}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: PlayerMovement
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
