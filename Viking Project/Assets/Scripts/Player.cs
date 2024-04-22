@@ -7,6 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using static UnityEngine.EventSystems.EventTrigger;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IWeaponParent {
     public float timeBetweenHitDetections;
@@ -35,10 +36,10 @@ public class Player : MonoBehaviour, IWeaponParent {
     public QuestSO currentQuest; // Active quest for player
     public List<QuestSO> openQuests; //List of all quest set for player
     public PlayerStatsSO stats; //Player stats
-    Animator animator; //Player animator
+    public Animator playerAnimator; //Player animator
 
     private void Awake() {
-        animator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
     }
     private void Start() {
         playerAlive = true;
@@ -48,47 +49,37 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
 
     private Vector3 moveDir;
+    private Vector3 rawInputMovement;
+    private Vector3 smoothInputMovement;
+    [SerializeField] private float movementSmoothingSpeed;
+
     private void Update() {
-        //Debug.Log(currentState);
+        CalculateMovementInputSmoothing();
+        UpdatePlayerMovement();
+        UpdatePlayerAnimationMovement();
+        MovePlayer();
+        TurnPlayer();
+
+        Debug.Log(currentState);
         UpdateHealthUI();
-        //Check input for changing player state
-        if (gameInput.IsBlocking() && weapon != null) {
-            currentState = PlayerState.Blocking;
-        } else if (gameInput.AttackInput() && weapon != null) {
-            nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
-            attackDuration = (nextAttackTime - Time.time);
-            currentState = PlayerState.Attacking;
-        } else if (gameInput.IsMoving()) {
-            currentState = PlayerState.Walking;
-        } else if (gameInput.IsIdle()) {
-            currentState = PlayerState.Idle;
-        }
         if (playerAlive) { 
             HandleState();
         }
-        
+        if (gameInput.IsIdle()) {
+            currentState = PlayerState.Idle;
+        }
     }
     private void HandleState() {
         // Handle logic based on current state
+
         switch (currentState) {
             case PlayerState.Idle:
-                // Trigger idle animation
-                animator.ResetTrigger("Running");
-                animator.ResetTrigger("Block");;
                 break;
-            case PlayerState.Walking:
-                // Trigger walking animation
-                animator.SetTrigger("Running");
-                animator.ResetTrigger("Block");
-                playerMovement();
+            case PlayerState.Moving:
                 break;
             case PlayerState.Blocking:
-                // Trigger blocking animation
-                animator.SetTrigger("Block");
-                animator.ResetTrigger("Running");
                 break;
             case PlayerState.Attacking:
-                Attack();
                 break;
             default:
                 Debug.Log("unhandled state");
@@ -97,28 +88,59 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
 
 
-    private void playerMovement() {
+    public void PlayerMovement( InputAction.CallbackContext value ) {
+        if (currentState != PlayerState.Blocking) { 
+            currentState = PlayerState.Moving;
+        }
         // Get normalized input vector
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector2 inputVector = value.ReadValue<Vector2>();
 
         // Apply skewing transformation for isometric movement
         var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
         var skewedInput = matrix.MultiplyPoint3x4(new Vector3(inputVector.x, 0f, inputVector.y));
 
         // Calculate movement direction in world space
-        moveDir = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
+        rawInputMovement = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
+    }
+    void UpdateMovementData( Vector3 newMovementDirection ) {
+        moveDir = newMovementDirection;
+    }
+    void CalculateMovementInputSmoothing() {
+        smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
 
+    }
+    void UpdatePlayerMovement() {
+        UpdateMovementData(smoothInputMovement);
+    }
+    public void UpdateMovementAnimation( float movementBlendValue ) {
+        playerAnimator.SetFloat("Movement", movementBlendValue);
+    }
+    void UpdatePlayerAnimationMovement() {
+        UpdateMovementAnimation(smoothInputMovement.magnitude);
+    }
+    public void MovePlayer() {
         float moveDistance = stats.movementSpeed * Time.deltaTime;
-        float rotationSpeed = 15f;
-
-
-        if (moveDir != Vector3.zero) {
-            Quaternion targetRotation = Quaternion.LookRotation(-moveDir, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            transform.Translate(moveDir * moveDistance, Space.World);
+        if (currentState == PlayerState.Blocking) {
+            moveDistance *= 0.3f;
         }
+        transform.Translate(moveDir * moveDistance, Space.World);
     }
 
+    public void TurnPlayer() {
+        float rotationSpeed = 10f; 
+        if (moveDir.sqrMagnitude > 0.01f) {
+            Quaternion targetRotation = Quaternion.LookRotation(-moveDir, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+    }
+    public void OnAttack( InputAction.CallbackContext value ) {
+        if (value.started && weapon != null && attackDuration <= 0 && currentState != PlayerState.Blocking) {
+            playerAnimator.SetTrigger("Attack");
+            nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
+            attackDuration = (nextAttackTime - Time.time);
+            StartCoroutine(PerformAttack());
+        }
+    }
     public void TakeDamage( float damage ) {
         if (playerAlive) {
             //Check if cooldown for taking damage has passed
@@ -143,7 +165,7 @@ public class Player : MonoBehaviour, IWeaponParent {
             if (currentHealth <= 0) {
                 HandleDeath();
             } else {
-                animator.SetTrigger("Damage");
+                playerAnimator.SetTrigger("Damage");
             }
             //Update last damage time
             lastDamageTime = Time.time;
@@ -151,16 +173,10 @@ public class Player : MonoBehaviour, IWeaponParent {
             Debug.Log("Player already dead");
         }
     }
-    public void Attack() {
-        StartCoroutine(PerformAttack());
-    }
+
 
     private IEnumerator PerformAttack() {
-        gameInput.DisableInput();
-        animator.speed = 1.0f / attackDuration;
-        //Debug.Log("attack will take : " + attackDuration);
-        animator.ResetTrigger("AttackStopped");
-        animator.SetTrigger("Attack");
+        playerAnimator.speed = 1.0f / attackDuration;
         yield return new WaitForSeconds(attackDuration * 0.8f);
         // Track enemies hit during the entire attack animation
         List<Collider> allHitEnemies = new List<Collider>();
@@ -169,7 +185,6 @@ public class Player : MonoBehaviour, IWeaponParent {
             currentState = PlayerState.Attacking;
             // Detect enemies in attack range
             Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-            //Debug.Log(potentialHitEnemies.Length);
             foreach (Collider enemy in potentialHitEnemies) {
                 if (!allHitEnemies.Contains(enemy)) {
                     // Apply damage to the enemy
@@ -183,15 +198,11 @@ public class Player : MonoBehaviour, IWeaponParent {
                 }
             }
             attackDuration -= Time.deltaTime;
-            // Wait for the next frame
             yield return null;
         }
         Debug.Log("Stop detection");
-        animator.speed = 1f;
-        //These 2 together
-        //Switch animation to idle and allow input
-        gameInput.EnableInput();
-        animator.SetTrigger("AttackStopped");
+        playerAnimator.speed = 1f;
+        currentState = PlayerState.Idle;
     }
     //Visualizing the attack range in the scene view
     void OnDrawGizmosSelected() {
@@ -200,10 +211,16 @@ public class Player : MonoBehaviour, IWeaponParent {
         Gizmos.DrawWireSphere(weaponHoldingPoint.position, weapon.hitRange); 
         }
     }
-    public void Block() {
-        animator.SetTrigger("Block");
-        animator.ResetTrigger("Running");
-        animator.ResetTrigger("Attack");
+    public void OnBlock( InputAction.CallbackContext value ) {
+        if (weapon != null) {
+            if (value.started) {
+                playerAnimator.SetBool("Block", true);
+                currentState = PlayerState.Blocking;
+            } else if (value.canceled) {
+                playerAnimator.SetBool("Block", false);
+                currentState = PlayerState.Idle;
+            }
+        }
     }
 
     //Function to update health bars
@@ -223,7 +240,7 @@ public class Player : MonoBehaviour, IWeaponParent {
 
     //Handle death
     void HandleDeath() {
-        animator.SetTrigger("Dying");
+        playerAnimator.SetTrigger("Dying");
         OnPlayerDeath?.Invoke();
         playerAlive = false;
         gameInput.DisableInput();
