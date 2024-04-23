@@ -17,7 +17,7 @@ public class EnemyNpc : QuestItem {
     [SerializeField] private Slider easeHealthSlider;
     [SerializeField] private Transform weaponHoldingPoint;
     private NavMeshAgent navAgent;
-    private Player player;
+    private PlayerController player;
     private Collider[] withinAggroColliders;
     private float lerpSpeed = 0.01f;
     private bool npcAlive = true;
@@ -44,7 +44,7 @@ public class EnemyNpc : QuestItem {
             //If any aggroLayer object is within range perform ChasePlayer function
             //Only 1 object that is the player is supposed to be detectable as within range
             if (withinAggroColliders.Length > 0) {
-                ChasePlayer(withinAggroColliders[0].GetComponent<Player>());
+                ChasePlayer(withinAggroColliders[0].GetComponent<PlayerController>());
             } else {
                 currentState = EnemyState.Idle;
             }
@@ -124,7 +124,7 @@ public class EnemyNpc : QuestItem {
     }
 
     //Chase function, perform only when within aggro range
-    void ChasePlayer(Player player) {
+    void ChasePlayer(PlayerController player) {
         if (npcAlive) {
             //If npc is alive
             this.player = player;

@@ -5,7 +5,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour {
-    [SerializeField] private Player playerController;
+    [SerializeField] private PlayerController playerController;
     
     [Header("Health Stats")]
     public float currentHealth; //Handle player's health

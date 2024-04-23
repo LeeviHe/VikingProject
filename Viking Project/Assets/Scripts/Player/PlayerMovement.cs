@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] private Player playerController;
+    [SerializeField] private PlayerController playerController;
     private Vector3 moveDir;
     public void UpdateMovementData( Vector3 newMovementDirection ) {
         moveDir = newMovementDirection;

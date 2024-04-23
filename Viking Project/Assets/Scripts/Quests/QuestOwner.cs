@@ -12,7 +12,7 @@ public class QuestOwner : MonoBehaviour {
     public Transform spawnPoint;
 
     // Give the quest to the player and initialize quest items
-    public void GiveQuestToPlayer( Player player ) {
+    public void GiveQuestToPlayer( PlayerController player ) {
         // Pass the quest to the player to start tracking
         player.ReceiveNewQuest(myQuest);
         // Initialize quest items if they haven't been initialized yet

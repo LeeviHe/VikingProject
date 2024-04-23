@@ -25,7 +25,7 @@ public class LootBox : QuestItem, IInteractable {
         }
     }
 
-    public void Interact( Player player ) {
+    public void Interact( PlayerController player ) {
         InteractLootBox();
     }
 

@@ -15,7 +15,7 @@ public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
         Weapon.SpawnWeapon(weaponSO, this, spawnRotation);
     }
 
-    private void InteractWeaponBox( Player player ) {
+    private void InteractWeaponBox( PlayerController player ) {
         //Interact/complete the objective if there is any
         if (objective) { 
             ObjectiveInteraction();
@@ -56,7 +56,7 @@ public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
         return weapon != null;
     }
 
-    public void Interact(Player player) {
+    public void Interact(PlayerController player) {
         InteractWeaponBox(player);
     }
 

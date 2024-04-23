@@ -6,7 +6,7 @@ public class InteractableNPC : QuestOwner, IInteractable {
     [SerializeField] private string interactText;
 
     //Handle interaction with NPC
-    public void Interact(Player player) {
+    public void Interact(PlayerController player) {
         //Check if player doesn't have a quest and that the NPC has a quest to give
         if (!player.currentQuest && myQuest != null) {
             //Give quest

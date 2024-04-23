@@ -11,7 +11,7 @@ public class PlayerInteract : MonoBehaviour {
         // If there is an interactable object
         if (interactable != null) {
             // Call the Interact method of the interactable object, passing the player object
-            interactable.Interact(playerObject.GetComponent<Player>());
+            interactable.Interact(playerObject.GetComponent<PlayerController>());
         }
     }
     // Find and return the interactable object within range
