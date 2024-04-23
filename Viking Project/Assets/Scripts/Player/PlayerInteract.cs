@@ -1,24 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour {
     [SerializeField] private GameObject playerObject;
-    //!!!POLISH!!! Change interact input to new input system
-    void Update() {
-        // Check for input to interact with objects
-        if (Input.GetKeyDown(KeyCode.E)) {
-            // Get the interactable object within range
-            IInteractable interactable = GetInteractableObject();
-            // If there is an interactable object
-            if (interactable != null) {
-                // Call the Interact method of the interactable object, passing the player object
-                interactable.Interact(playerObject.GetComponent<Player>());
-            }
+
+    public void HandleInteract() {
+        IInteractable interactable = GetInteractableObject();
+        // If there is an interactable object
+        if (interactable != null) {
+            // Call the Interact method of the interactable object, passing the player object
+            interactable.Interact(playerObject.GetComponent<Player>());
         }
     }
-
-
     // Find and return the interactable object within range
     public IInteractable GetInteractableObject() {
         // List to store all nearby interactable objects

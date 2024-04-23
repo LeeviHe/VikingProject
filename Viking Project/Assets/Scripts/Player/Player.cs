@@ -9,37 +9,36 @@ public class Player : MonoBehaviour, IWeaponParent {
     [Header("Behaviours")]
     public PlayerMovement playerMovement;
     public PlayerAnimations playerAnimations;
+    public PlayerCombat playerCombat;
+    public PlayerInteract playerInteract;
 
-    public PlayerStatsSO stats; //Player stats
-    public float timeBetweenHitDetections;
-    [SerializeField] private GameInput gameInput;
-    [SerializeField] private Transform weaponHoldingPoint;
+    [Header("Equipped weapon fields")]
+    public Weapon weapon;
+    public Transform weaponHoldingPoint;
+
+    [Header("Health Sliders")]
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
-    public static event Action OnPlayerDeath;
+
+    [Header("States")]
+    public bool isAlive = true;
+    public bool isBlocking = false;
+
+    [Header("Quests")]
+    public QuestSO currentQuest; // Active quest for player
+    public List<QuestSO> openQuests; //List of all quest set for player
+
+    public PlayerStatsSO stats; //Player stats
+    private float nextAttackTime = 0f; //Time when next attack is allowed
+    private float attackDefaultCooldown = 2f;
+    private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
+
     public static event Action OnPlayerWin;
     public static event Action OnQuestActivated;
     public static event Action OnReadyToLeave;
 
-    private Weapon weapon; //Weapon of player
-
-    private float currentHealth; //Handle player's health
-    private float nextAttackTime = 0f; //Time when next attack is allowed
-    private float attackDefaultCooldown = 2f;
-    private float damageCooldown = 2f; // Cooldown duration in seconds
-    private float lastDamageTime; // Time when player last took damage
-    private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
-    private bool playerAlive = true;
-    private bool isBlocking = false;
-    private float attackDuration;
-
-    public LayerMask enemyLayer; // Define the layer for enemy NPCs
-    public QuestSO currentQuest; // Active quest for player
-    public List<QuestSO> openQuests; //List of all quest set for player
-    
     private void Start() {
-        playerAlive = true;
-        currentHealth = stats.maxHealth;
+        isAlive = true;
         UpdateHealthUI();
     }
 
@@ -54,6 +53,12 @@ public class Player : MonoBehaviour, IWeaponParent {
         UpdateHealthUI();
     }
 
+    public void OnInteract( InputAction.CallbackContext value ) {
+        if (value.started) {
+            playerInteract.HandleInteract();
+        }
+    }
+
     public void OnMove( InputAction.CallbackContext value ) {
         // Get normalized input vector
         Vector2 inputVector = value.ReadValue<Vector2>();
@@ -65,93 +70,16 @@ public class Player : MonoBehaviour, IWeaponParent {
         // Calculate movement direction in world space
         rawInputMovement = new Vector3(skewedInput.x, 0f, skewedInput.z).normalized;
     }
-    void CalculateMovementInputSmoothing() {
-        smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
-    }
-    void UpdatePlayerMovement() {
-        playerMovement.UpdateMovementData(smoothInputMovement);
-    }
-    void UpdatePlayerAnimationMovement() {
-        playerAnimations.UpdateMovementAnimation(smoothInputMovement.magnitude);
-    }
+
     public void OnAttack( InputAction.CallbackContext value ) {
-        if (value.started && weapon != null && attackDuration <= 0) {
+        if (value.started && weapon != null && playerCombat.attackDuration <= 0) {
             playerAnimations.PlayAttackAnimation();
             nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
-            attackDuration = (nextAttackTime - Time.time);
-            StartCoroutine(PerformAttack());
+            playerCombat.attackDuration = (nextAttackTime - Time.time);
+            StartCoroutine(playerCombat.PerformAttack());
         }
     }
-    public void TakeDamage( float damage ) {
-        if (playerAlive) {
-            //Check if cooldown for taking damage has passed
-
-            //If player is blocking change the damage value based on player weapon blocking power
-            if (isBlocking) {
-                damage /= weapon.blockingPower;
-                Debug.Log("Blocked");
-            }
-            //Substract armor value from damage
-            damage = damage - stats.armor;
-            Debug.Log("Player took " + damage + " dmg");
-
-            //Perform death when health is depleted
-            if (Time.time - lastDamageTime >= damageCooldown) {
-                currentHealth -= damage;
-                Debug.Log(currentHealth);
-            } else {
-                damage *= 0.2f;
-                currentHealth -= damage;
-            }
-            if (currentHealth <= 0) {
-                HandleDeath();
-            } else {
-                playerAnimations.PlayHitAnimation();
-            }
-            //Update last damage time
-            lastDamageTime = Time.time;
-        } else {
-            Debug.Log("Player already dead");
-        }
-    }
-
-
-    private IEnumerator PerformAttack() {
-        playerAnimations.playerAnimator.speed = 1.0f / attackDuration;
-        yield return new WaitForSeconds(attackDuration * 0.8f);
-        // Track enemies hit during the entire attack animation
-        List<Collider> allHitEnemies = new List<Collider>();
-        Debug.Log("start detection");
-        while (attackDuration > 0) {
-            playerAnimations.playerAnimator.SetBool("Block", false);
-            isBlocking = false;
-            // Detect enemies in attack range
-            Collider[] potentialHitEnemies = Physics.OverlapSphere(weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-            foreach (Collider enemy in potentialHitEnemies) {
-                if (!allHitEnemies.Contains(enemy)) {
-                    // Apply damage to the enemy
-                    if (enemy.GetComponent<EnemyNpc>() != null) {
-                        // Damage dealt is randomly set on each hit, defined between weapon's damage stats
-                        int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-                        Debug.Log("Applied " + damage + " to " + enemy);
-                        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
-                        allHitEnemies.Add(enemy);
-                    }
-                }
-            }
-            attackDuration -= Time.deltaTime;
-            yield return null;
-        }
-        Debug.Log("Stop detection");
-        playerAnimations.playerAnimator.speed = 1f;
-    }
-    //Visualizing the attack range in the scene view
-    void OnDrawGizmosSelected() {
-        if (weapon != null) {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(weaponHoldingPoint.position, weapon.hitRange); 
-        }
-    }
+    
     public void OnBlock( InputAction.CallbackContext value ) {
         if (weapon != null) {
             if (value.started) {
@@ -164,29 +92,32 @@ public class Player : MonoBehaviour, IWeaponParent {
         }
     }
 
+    void CalculateMovementInputSmoothing() {
+        smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
+    }
+
+    void UpdatePlayerMovement() {
+        playerMovement.UpdateMovementData(smoothInputMovement);
+    }
+
+    void UpdatePlayerAnimationMovement() {
+        playerAnimations.UpdateMovementAnimation(smoothInputMovement.magnitude);
+    }
+
     //Function to update health bars
     void UpdateHealthUI() {
         healthSlider.maxValue = stats.maxHealth;
         easeHealthSlider.maxValue = stats.maxHealth;
         //If health value changes, update healthslider to new value
-        if (healthSlider.value != currentHealth) {
-            healthSlider.value = currentHealth;
+        if (healthSlider.value != playerCombat.currentHealth) {
+            healthSlider.value = playerCombat.currentHealth;
         }
         //For nice animation
         if (healthSlider.value != easeHealthSlider.value) {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, healthLerpSpeed);
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, playerCombat.currentHealth, healthLerpSpeed);
         }
     }
 
-
-    //Handle death
-    void HandleDeath() {
-        playerAnimations.PlayDeathAnimation();
-        OnPlayerDeath?.Invoke();
-        playerAlive = false;
-        gameInput.DisableInput();
-        Debug.Log("Player dies, game ends");
-    }
     private void OnTriggerEnter( Collider other ) {
         if (other.gameObject.CompareTag("Finish")) {
             OnPlayerWin?.Invoke();
@@ -195,6 +126,7 @@ public class Player : MonoBehaviour, IWeaponParent {
             Debug.Log("Empty trigger");
         }
     }
+
     // Method for the player to receive a new quest.
     public void ReceiveNewQuest( QuestSO quest ) {
         // Add the quest to the list of open quests.
@@ -210,7 +142,7 @@ public class Player : MonoBehaviour, IWeaponParent {
     }
 
     // Removes a completed quest from the list of open quests.
-    void RemoveCompletedQuest(QuestSO quest) {
+    void RemoveCompletedQuest( QuestSO quest ) {
         // Check if the completed quest is the current quest.
         if (currentQuest == quest) {
             // Reset the current quest to null.
@@ -224,7 +156,7 @@ public class Player : MonoBehaviour, IWeaponParent {
         OnReadyToLeave?.Invoke();
 
         // If there are remaining open quests, set the current quest to the first one in the list.
-        if (openQuests.Count > 0) { 
+        if (openQuests.Count > 0) {
             currentQuest = openQuests[0];
         }
     }
@@ -247,11 +179,10 @@ public class Player : MonoBehaviour, IWeaponParent {
     // Called automatically by Unity when the script instance is disabled.
     void OnDisable() {
         // Unsubscribe from the OnQuestCompleted event of all open quests.
-        foreach (QuestSO quest in openQuests) { 
+        foreach (QuestSO quest in openQuests) {
             quest.OnQuestCompleted -= RemoveCompletedQuest;
         }
-}
-
+    }
     public Transform GetWeaponFollowTransform() {
         return weaponHoldingPoint;
     }

@@ -98,7 +98,7 @@ public class EnemyNpc : QuestItem {
         foreach (Collider playerCollider in potentialHitPlayers) {
             if (!hitPlayers.Contains(playerCollider)) {
                 // If player hasn't been hit, apply damage and mark as hit
-                playerCollider.GetComponent<Player>().TakeDamage(damage);
+                playerCollider.GetComponent<PlayerCombat>().TakeDamage(damage);
                 hitPlayers.Add(playerCollider);
             }
         }

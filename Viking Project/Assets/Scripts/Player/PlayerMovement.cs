@@ -4,7 +4,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public Player playerController;
+    [SerializeField] private Player playerController;
     private Vector3 moveDir;
     public void UpdateMovementData( Vector3 newMovementDirection ) {
         moveDir = newMovementDirection;
@@ -14,8 +14,10 @@ public class PlayerMovement : MonoBehaviour {
         TurnPlayer();
     }
     public void MovePlayer() {
-        float moveDistance = playerController.stats.movementSpeed * Time.deltaTime;
-        transform.Translate(moveDir * moveDistance, Space.World);
+        if (!playerController.isBlocking) {
+            float moveDistance = playerController.stats.movementSpeed * Time.deltaTime;
+            transform.Translate(moveDir * moveDistance, Space.World);
+        }
     }
 
     public void TurnPlayer() {
