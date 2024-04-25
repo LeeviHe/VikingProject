@@ -55,14 +55,14 @@ public class GameManager : MonoBehaviour {
     }
     private void OnEnable() {
         PlayerCombat.OnPlayerDeath += OnPlayerDeath;
-        PlayerController.OnPlayerWin += OnPlayerWin;
+        //PlayerController.OnPlayerWin += OnPlayerWin;
         PlayerController.OnQuestActivated += OnQuestActivated;
         PlayerController.OnReadyToLeave += OnReadyToLeave;
     }
 
     private void OnDestroy() {
         PlayerCombat.OnPlayerDeath -= OnPlayerDeath;
-        PlayerController.OnPlayerWin -= OnPlayerWin;
+        //PlayerController.OnPlayerWin -= OnPlayerWin;
         PlayerController.OnQuestActivated -= OnQuestActivated;
         PlayerController.OnReadyToLeave -= OnReadyToLeave;
     }

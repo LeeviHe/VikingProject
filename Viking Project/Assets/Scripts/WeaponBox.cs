@@ -1,41 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
-
-    [SerializeField] private Transform boxHoldingPoint; // The transform where the weapon is set on the object
-    [SerializeField] private WeaponSO weaponSO; // The ScriptableObject representing the weapon properties
-    private Weapon weapon; //Reference to the spawned weapon
-    Quaternion spawnRotation;
-
-    //Spawn the weapon on the boxholdingpoint on initialize
-    private void Start() {
-        spawnRotation = weaponSO.prefab.transform.rotation;
-        Weapon.SpawnWeapon(weaponSO, this, spawnRotation);
-    }
-
+public class WeaponBox : MonoBehaviour, IInteractable {
+    [SerializeField] private List<Weapon> weaponsList = new List<Weapon>();
     private void InteractWeaponBox( PlayerController player ) {
         //Interact/complete the objective if there is any
-        if (objective) { 
-            ObjectiveInteraction();
+        Debug.Log("Available weapons in the box:");
+        for (int i = 0; i < weaponsList.Count; i++) {
+            Debug.Log((i + 1) + ". " + weaponsList[i].weaponSO.objectName);
         }
-        //Check if weaponBox has a weapon
-        if (HasWeapon()) {
-            //Player is carrying weapon
+        int choice = GetPlayerChoice();
+        if (choice > 0 && choice <= weaponsList.Count) {
+            Weapon chosenSlot = weaponsList[choice - 1];
             if (player.HasWeapon()) {
                 //Clear old weapon
                 player.GetWeapon().DestroySelf();
             }
-        // Spawn weapon on player
-        Weapon.SpawnWeapon(weaponSO, player, spawnRotation);
+            // Set player's weapon as the chosen weapon
+            player.SetWeapon(chosenSlot);
+            Debug.Log("player took " + chosenSlot);
+            PlayerData.Instance.UpdateWeapon(chosenSlot);
+            Weapon.SpawnWeapon(chosenSlot.weaponSO, player, chosenSlot.weaponSO.prefab.transform.rotation);
         }
     }
 
-    public void ClearWeapon() {
-        weapon = null;
+    private int GetPlayerChoice() {
+        // Implement a method to get player's choice, e.g., using input
+        // For simplicity, return 1 for now
+        return 1;
     }
-
     public string GetInteractText() {
         return "Pick up weapon";
     }
@@ -44,23 +39,7 @@ public class WeaponBox : QuestItem, IWeaponParent, IInteractable {
         return transform;
     }
 
-    public Weapon GetWeapon() {
-        return weapon;
-    }
-
-    public Transform GetWeaponFollowTransform() {
-        return boxHoldingPoint;
-    }
-
-    public bool HasWeapon() {
-        return weapon != null;
-    }
-
     public void Interact(PlayerController player) {
         InteractWeaponBox(player);
-    }
-
-    public void SetWeapon( Weapon weapon ) {
-        this.weapon = weapon;
     }
 }

@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     public void MovePlayer() {
         if (!playerController.isBlocking) {
-            float moveDistance = playerController.stats.movementSpeed * Time.deltaTime;
+            float moveDistance = playerController.currentMoveSpeed * Time.deltaTime;
             transform.Translate(moveDir * moveDistance, Space.World);
         }
     }

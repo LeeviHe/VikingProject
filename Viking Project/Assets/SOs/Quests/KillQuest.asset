@@ -17,6 +17,3 @@ MonoBehaviour:
   objectives:
   - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
   - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
-  clonedObjectives:
-  - {fileID: 0}
-  - {fileID: 0}

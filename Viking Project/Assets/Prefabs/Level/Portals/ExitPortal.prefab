@@ -57,7 +57,9 @@ PrefabInstance:
       value: ExitPortal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6655565670970556640, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+    - {fileID: 2350499025131829836, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9155765363777273273, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}

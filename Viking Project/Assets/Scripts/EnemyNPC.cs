@@ -25,8 +25,6 @@ public class EnemyNpc : QuestItem {
     [SerializeField] private Animator animator;
     EnemyState currentState;
 
-    private bool inAttackRange = false;
-
     //Assign navAgent to be NavMeshAgent component of this enemy instance, and assign NPC stats
     void Start() {
         currentState = EnemyState.Idle;
@@ -135,14 +133,12 @@ public class EnemyNpc : QuestItem {
             //!!!POLISH!!! See if there is a cleaner and more fitting way to do this
             if (navAgent.remainingDistance <= navAgent.stoppingDistance) {
                 //In Attack Range
-                inAttackRange = true;
                 //Check if already invoking attack
                 if (!IsInvoking("EnemyAttack")) {
                     InvokeRepeating("EnemyAttack", .1f, enemyStats.attackCooldown);
                 }
             } else {
                 //No longer in attack range
-                inAttackRange = false;
                 //Canvel attack invoking
                 CancelInvoke("EnemyAttack");
             }
@@ -157,7 +153,6 @@ public class EnemyNpc : QuestItem {
     void Die() {
         Debug.Log("NPC died");
         npcAlive = false;
-        inAttackRange = false;
         animator.SetTrigger("Dying");
         animator.ResetTrigger("Running");
         animator.ResetTrigger("Attack");

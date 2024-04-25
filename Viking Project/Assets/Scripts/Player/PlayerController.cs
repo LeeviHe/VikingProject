@@ -6,17 +6,19 @@ using System;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IWeaponParent {
+    [SerializeField] private BlessingSO testBlessing;
     [Header("Behaviours")]
     public PlayerMovement playerMovement;
     public PlayerAnimations playerAnimations;
     public PlayerCombat playerCombat;
     public PlayerInteract playerInteract;
-
     [Header("Equipped weapon fields")]
     public Weapon weapon;
     public Transform weaponHoldingPoint;
 
     [Header("Health Sliders")]
+    public float currentHealth; //Handle player's health
+    public float currentMoveSpeed;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
 
@@ -33,13 +35,17 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private float attackDefaultCooldown = 2f;
     private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
 
-    public static event Action OnPlayerWin;
+    //public static event Action OnPlayerWin;
     public static event Action OnQuestActivated;
     public static event Action OnReadyToLeave;
 
     private void Start() {
         isAlive = true;
+        UpdatePlayerObject();
         UpdateHealthUI();
+        if (weapon) { 
+            Weapon.SpawnWeapon(weapon.weaponSO, this, weapon.weaponSO.prefab.transform.rotation);
+        }
     }
 
     private Vector3 rawInputMovement;
@@ -47,6 +53,9 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            EquipBlessing(testBlessing);
+        }
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
@@ -83,7 +92,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             StartCoroutine(playerCombat.PerformAttack());
         }
     }
-    
+
     public void OnBlock( InputAction.CallbackContext value ) {
         if (weapon != null) {
             if (value.started) {
@@ -95,7 +104,33 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             }
         }
     }
+    public void EquipBlessing( BlessingSO blessing ) {
+        // Remove effects of previously equipped blessing (if any)
+        RemoveBlessingEffects();
+        // Apply new blessing effects
+        blessing.ApplyBlessing(this);
+        PlayerData.Instance.UpdateBlessing(blessing);
+    }
 
+    public void ModifyMovementSpeed( float modifier ) {
+        float newActiveMoveSpeed = stats.movementSpeed;
+        newActiveMoveSpeed += modifier;
+        PlayerData.Instance.UpdateSpeed(newActiveMoveSpeed);
+        currentMoveSpeed = newActiveMoveSpeed;
+    }
+
+    public void ModifyHealth( int modifier ) {
+        float newActiveMaxHealth = stats.maxHealth;
+        newActiveMaxHealth += modifier;
+        PlayerData.Instance.UpdateHealth(newActiveMaxHealth);
+        currentHealth = newActiveMaxHealth;
+    }
+
+    private void RemoveBlessingEffects() {
+        // Reset stats to base values
+        currentMoveSpeed = stats.movementSpeed;
+        currentHealth = stats.maxHealth;
+    }
     void CalculateMovementInputSmoothing() {
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
     }
@@ -108,26 +143,37 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         playerAnimations.UpdateMovementAnimation(smoothInputMovement.magnitude);
     }
 
+    // Method to update the player object with data from PlayerData script
+    private void UpdatePlayerObject() {
+        PlayerData playerData = PlayerData.Instance;
+        // Update player's weapon
+        weapon = playerData.weapon;
+        // Update player's quests
+        openQuests = playerData.openQuests;
+
+        currentQuest = playerData.currentQuest;
+
+        // Update player's blessing
+        // playerObject.blessing = playerData.blessing;
+
+        // Update player's health
+        currentHealth = playerData.activeMaxHealth;
+
+        currentMoveSpeed = playerData.activeSpeed;
+
+    }
+
     //Function to update health bars
     void UpdateHealthUI() {
-        healthSlider.maxValue = stats.maxHealth;
-        easeHealthSlider.maxValue = stats.maxHealth;
+        healthSlider.maxValue = currentHealth;
+        easeHealthSlider.maxValue = currentHealth;
         //If health value changes, update healthslider to new value
-        if (healthSlider.value != playerCombat.currentHealth) {
-            healthSlider.value = playerCombat.currentHealth;
+        if (healthSlider.value != currentHealth) {
+            healthSlider.value = currentHealth;
         }
         //For nice animation
         if (healthSlider.value != easeHealthSlider.value) {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, playerCombat.currentHealth, healthLerpSpeed);
-        }
-    }
-
-    private void OnTriggerEnter( Collider other ) {
-        if (other.gameObject.CompareTag("Finish")) {
-            OnPlayerWin?.Invoke();
-            //gameObject.SetActive(false);
-        } else {
-            Debug.Log("Empty trigger");
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, healthLerpSpeed);
         }
     }
 
@@ -135,12 +181,13 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public void ReceiveNewQuest( QuestSO quest ) {
         // Add the quest to the list of open quests.
         openQuests.Add(quest);
+        PlayerData.Instance.UpdateQuests(openQuests);
         // Activate the quest.
         quest.active = true;
         OnQuestActivated?.Invoke();
         // Set the current quest to the received quest.
         currentQuest = quest;
-
+        PlayerData.Instance.UpdateCurrentQuest(quest);
         // Subscribe to the OnQuestCompleted event of the received quest.
         quest.OnQuestCompleted += RemoveCompletedQuest;
     }
@@ -157,11 +204,14 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         quest.OnQuestCompleted -= RemoveCompletedQuest;
         // Remove the completed quest from the list of open quests.
         openQuests.Remove(quest);
+        PlayerData.Instance.UpdateQuests(openQuests);
         OnReadyToLeave?.Invoke();
+
 
         // If there are remaining open quests, set the current quest to the first one in the list.
         if (openQuests.Count > 0) {
             currentQuest = openQuests[0];
+            PlayerData.Instance.UpdateCurrentQuest(openQuests[0]);
         }
     }
 

@@ -8,7 +8,6 @@ public class PlayerCombat : MonoBehaviour {
     [SerializeField] private PlayerController playerController;
     
     [Header("Health Stats")]
-    public float currentHealth; //Handle player's health
     private float lastDamageTime; // Time when player last took damage
     private float damageCooldown = 2f; // Cooldown duration in seconds
     [Header("Weapon fields")]
@@ -18,9 +17,6 @@ public class PlayerCombat : MonoBehaviour {
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
 
     public static event Action OnPlayerDeath;
-    private void Awake() {
-        currentHealth = playerController.stats.maxHealth;
-    }
 
     private void LateUpdate() {
         weapon = playerController.weapon;
@@ -77,16 +73,17 @@ public class PlayerCombat : MonoBehaviour {
 
             //Perform death when health is depleted
             if (Time.time - lastDamageTime >= damageCooldown) {
-                currentHealth -= damage;
-                Debug.Log(currentHealth);
+                playerController.currentHealth -= damage;
+                Debug.Log(playerController.currentHealth);
             } else {
                 damage *= 0.2f;
-                currentHealth -= damage;
+                playerController.currentHealth -= damage;
             }
-            if (currentHealth <= 0) {
+            if (playerController.currentHealth <= 0) {
                 HandleDeath(playerController.playerAnimations);
             } else {
                 playerController.playerAnimations.PlayHitAnimation();
+                //PlayerData.Instance.UpdateHealth(playerController.currentHealth);
             }
             //Update last damage time
             lastDamageTime = Time.time;

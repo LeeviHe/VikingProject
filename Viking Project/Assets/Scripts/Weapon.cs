@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    [SerializeField] private WeaponSO weaponSO; // The SO representing this weapon's values
+    public WeaponSO weaponSO; // The SO representing this weapon's values
     private IWeaponParent weaponParent; // Reference to the parent object (e.g., player's hand)
     [HideInInspector] public int minDamage;
     [HideInInspector] public int maxDamage;
@@ -19,34 +19,15 @@ public class Weapon : MonoBehaviour {
         attackSpeed = weaponSO.attackSpeed;
         blockingPower = weaponSO.blockingPower;
     }
-    // Get the WeaponSO associated with this weapon
-    public WeaponSO GetWeaponSO() { 
-        return weaponSO;
-    }
+
     //!!!POLISH!!! Questionable functionality
     //Set Weapon to a parent object (players hand)
     public void SetWeaponParent( IWeaponParent weaponParent ) {
-        // Clear the weapon from the previous parent (if any)
-        if (this.weaponParent != null) {
-            this.weaponParent.ClearWeapon();
-        }
         //Set the new parent (hand) for the weapon
         this.weaponParent = weaponParent;
-
-        // If parent doesn't have a weapon, attach the weapon to the new parent's follow transform
-        if (!weaponParent.HasWeapon()) {
-            weaponParent.SetWeapon(this);
-            transform.parent = weaponParent.GetWeaponFollowTransform();
-            transform.localPosition = Vector3.zero;
-        } else {
-            // Log an error if the parent already has a weapon
-            Debug.Log("IWeaponParent already has a WeaponParent");
-        }
-    }
-
-    // Get the parent object of the weapon
-    public IWeaponParent GetWeaponParent() {
-        return weaponParent;
+        weaponParent.SetWeapon(this);
+        transform.parent = weaponParent.GetWeaponFollowTransform();
+        transform.localPosition = Vector3.zero;
     }
 
     // Destroy the weapon object
@@ -65,7 +46,6 @@ public class Weapon : MonoBehaviour {
         Weapon weapon = weaponTransform.GetComponent<Weapon>();
         // Set the weapon's parent
         weapon.SetWeaponParent(weaponParent);
-
         weaponTransform.localRotation = rotation;
         return weapon;
     }
