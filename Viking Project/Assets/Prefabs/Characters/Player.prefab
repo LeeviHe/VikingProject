@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: -199063091410215100}
-  playerRigidBody: {fileID: 0}
 --- !u!114 &7864305396702981775
 MonoBehaviour:
   m_ObjectHideFlags: 0
