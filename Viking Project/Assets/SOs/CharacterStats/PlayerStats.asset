@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d655fe11ac37a442959165f6dc9fdcf, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  maxHealth: 125
-  armor: 10
+  maxHealth: 100
+  armor: 0
   movementSpeed: 5

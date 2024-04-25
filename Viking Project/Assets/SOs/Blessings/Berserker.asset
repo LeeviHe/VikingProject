@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Berserker
   m_EditorClassIdentifier: 
   blessingName: Berserker
-  movementSpeedModifier: -3
-  healthModifier: 0
+  movementSpeedModifier: -1
+  healthModifier: 10
   hasSpecialAbility: 1

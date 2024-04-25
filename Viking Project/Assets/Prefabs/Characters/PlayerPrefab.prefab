@@ -98,12 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b53a05cde0ca3a4fa3ed682e6243023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testBlessing: {fileID: 11400000, guid: 5f8bdbf686b1755439046a2fdf8532f5, type: 2}
+  testBlessing: {fileID: 0}
   playerMovement: {fileID: 1689767482997328312}
   playerAnimations: {fileID: 8547043213802683963}
   playerCombat: {fileID: 1992507361934904343}
   playerInteract: {fileID: 7864305396702981775}
-  playerData: {fileID: 0}
   weapon: {fileID: 0}
   weaponHoldingPoint: {fileID: 8033730305092556532}
   currentHealth: 0

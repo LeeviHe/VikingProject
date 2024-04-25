@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public static event Action OnReadyToLeave;
 
     private void Start() {
+
         isAlive = true;
         UpdatePlayerObject();
         UpdateHealthUI();
@@ -53,17 +54,17 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        /*if (Input.GetKeyDown(KeyCode.R)) {
             EquipBlessing(testBlessing);
-        }
+        }*/
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
             UpdatePlayerAnimationMovement();
-            UpdateHealthUI();
         } else { 
             playerAnimations.enabled = false;
         }
+        UpdateHealthUI();
     }
 
     public void OnInteract( InputAction.CallbackContext value ) {
@@ -104,12 +105,12 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             }
         }
     }
-    public void EquipBlessing( BlessingSO blessing ) {
+    public void EquipBlessing( BlessingSO blessingSO ) {
         // Remove effects of previously equipped blessing (if any)
         RemoveBlessingEffects();
         // Apply new blessing effects
-        blessing.ApplyBlessing(this);
-        PlayerData.Instance.UpdateBlessing(blessing);
+        blessingSO.ApplyBlessing(this);
+        PlayerData.Instance.UpdateBlessing(blessingSO);
     }
 
     public void ModifyMovementSpeed( float modifier ) {
@@ -165,8 +166,9 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     //Function to update health bars
     void UpdateHealthUI() {
-        healthSlider.maxValue = currentHealth;
-        easeHealthSlider.maxValue = currentHealth;
+        PlayerData playerData = PlayerData.Instance;
+        healthSlider.maxValue = playerData.activeMaxHealth;
+        easeHealthSlider.maxValue = playerData.activeMaxHealth;
         //If health value changes, update healthslider to new value
         if (healthSlider.value != currentHealth) {
             healthSlider.value = currentHealth;

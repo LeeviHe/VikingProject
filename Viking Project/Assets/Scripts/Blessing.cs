@@ -10,7 +10,14 @@ public class Blessing : MonoBehaviour {
         RemoveBlessingEffects(player);
 
         // Apply new blessing effects
-        blessingSO.ApplyBlessing(player, this);
+        blessingSO.ApplyBlessing(player);
+        PlayerData.Instance.UpdateBlessing(blessingSO);
+    }
+    public void EquipBlessing( BlessingSO blessingSO ) {
+        // Remove effects of previously equipped blessing (if any)
+        RemoveBlessingEffects();
+        // Apply new blessing effects
+        blessingSO.ApplyBlessing(this);
         PlayerData.Instance.UpdateBlessing(blessingSO);
     }
     public void ModifyStat( float stat, float modifier ) {
@@ -21,4 +28,4 @@ public class Blessing : MonoBehaviour {
         player.currentMoveSpeed = player.stats.movementSpeed;
         player.currentHealth = player.stats.maxHealth;
     }
-}**/
+}*/
