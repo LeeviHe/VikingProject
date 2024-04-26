@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.InputSystem;
+using UnityEditor.Rendering.LookDev;
 
 public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private BlessingSO testBlessing;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [Header("States")]
     public bool isAlive = true;
     public bool isBlocking = false;
+    public bool isFightMode = false;
 
     [Header("Quests")]
     public QuestSO currentQuest; // Active quest for player
@@ -44,24 +46,22 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         isAlive = true;
         UpdatePlayerObject();
         UpdateHealthUI();
-        if (weapon) { 
+        if (weapon) {
             Weapon.SpawnWeapon(weapon.weaponSO, this, weapon.weaponSO.prefab.transform.rotation);
         }
     }
 
     private Vector3 rawInputMovement;
     private Vector3 smoothInputMovement;
+    private Vector2 lookInput;
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
-        /*if (Input.GetKeyDown(KeyCode.R)) {
-            EquipBlessing(testBlessing);
-        }*/
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
             UpdatePlayerAnimationMovement();
-        } else { 
+        } else {
             playerAnimations.enabled = false;
         }
         UpdateHealthUI();
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     public void OnAttack( InputAction.CallbackContext value ) {
-        if (value.started && weapon != null && playerCombat.attackDuration <= 0) {
+        if (value.started && weapon != null && playerCombat.attackDuration <= 0 && isFightMode) {
             playerAnimations.PlayAttackAnimation();
             nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
             playerCombat.attackDuration = (nextAttackTime - Time.time);
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     public void OnBlock( InputAction.CallbackContext value ) {
-        if (weapon != null) {
+        if (weapon != null && isFightMode) {
             if (value.started) {
                 playerAnimations.PlayBlockAnimation(true);
                 isBlocking = true;
@@ -104,6 +104,34 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
                 isBlocking = false;
             }
         }
+    }
+    public void OnLook( InputAction.CallbackContext value ) {
+        lookInput = value.ReadValue<Vector2>();
+    }
+
+    public void OnToggleFightMode( InputAction.CallbackContext value ) {
+        if (value.started) {
+            isFightMode = !isFightMode;
+
+            if (isFightMode) {
+                EnterFightMode();
+            } else {
+                ExitFightMode();
+            }
+        }
+        
+    }
+    private void EnterFightMode() {
+        // Perform actions to enter fight mode
+        Debug.Log("Entered Fight Mode");
+        currentMoveSpeed *= 0.5f;
+    }
+
+    // Method to handle exiting fight mode
+    private void ExitFightMode() {
+        // Perform actions to exit fight mode
+        Debug.Log("Exited Fight Mode");
+        currentMoveSpeed /= 0.5f;
     }
     public void EquipBlessing( BlessingSO blessingSO ) {
         // Remove effects of previously equipped blessing (if any)
@@ -137,7 +165,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     void UpdatePlayerMovement() {
-        playerMovement.UpdateMovementData(smoothInputMovement);
+        playerMovement.UpdateMovementData(smoothInputMovement, lookInput);
     }
 
     void UpdatePlayerAnimationMovement() {

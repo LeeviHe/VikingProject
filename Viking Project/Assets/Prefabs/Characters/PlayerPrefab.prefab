@@ -103,7 +103,7 @@ MonoBehaviour:
   playerAnimations: {fileID: 8547043213802683963}
   playerCombat: {fileID: 1992507361934904343}
   playerInteract: {fileID: 7864305396702981775}
-  weapon: {fileID: 0}
+  weapon: {fileID: 1792399191134507646, guid: 94fbef19f62407848bf47005834f255e, type: 3}
   weaponHoldingPoint: {fileID: 8033730305092556532}
   currentHealth: 0
   currentMoveSpeed: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   easeHealthSlider: {fileID: 7575906131931860261}
   isAlive: 1
   isBlocking: 0
+  isFightMode: 0
   currentQuest: {fileID: 0}
   openQuests: []
   stats: {fileID: 11400000, guid: c713c5a0390e3b94bac837b30a323aed, type: 2}
@@ -247,6 +248,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 147f2ae9-5ae9-49a6-abef-82ac5b13c807
     m_ActionName: Player/Interact[/DualShock4GamepadHID/buttonWest,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 68df6850-4bf3-4c2a-b5ef-1e153909b908
+    m_ActionName: Player/Look[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -199063091410215100}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnToggleFightMode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c3afd22-bb2f-4393-8f3c-44a2ca7d5ea9
+    m_ActionName: Player/FightMode[/Keyboard/leftCtrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
