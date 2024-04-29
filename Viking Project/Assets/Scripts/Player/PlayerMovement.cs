@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour {
     public void UpdateMovementData( Vector3 newMovementDirection, Vector2 lookDirection ) {
         moveDir = newMovementDirection;
         lookDir = lookDirection;
-        Debug.Log(lookDir);
     }
     private void Update() {
         MovePlayer();

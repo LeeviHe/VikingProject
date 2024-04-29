@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEditor.Rendering.LookDev;
 
 public class PlayerController : MonoBehaviour, IWeaponParent {
-    [SerializeField] private BlessingSO testBlessing;
+    
     [Header("Behaviours")]
     public PlayerMovement playerMovement;
     public PlayerAnimations playerAnimations;
@@ -16,7 +16,10 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [Header("Equipped weapon fields")]
     public Weapon weapon;
     public Transform weaponHoldingPoint;
-
+    public BlessingSO currentBlessing;
+    // Spawn point of ability 
+    // CHANGE!!
+    public Transform abilityOrigin;
     [Header("Health Sliders")]
     public float currentHealth; //Handle player's health
     public float currentMoveSpeed;
@@ -57,6 +60,9 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.G)) {
+            ActivateSpecialAbility();
+        }
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
@@ -66,7 +72,12 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         }
         UpdateHealthUI();
     }
-
+    private void ActivateSpecialAbility() {
+        if (currentBlessing != null && currentBlessing.specialAbilities.Length > 0) {
+            // Activate the special ability associated with the current blessing
+            currentBlessing.specialAbilities[0].ActivateAbility(abilityOrigin);
+        }
+    }
     public void OnInteract( InputAction.CallbackContext value ) {
         if (value.started) {
             playerInteract.HandleInteract();
@@ -136,6 +147,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public void EquipBlessing( BlessingSO blessingSO ) {
         // Remove effects of previously equipped blessing (if any)
         RemoveBlessingEffects();
+        currentBlessing = blessingSO;
         // Apply new blessing effects
         blessingSO.ApplyBlessing(this);
         PlayerData.Instance.UpdateBlessing(blessingSO);

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEditor.Experimental.GraphView;
 
 
 //Take QuestItem interaction to use here, 
@@ -16,11 +17,13 @@ public class EnemyNpc : QuestItem {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
     [SerializeField] private Transform weaponHoldingPoint;
+    public SpellSO activeSpell;
     private NavMeshAgent navAgent;
     private PlayerController player;
     private Collider[] withinAggroColliders;
     private float lerpSpeed = 0.01f;
     private bool npcAlive = true;
+    public bool coroutineStarted = false;
     float currentHealth;
     [SerializeField] private Animator animator;
     EnemyState currentState;
@@ -36,6 +39,15 @@ public class EnemyNpc : QuestItem {
 
     //FixedUpdate or normal update? Check performance
     public void Update() {
+        if (activeSpell != null) {
+            FireballSO fireballSpell = activeSpell as FireballSO; // Assuming Fireball is a type of SpellSO
+            if (fireballSpell != null && !coroutineStarted) {
+                StartCoroutine(fireballSpell.Burn(this));
+                coroutineStarted = true;
+            }
+        } else {
+            coroutineStarted = false;
+        }
         if (npcAlive) { 
             //Set Aggro area with NPC aggro value and layer that is to be aggroed (player)
             withinAggroColliders = Physics.OverlapSphere(transform.position, enemyStats.aggroRange, aggroLayerMask);

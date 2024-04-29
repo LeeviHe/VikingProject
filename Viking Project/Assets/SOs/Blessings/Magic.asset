@@ -15,4 +15,5 @@ MonoBehaviour:
   blessingName: Magick
   movementSpeedModifier: 0
   healthModifier: -25
-  hasSpecialAbility: 1
+  specialAbilities:
+  - {fileID: 11400000, guid: 5ef64c6625d6f464ba53b991242b8348, type: 2}
