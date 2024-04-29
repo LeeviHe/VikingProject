@@ -135,3 +135,4 @@ MonoBehaviour:
   maxDamage: 0
   hitRange: 0
   attackSpeed: 0
+  blockingPower: 0

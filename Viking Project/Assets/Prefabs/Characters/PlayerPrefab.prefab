@@ -105,7 +105,7 @@ MonoBehaviour:
   playerInteract: {fileID: 7864305396702981775}
   weapon: {fileID: 1792399191134507646, guid: 94fbef19f62407848bf47005834f255e, type: 3}
   weaponHoldingPoint: {fileID: 8033730305092556532}
-  currentBlessing: {fileID: 11400000, guid: 5f8bdbf686b1755439046a2fdf8532f5, type: 2}
+  currentBlessing: {fileID: 0}
   abilityOrigin: {fileID: 3144889396278254992}
   currentHealth: 0
   currentMoveSpeed: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: -199063091410215100}
+  attackAnimation: {fileID: 0}
+  weapon: {fileID: 0}
+  weaponObject: {fileID: 0}
   attackDuration: 0
   enemyLayer:
     serializedVersion: 2

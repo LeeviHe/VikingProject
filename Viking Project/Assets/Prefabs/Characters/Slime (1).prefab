@@ -57,6 +57,8 @@ MonoBehaviour:
   healthSlider: {fileID: 8072286659045810439}
   easeHealthSlider: {fileID: 4594408167875946445}
   weaponHoldingPoint: {fileID: 4671555627537925959}
+  activeSpell: {fileID: 0}
+  coroutineStarted: 0
   animator: {fileID: 8422734207435584756}
 --- !u!195 &1993297424261481154
 NavMeshAgent:

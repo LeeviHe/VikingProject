@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour {
     [SerializeField] private PlayerController playerController;
-    
+    [SerializeField] private AnimationClip attackAnimation;
+
     [Header("Health Stats")]
     private float lastDamageTime; // Time when player last took damage
     private float damageCooldown = 2f; // Cooldown duration in seconds
     [Header("Weapon fields")]
-    private Weapon weapon; //Weapon of player
+    public Weapon weapon; //Weapon of player
+    public GameObject weaponObject;
     public float attackDuration;
     [Header("Enemy layer")]
     public LayerMask enemyLayer; // Define the layer for enemy NPCs
@@ -20,6 +22,9 @@ public class PlayerCombat : MonoBehaviour {
 
     private void LateUpdate() {
         weapon = playerController.weapon;
+        if (weapon) {
+            weaponObject = weapon.gameObject;
+        }
     }
 
     public IEnumerator PerformAttack() {

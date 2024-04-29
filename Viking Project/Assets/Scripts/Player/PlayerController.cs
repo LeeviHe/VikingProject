@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.G)) {
             ActivateSpecialAbility();
+            playerAnimations.playerAnimator.Play("Attack");
         }
         if (isAlive) {
             CalculateMovementInputSmoothing();
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private void EnterFightMode() {
         // Perform actions to enter fight mode
         Debug.Log("Entered Fight Mode");
+        playerAnimations.SwitchAttackModeAnimation();
         currentMoveSpeed *= 0.5f;
     }
 
@@ -142,6 +144,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private void ExitFightMode() {
         // Perform actions to exit fight mode
         Debug.Log("Exited Fight Mode");
+        playerAnimations.SwitchAttackModeAnimation();
         currentMoveSpeed /= 0.5f;
     }
     public void EquipBlessing( BlessingSO blessingSO ) {
@@ -195,7 +198,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         currentQuest = playerData.currentQuest;
 
         // Update player's blessing
-        // playerObject.blessing = playerData.blessing;
+        currentBlessing = playerData.blessing;
 
         // Update player's health
         currentHealth = playerData.activeMaxHealth;
