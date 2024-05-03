@@ -5,32 +5,29 @@ using UnityEngine;
 
 public class WeaponBox : MonoBehaviour, IInteractable {
     [SerializeField] private List<Weapon> weaponsList = new List<Weapon>();
-    private void InteractWeaponBox( PlayerController player ) {
-        //Interact/complete the objective if there is any
-        Debug.Log("Available weapons in the box:");
-        for (int i = 0; i < weaponsList.Count; i++) {
-            Debug.Log((i + 1) + ". " + weaponsList[i].weaponSO.objectName);
-        }
-        int choice = GetPlayerChoice();
-        if (choice > 0 && choice <= weaponsList.Count) {
-            Weapon chosenSlot = weaponsList[choice - 1];
-            if (player.HasWeapon()) {
-                //Clear old weapon
-                player.GetWeapon().DestroySelf();
+    public UIElementManager uiElementManager;
+    public PlayerController playerController;
+
+    private void InteractWeaponBox() {
+        uiElementManager.ToggleScreen(uiElementManager.weaponSelectorUI);
+    }
+
+    public void EquipWeapon( int weaponIteration ) {
+        if (!playerController) {
+            Debug.Log("Issue with playerController detection");
+        } else { 
+            if (playerController.HasWeapon()) {
+                playerController.GetWeapon().DestroySelf();
             }
-            // Set player's weapon as the chosen weapon
-            player.SetWeapon(chosenSlot);
-            Debug.Log("player took " + chosenSlot);
-            PlayerData.Instance.UpdateWeapon(chosenSlot);
-            Weapon.SpawnWeapon(chosenSlot.weaponSO, player, chosenSlot.weaponSO.prefab.transform.rotation);
+            playerController.SetWeapon(weaponsList[weaponIteration]);
+            Debug.Log("player took " + weaponsList[weaponIteration]);
+            PlayerData.Instance.UpdateWeapon(weaponsList[weaponIteration]);
+            Weapon.SpawnWeapon(weaponsList[weaponIteration].weaponSO, playerController, weaponsList[weaponIteration].weaponSO.prefab.transform.rotation);
+            uiElementManager.ToggleScreen(uiElementManager.weaponSelectorUI);
+            Time.timeScale = 1f;
         }
     }
 
-    private int GetPlayerChoice() {
-        // Implement a method to get player's choice, e.g., using input
-        // For simplicity, return 1 for now
-        return 1;
-    }
     public string GetInteractText() {
         return "Pick up weapon";
     }
@@ -40,6 +37,6 @@ public class WeaponBox : MonoBehaviour, IInteractable {
     }
 
     public void Interact(PlayerController player) {
-        InteractWeaponBox(player);
+        InteractWeaponBox();
     }
 }

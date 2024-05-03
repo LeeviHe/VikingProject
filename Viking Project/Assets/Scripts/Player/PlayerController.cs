@@ -142,15 +142,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         playerAnimations.SwitchAttackModeAnimation();
         currentMoveSpeed /= 0.5f;
     }
-    public void EquipBlessing( BlessingSO blessingSO ) {
-        // Remove effects of previously equipped blessing (if any)
-        RemoveBlessingEffects();
-        Debug.Log(blessingSO);
-        currentBlessing = blessingSO;
-        // Apply new blessing effects
-        blessingSO.ApplyBlessing(this);
-        PlayerData.Instance.UpdateBlessing(blessingSO);
-    }
 
     public void ModifyMovementSpeed( float modifier ) {
         float newActiveMoveSpeed = stats.movementSpeed;
@@ -166,7 +157,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         currentHealth = newActiveMaxHealth;
     }
 
-    private void RemoveBlessingEffects() {
+    public void RemoveBlessingEffects() {
         // Reset stats to base values
         currentMoveSpeed = stats.movementSpeed;
         currentHealth = stats.maxHealth;
