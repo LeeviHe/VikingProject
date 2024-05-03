@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour {
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private AnimationClip attackAnimation;
 
     [Header("Health Stats")]
     private float lastDamageTime; // Time when player last took damage
@@ -56,6 +56,7 @@ public class PlayerCombat : MonoBehaviour {
         Debug.Log("Stop detection");
         playerController.playerAnimations.playerAnimator.speed = 1f;
     }
+
     void OnDrawGizmosSelected() {
         if (weapon != null) {
             Gizmos.color = Color.red;

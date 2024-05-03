@@ -404,7 +404,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4889725786387508750}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIElementManager, Assembly-CSharp
+        m_MethodName: ToggleBlessingScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1134710030394976684
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 282286221128389955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: EquipBlessing
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5d3223240eed39b4a8d98f461ec52070, type: 2}
+          m_ObjectArgumentAssemblyTypeName: BlessingSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5323275835633054905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1080,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8521344085940461910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: EquipBlessing
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5f8bdbf686b1755439046a2fdf8532f5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: BlessingSO, Assembly-CSharp
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5919202217788290583
 GameObject:
   m_ObjectHideFlags: 0

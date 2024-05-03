@@ -15,5 +15,4 @@ MonoBehaviour:
   active: 0
   questDescription: Kill 2 enemies!
   objectives:
-  - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
-  - {fileID: 11400000, guid: 74e552d840275ff40b707eb341961444, type: 2}
+  - {fileID: 11400000, guid: 33debcb3c92267348a9aa8d8b9da048e, type: 2}

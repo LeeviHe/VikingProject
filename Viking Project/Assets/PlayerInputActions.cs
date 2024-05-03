@@ -80,6 +80,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Spell 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""7849e2a7-a2f4-42ab-9511-e2fbfaf26dc5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +267,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""FightMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8995e23-2fd8-482a-94c2-fcd4ad08b6f6"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Spell 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""878ec6f9-b3ad-43c0-99b2-c20320ceed22"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Spell 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -300,6 +331,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_FightMode = m_Player.FindAction("FightMode", throwIfNotFound: true);
+        m_Player_Spell1 = m_Player.FindAction("Spell 1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -367,6 +399,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Block;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_FightMode;
+    private readonly InputAction m_Player_Spell1;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -377,6 +410,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Block => m_Wrapper.m_Player_Block;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @FightMode => m_Wrapper.m_Player_FightMode;
+        public InputAction @Spell1 => m_Wrapper.m_Player_Spell1;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -404,6 +438,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @FightMode.started += instance.OnFightMode;
             @FightMode.performed += instance.OnFightMode;
             @FightMode.canceled += instance.OnFightMode;
+            @Spell1.started += instance.OnSpell1;
+            @Spell1.performed += instance.OnSpell1;
+            @Spell1.canceled += instance.OnSpell1;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -426,6 +463,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @FightMode.started -= instance.OnFightMode;
             @FightMode.performed -= instance.OnFightMode;
             @FightMode.canceled -= instance.OnFightMode;
+            @Spell1.started -= instance.OnSpell1;
+            @Spell1.performed -= instance.OnSpell1;
+            @Spell1.canceled -= instance.OnSpell1;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -469,5 +509,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnBlock(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnFightMode(InputAction.CallbackContext context);
+        void OnSpell1(InputAction.CallbackContext context);
     }
 }

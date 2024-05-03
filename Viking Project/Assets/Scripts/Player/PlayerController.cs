@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.InputSystem;
-using UnityEditor.Rendering.LookDev;
 
 public class PlayerController : MonoBehaviour, IWeaponParent {
     
@@ -23,8 +22,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [Header("Health Sliders")]
     public float currentHealth; //Handle player's health
     public float currentMoveSpeed;
-    [SerializeField] private Slider healthSlider;
-    [SerializeField] private Slider easeHealthSlider;
 
     [Header("States")]
     public bool isAlive = true;
@@ -38,17 +35,14 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public PlayerStatsSO stats; //Player stats
     private float nextAttackTime = 0f; //Time when next attack is allowed
     private float attackDefaultCooldown = 2f;
-    private float healthLerpSpeed = 0.01f; //Value for healthbar animation speed
 
     //public static event Action OnPlayerWin;
     public static event Action OnQuestActivated;
     public static event Action OnReadyToLeave;
 
     private void Start() {
-
         isAlive = true;
         UpdatePlayerObject();
-        UpdateHealthUI();
         if (weapon) {
             Weapon.SpawnWeapon(weapon.weaponSO, this, weapon.weaponSO.prefab.transform.rotation);
         }
@@ -60,10 +54,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.G)) {
-            ActivateSpecialAbility();
-            playerAnimations.playerAnimator.Play("Attack");
-        }
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
@@ -71,10 +61,9 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         } else {
             playerAnimations.enabled = false;
         }
-        UpdateHealthUI();
     }
     private void ActivateSpecialAbility() {
-        if (currentBlessing != null && currentBlessing.specialAbilities.Length > 0) {
+        if (currentBlessing != null && currentBlessing.specialAbilities.Length > 0 && isFightMode) {
             // Activate the special ability associated with the current blessing
             currentBlessing.specialAbilities[0].ActivateAbility(abilityOrigin);
         }
@@ -103,6 +92,12 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
             playerCombat.attackDuration = (nextAttackTime - Time.time);
             StartCoroutine(playerCombat.PerformAttack());
+        }
+    }
+
+    public void OnSpell1( InputAction.CallbackContext value ) {
+        if (value.started) {
+            ActivateSpecialAbility();
         }
     }
 
@@ -150,6 +145,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public void EquipBlessing( BlessingSO blessingSO ) {
         // Remove effects of previously equipped blessing (if any)
         RemoveBlessingEffects();
+        Debug.Log(blessingSO);
         currentBlessing = blessingSO;
         // Apply new blessing effects
         blessingSO.ApplyBlessing(this);
@@ -205,21 +201,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
         currentMoveSpeed = playerData.activeSpeed;
 
-    }
-
-    //Function to update health bars
-    void UpdateHealthUI() {
-        PlayerData playerData = PlayerData.Instance;
-        healthSlider.maxValue = playerData.activeMaxHealth;
-        easeHealthSlider.maxValue = playerData.activeMaxHealth;
-        //If health value changes, update healthslider to new value
-        if (healthSlider.value != currentHealth) {
-            healthSlider.value = currentHealth;
-        }
-        //For nice animation
-        if (healthSlider.value != easeHealthSlider.value) {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, currentHealth, healthLerpSpeed);
-        }
     }
 
     // Method for the player to receive a new quest.

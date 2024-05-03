@@ -5,6 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     public WeaponSO weaponSO; // The SO representing this weapon's values
     private IWeaponParent weaponParent; // Reference to the parent object (e.g., player's hand)
+    public PlayerCombat playerCombat;
+
     [HideInInspector] public int minDamage;
     [HideInInspector] public int maxDamage;
     [HideInInspector] public float hitRange;

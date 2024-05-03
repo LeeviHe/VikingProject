@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlessingStone : MonoBehaviour, IInteractable {
-    [SerializeField] private BlessingSO blessingSO;
-    private void InteractWithBlessing(PlayerController player) {
-        player.EquipBlessing(blessingSO);
+    public List<BlessingSO> blessings = new List<BlessingSO>();
+    public UIElementManager uiElementManager;
+    private void InteractWithBlessingStone() {
+        uiElementManager.ToggleBlessingScreen();
     }
 
     public string GetInteractText() {
-        return "Equip " + blessingSO.blessingName + " blessing";
+        return "Choose blessing";
     }
 
     public Transform GetTransform() {
@@ -18,6 +19,6 @@ public class BlessingStone : MonoBehaviour, IInteractable {
     }
 
     public void Interact( PlayerController player ) {
-        InteractWithBlessing(player);
+        InteractWithBlessingStone();
     }
 }

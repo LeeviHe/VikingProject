@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 991281124673867473}
   - component: {fileID: 7534304721739104554}
   - component: {fileID: 6406423321496004379}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 939209867763383767}
   - component: {fileID: 3316720694643513304}
   - component: {fileID: 8059937955431682996}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8809794691512081363}
   - component: {fileID: 3439449300533677896}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: QuestStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 7033961709130448798}
   - component: {fileID: 7179070072479855076}
   - component: {fileID: 4893974716220109951}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: QuestHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 5786071333930892532}
   - component: {fileID: 6262603801629273087}
   - component: {fileID: 2839640399202047776}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.0004, y: -398}
+  m_AnchoredPosition: {x: -657.0004, y: -381}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8974936621133486254
@@ -976,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1792290993806303768}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InGameHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 8351442578210785735}
   - component: {fileID: 8236440907521641418}
   - component: {fileID: 3148876227601676094}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,13 +1089,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2859661957123421739}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: QuestMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2859661957123421739
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ Transform:
   m_GameObject: {fileID: 6633588688255241186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 777, y: 237, z: 0}
+  m_LocalPosition: {x: 594, y: 251, z: 0}
   m_LocalScale: {x: 2.4628298, y: 2.4628298, z: 2.4628298}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 6919768930459147357}
   - component: {fileID: 6450425160260231926}
   - component: {fileID: 4070292732713245002}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: QuestDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4504448371796336131}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ Transform:
   m_GameObject: {fileID: 7022145491923198638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -388, y: 390, z: 4.3976936}
+  m_LocalPosition: {x: -209, y: 407, z: 4.3976936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 5790246889860912945}
   - component: {fileID: 4352791998229881154}
   - component: {fileID: 3153291659371226520}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 4509599064438659105}
   - component: {fileID: 5714368158111289356}
   - component: {fileID: 4612877927370222073}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayerIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

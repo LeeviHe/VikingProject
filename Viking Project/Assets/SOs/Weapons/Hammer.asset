@@ -17,5 +17,5 @@ MonoBehaviour:
   minDamage: 15
   maxDamage: 20
   attackSpeed: 4
-  hitRange: 1.5
+  hitRange: 1
   blockingPower: 1.5

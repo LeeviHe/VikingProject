@@ -15,4 +15,5 @@ MonoBehaviour:
   parentQuest: {fileID: 0}
   required: 1
   waypoint: {fileID: 0}
+  objectiveItemPrefab: {fileID: 751763406716217388, guid: 2a257902e848fe64d832de9b89442d27, type: 3}
   description: Loot a vase

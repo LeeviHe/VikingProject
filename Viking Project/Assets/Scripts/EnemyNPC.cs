@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
-using UnityEditor.Experimental.GraphView;
 
 
 //Take QuestItem interaction to use here, 

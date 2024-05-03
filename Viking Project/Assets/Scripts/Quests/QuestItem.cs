@@ -5,18 +5,18 @@ using UnityEngine;
 public class QuestItem : MonoBehaviour {
     // The objective associated with this quest item
     // can hide but keep visible for debugging
+    public QuestSO parentQuest;
     public ObjectiveSO objective;
     // Set the objective for this quest item
-    public void SetObjective( ObjectiveSO newObjective ) {
+    public void SetObjective( ObjectiveSO newObjective, QuestSO parentQuest ) {
         // Assign the new objective
         objective = newObjective;
 
         // Set the parent quest of the objective to the quest associated with this quest item's owner (if available)
-        if (objective != null && transform.parent != null) {
-            QuestOwner questOwner = transform.parent.GetComponent<QuestOwner>();
-            if (questOwner != null && questOwner.myQuest != null) {
-                objective.parentQuest = questOwner.myQuest;
-            }
+        if (objective != null) {
+            Debug.Log(parentQuest);
+            objective.parentQuest = parentQuest;
+            this.parentQuest = parentQuest;
         }
 
         // Mark the new objective as incomplete

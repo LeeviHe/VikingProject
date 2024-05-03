@@ -37,19 +37,19 @@ public class GameManager : MonoBehaviour {
                 //Cursor.visible = false;
                 break;
             case GameState.QuestActive:
-                toggleUI.gameObject.SetActive(true);
+                //toggleUI.gameObject.SetActive(true);
                 break;
             case GameState.ReadyToLeave:
-                toggleUI.isOn = true;
+                //toggleUI.isOn = true;
                 portal.gameObject.SetActive(true);
                 break;
             case GameState.GameOver:
                 screenDelay = 2f;
-                Invoke("ShowDeathScreen", screenDelay);
+                //Invoke("ShowDeathScreen", screenDelay);
                 break;
             case GameState.GameWon:
                 screenDelay = 0.5f;
-                Invoke("ShowWinScreen", screenDelay);
+                //Invoke("ShowWinScreen", screenDelay);
                 break;
         }
     }

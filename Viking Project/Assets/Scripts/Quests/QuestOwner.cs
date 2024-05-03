@@ -18,7 +18,7 @@ public class QuestOwner : MonoBehaviour {
         // Initialize quest items if they haven't been initialized yet
         questItems.Clear();
         // Initialize quest items
-        if (questItems.Count > 0) {
+        /*if (questItems.Count > 0) {
             foreach (ObjectiveSO objective in myQuest.objectives) {
                 // Instantiate a new GameObject for each quest objective
                 GameObject questItemGO = Instantiate(questItemPrefab, spawnPoint.position, Quaternion.identity);
@@ -26,11 +26,11 @@ public class QuestOwner : MonoBehaviour {
                 // Get the QuestItem component attached to the newly instantiated GameObject
                 QuestItem questItem = questItemGO.GetComponent<QuestItem>();
                 // Set the objective for the QuestItem
-                questItem.SetObjective(objective);
+                questItem.SetObjective(objective, myQuest);
                 // Add the QuestItem to the list of quest items owned by this quest owner
                 questItems.Add(questItem);
                 Debug.Log("Add quest item " + questItemGO.name + " to NPC's quest");
             }
-        }
+        }*/
     }
 }

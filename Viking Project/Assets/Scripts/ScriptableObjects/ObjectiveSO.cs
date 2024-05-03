@@ -8,6 +8,7 @@ public class ObjectiveSO : ScriptableObject {
     public bool required = true;
     public bool Completed { get; set; }
     public Transform waypoint;
+    public GameObject objectiveItemPrefab;
     [TextArea]
     public string description;
 
