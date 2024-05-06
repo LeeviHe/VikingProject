@@ -44,8 +44,7 @@ public class GameManager : MonoBehaviour {
                 portal.gameObject.SetActive(true);
                 break;
             case GameState.GameOver:
-                screenDelay = 2f;
-                //Invoke("ShowDeathScreen", screenDelay);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
             case GameState.GameWon:
                 screenDelay = 0.5f;

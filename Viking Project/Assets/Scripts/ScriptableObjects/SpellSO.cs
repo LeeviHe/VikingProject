@@ -5,11 +5,14 @@ public class SpellSO : ScriptableObject {
     public string spellName;
     public GameObject spellPrefab;
     public float spellCooldown;
+    private float initialCooldown = 0;
 
     private float lastActivationTime;
 
     public void ActivateAbility( Transform origin ) {
-        // Instantiate ability prefab at the specified position
+        if (Time.time - lastActivationTime >= spellCooldown || initialCooldown == 0) {
+            initialCooldown = 1f;
+            // Instantiate ability prefab at the specified position
             GameObject effect = Instantiate(spellPrefab, origin.position, origin.rotation);
             Destroy(effect, 1.9f);
 
@@ -18,8 +21,6 @@ public class SpellSO : ScriptableObject {
 
             // Execute the ability
             ExecuteAbility(origin);
-        if (Time.time - lastActivationTime >= spellCooldown) {
-            
         } else {
             Debug.Log("Ability is on cooldown.");
         }

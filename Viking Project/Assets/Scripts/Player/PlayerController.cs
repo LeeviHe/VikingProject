@@ -136,11 +136,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     // Method to handle exiting fight mode
-    private void ExitFightMode() {
+    public void ExitFightMode() {
         // Perform actions to exit fight mode
         Debug.Log("Exited Fight Mode");
         playerAnimations.SwitchAttackModeAnimation();
-        currentMoveSpeed /= 0.5f;
+        currentMoveSpeed = PlayerData.Instance.activeSpeed;
     }
 
     public void ModifyMovementSpeed( float modifier ) {
