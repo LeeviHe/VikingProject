@@ -11,7 +11,7 @@ public class SpellSO : ScriptableObject {
     public void ActivateAbility( Transform origin ) {
         // Instantiate ability prefab at the specified position
             GameObject effect = Instantiate(spellPrefab, origin.position, origin.rotation);
-            Destroy(effect, 0.5f);
+            Destroy(effect, 1.9f);
 
             // Update the last activation time
             lastActivationTime = Time.time;
