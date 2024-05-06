@@ -15,9 +15,25 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
 
+    public List<ObjectiveSO> objectives = new List<ObjectiveSO>();
+
+    public List<Toggle> objectiveUIs = new List<Toggle>();
+
+    public List<Text> objectiveLabelObjects = new List<Text>();
+
     public void Update() {
         RefreshHUDInfo();
         UpdateHealthUI();
+    }
+
+    void SetObjectiveUI() {
+        for (int i = 0; i < objectives.Count; i++) {
+            objectiveUIs[i].gameObject.SetActive(true);
+            objectiveLabelObjects[i].text = objectives[i].description;
+            if (objectives[i].Completed) { 
+                objectiveUIs[i].isOn = true;
+            }
+        }
     }
 
     public void RefreshHUDInfo() { 
@@ -25,6 +41,8 @@ public class UIManager : MonoBehaviour {
         string header;
         if (playerController.currentQuest) {
             questUI.SetActive(true);
+            objectives = playerController.currentQuest.objectives;
+            SetObjectiveUI();
             description = playerController.currentQuest.questDescription;
             header = playerController.currentQuest.name;
         } else {

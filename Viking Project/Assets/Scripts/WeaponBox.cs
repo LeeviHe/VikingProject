@@ -36,7 +36,7 @@ public class WeaponBox : MonoBehaviour, IInteractable {
         return transform;
     }
 
-    public void Interact(PlayerController player) {
+    public void Interact( PlayerController player ) {
         InteractWeaponBox();
     }
 }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableNPC : QuestOwner, IInteractable {
+public class InteractableNPC : QuestBoard, IInteractable {
     [SerializeField] private string interactText;
 
     //Handle interaction with NPC
-    public void Interact(PlayerController player) {
+    public void Interact( PlayerController player ) {
         //Check if player doesn't have a quest and that the NPC has a quest to give
         if (!player.currentQuest && myQuest != null) {
             //Give quest

@@ -130,7 +130,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
     private void EnterFightMode() {
         // Perform actions to enter fight mode
-        Debug.Log("Entered Fight Mode");
         playerAnimations.SwitchAttackModeAnimation();
         currentMoveSpeed *= 0.5f;
     }
@@ -138,7 +137,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     // Method to handle exiting fight mode
     public void ExitFightMode() {
         // Perform actions to exit fight mode
-        Debug.Log("Exited Fight Mode");
         playerAnimations.SwitchAttackModeAnimation();
         currentMoveSpeed = PlayerData.Instance.activeSpeed;
     }
@@ -196,9 +194,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     // Method for the player to receive a new quest.
     public void ReceiveNewQuest( QuestSO quest ) {
-        // Add the quest to the list of open quests.
-        openQuests.Add(quest);
-        PlayerData.Instance.UpdateQuests(openQuests);
         // Activate the quest.
         quest.active = true;
         OnQuestActivated?.Invoke();
@@ -206,6 +201,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         currentQuest = quest;
         PlayerData.Instance.UpdateCurrentQuest(quest);
         // Subscribe to the OnQuestCompleted event of the received quest.
+        Debug.Log("subscribed to " + quest);
         quest.OnQuestCompleted += RemoveCompletedQuest;
     }
 
@@ -213,22 +209,14 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     void RemoveCompletedQuest( QuestSO quest ) {
         // Check if the completed quest is the current quest.
         if (currentQuest == quest) {
-            // Reset the current quest to null.
+            Debug.Log("same quest");
             currentQuest = null;
-        }
-
-        // Unsubscribe from the OnQuestCompleted event of the completed quest.
-        quest.OnQuestCompleted -= RemoveCompletedQuest;
-        // Remove the completed quest from the list of open quests.
-        openQuests.Remove(quest);
-        PlayerData.Instance.UpdateQuests(openQuests);
-        OnReadyToLeave?.Invoke();
-
-
-        // If there are remaining open quests, set the current quest to the first one in the list.
-        if (openQuests.Count > 0) {
-            currentQuest = openQuests[0];
-            PlayerData.Instance.UpdateCurrentQuest(openQuests[0]);
+            Debug.Log(currentQuest);
+            PlayerData.Instance.UpdateCurrentQuest(currentQuest);
+            // Unsubscribe from the OnQuestCompleted event of the completed quest.
+            quest.OnQuestCompleted -= RemoveCompletedQuest;
+            
+            OnReadyToLeave?.Invoke();
         }
     }
 
@@ -239,9 +227,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             // Check if the current quest is completed.
             if (openQuests[i].QuestCompleted) {
                 // If completed, remove it from the list of open quests.
+                Debug.Log("Quest completed, remove it from list of open quests");
                 RemoveCompletedQuest(openQuests[i]);
             } else {
                 // If not completed, subscribe to its OnQuestCompleted event.
+                Debug.Log("Quest not completed subrsibing to event");
                 openQuests[i].OnQuestCompleted += RemoveCompletedQuest;
             }
         }

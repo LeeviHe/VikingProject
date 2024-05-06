@@ -9,7 +9,7 @@ public class PlayerInteract : MonoBehaviour {
     public void HandleInteract() {
         IInteractable interactable = GetInteractableObject();
         // If there is an interactable object
-        if (interactable != null) {
+        if (interactable != null && Time.timeScale > 0) {
             // Call the Interact method of the interactable object, passing the player object
             interactable.Interact(playerObject.GetComponent<PlayerController>());
         }

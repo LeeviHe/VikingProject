@@ -5,13 +5,18 @@ public class SpellSO : ScriptableObject {
     public string spellName;
     public GameObject spellPrefab;
     public float spellCooldown;
-    private float initialCooldown = 0;
 
     private float lastActivationTime;
 
+    private void OnEnable() {
+        lastActivationTime = Time.time;
+    }
+
+    private void OnDisable() {
+        lastActivationTime = 0;
+    }
     public void ActivateAbility( Transform origin ) {
-        if (Time.time - lastActivationTime >= spellCooldown || initialCooldown == 0) {
-            initialCooldown = 1f;
+        if (Time.time - lastActivationTime >= spellCooldown) {
             // Instantiate ability prefab at the specified position
             GameObject effect = Instantiate(spellPrefab, origin.position, origin.rotation);
             Destroy(effect, 1.9f);
