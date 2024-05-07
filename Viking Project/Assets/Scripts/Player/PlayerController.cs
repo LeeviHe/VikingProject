@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     [Header("Quests")]
     public QuestSO currentQuest; // Active quest for player
-    public List<QuestSO> openQuests; //List of all quest set for player
+    public List<ObjectiveSO> openQuests = new List<ObjectiveSO>(); //List of all quest set for player
 
     public PlayerStatsSO stats; //Player stats
     private float nextAttackTime = 0f; //Time when next attack is allowed
@@ -40,9 +40,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public static event Action OnQuestActivated;
     public static event Action OnReadyToLeave;
 
+    private void Awake() {
+        UpdatePlayerObject();
+    }
     private void Start() {
         isAlive = true;
-        UpdatePlayerObject();
         if (weapon) {
             Weapon.SpawnWeapon(weapon.weaponSO, this, weapon.weaponSO.prefab.transform.rotation);
         }
@@ -54,6 +56,9 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
+        if (currentQuest) { 
+            openQuests = currentQuest.objectives;
+        }
         if (isAlive) {
             CalculateMovementInputSmoothing();
             UpdatePlayerMovement();
@@ -209,9 +214,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     void RemoveCompletedQuest( QuestSO quest ) {
         // Check if the completed quest is the current quest.
         if (currentQuest == quest) {
-            Debug.Log("same quest");
             currentQuest = null;
-            Debug.Log(currentQuest);
             PlayerData.Instance.UpdateCurrentQuest(currentQuest);
             // Unsubscribe from the OnQuestCompleted event of the completed quest.
             quest.OnQuestCompleted -= RemoveCompletedQuest;
@@ -222,8 +225,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     // Called automatically by Unity when the script instance is enabled.
     private void OnEnable() {
+        if (currentQuest) { 
+            currentQuest.OnQuestCompleted += RemoveCompletedQuest;
+        }
         // Loop through the list of open quests in reverse order.
-        for (int i = openQuests.Count - 1; i >= 0; i--) {
+        /*for (int i = openQuests.Count - 1; i >= 0; i--) {
             // Check if the current quest is completed.
             if (openQuests[i].QuestCompleted) {
                 // If completed, remove it from the list of open quests.
@@ -234,14 +240,13 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
                 Debug.Log("Quest not completed subrsibing to event");
                 openQuests[i].OnQuestCompleted += RemoveCompletedQuest;
             }
-        }
+        }*/
     }
 
     // Called automatically by Unity when the script instance is disabled.
     void OnDisable() {
-        // Unsubscribe from the OnQuestCompleted event of all open quests.
-        foreach (QuestSO quest in openQuests) {
-            quest.OnQuestCompleted -= RemoveCompletedQuest;
+        if (currentQuest) { 
+            currentQuest.OnQuestCompleted -= RemoveCompletedQuest;
         }
     }
     public Transform GetWeaponFollowTransform() {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0769114d78463d4998df397c9a34743, type: 3}
   m_Name: PickUpVase
   m_EditorClassIdentifier: 
-  parentQuest: {fileID: 0}
+  parentQuest: {fileID: 11400000, guid: f15ba01e4d4e60b40a499ec04c24fff4, type: 2}
   required: 1
   waypoint: {fileID: 0}
   objectiveItemPrefab: {fileID: 751763406716217388, guid: 2a257902e848fe64d832de9b89442d27, type: 3}

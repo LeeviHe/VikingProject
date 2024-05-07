@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIElementManager : MonoBehaviour {
     public GameObject blessingSelectorUI;
     public GameObject weaponSelectorUI;
     public GameObject questBoardUI;
     public GameObject questInfoUI;
+    public TextMeshProUGUI questPageText;
+    public Button quest1;
+    public TextMeshProUGUI quest1Text;
+    public Button quest2;
+    public TextMeshProUGUI quest2Text;
+    public Button navButtonNext;
+    public Button navButtonBack;
+    public TextMeshProUGUI questHeader;
+    public TextMeshProUGUI questDescription;
     public GameObject inGameHud;
     public GameObject activeUI;
 
@@ -16,8 +27,6 @@ public class UIElementManager : MonoBehaviour {
         bool isActive = selectorUI.activeSelf;
         selectorUI.SetActive(!isActive);
         activeUI = selectorUI.gameObject;
-
-
         TogglePlayerHUD();
 
         if (activeUI) {

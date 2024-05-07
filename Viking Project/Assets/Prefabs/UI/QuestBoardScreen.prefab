@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 8255778233319974384}
   - component: {fileID: 41173123470653407}
   m_Layer: 5
-  m_Name: PreviusButton
+  m_Name: PreviousButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skeleton Quest
+  m_text: ipsum lorem
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
   m_sharedMaterial: {fileID: -5211876874483632919, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1 / 2
+  m_text: 0 / 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
   m_sharedMaterial: {fileID: -5211876874483632919, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: rescue quest
+  m_text: lorem ipsum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
   m_sharedMaterial: {fileID: -5211876874483632919, guid: d25f606173d0e834eb90633c87a35b05, type: 2}

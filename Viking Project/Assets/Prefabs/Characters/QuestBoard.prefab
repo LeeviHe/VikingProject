@@ -69,7 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c24bf6a3e9befc49bfe0aa82fdde705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myQuest: {fileID: 11400000, guid: f15ba01e4d4e60b40a499ec04c24fff4, type: 2}
+  questList:
+  - {fileID: 11400000, guid: 175c640107d95ed41a4e4eec01198522, type: 2}
+  - {fileID: 11400000, guid: bf0358c8f3bc78b41aa8e9f1a54f23dd, type: 2}
+  - {fileID: 11400000, guid: f15ba01e4d4e60b40a499ec04c24fff4, type: 2}
   elementManager: {fileID: 0}
 --- !u!1001 &6593102266067735846
 PrefabInstance:

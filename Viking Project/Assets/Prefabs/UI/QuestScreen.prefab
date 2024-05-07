@@ -623,7 +623,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6655881230717568054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4830362375231805062
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: the skeletons have stolen a villagers vase, take it back !
+  m_text: lorem ipsum description ipsums
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
   m_sharedMaterial: {fileID: -5211876874483632919, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
@@ -972,7 +984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rescue mission
+  m_text: lorem ipsum header
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d25f606173d0e834eb90633c87a35b05, type: 2}
   m_sharedMaterial: {fileID: -5211876874483632919, guid: d25f606173d0e834eb90633c87a35b05, type: 2}

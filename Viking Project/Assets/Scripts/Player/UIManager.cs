@@ -30,9 +30,10 @@ public class UIManager : MonoBehaviour {
         for (int i = 0; i < objectives.Count; i++) {
             objectiveUIs[i].gameObject.SetActive(true);
             objectiveLabelObjects[i].text = objectives[i].description;
-            if (objectives[i].Completed) { 
-                objectiveUIs[i].isOn = true;
-            }
+            objectiveUIs[i].isOn = objectives[i].Completed;
+        }
+        for (int i = objectives.Count; i < objectiveUIs.Count; i++) {
+            objectiveUIs[i].gameObject.SetActive(false);
         }
     }
 

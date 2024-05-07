@@ -11,7 +11,7 @@ public class PlayerData : MonoBehaviour {
 
     [Header("Player Quests")]
     public QuestSO currentQuest; // Active quest for player
-    public List<QuestSO> openQuests; //List of all quests set for player
+    public List<ObjectiveSO> openQuests; //List of all quests set for player
 
     [Header("Blessing")]
     public BlessingSO blessing;
@@ -39,11 +39,6 @@ public class PlayerData : MonoBehaviour {
     // Method to update the player's quests
     public void UpdateCurrentQuest( QuestSO updatedCurrentQuest ) {
         currentQuest = updatedCurrentQuest;
-        // Optionally, update the player object with the new quests
-    }
-    // Method to update the player's quests
-    public void UpdateQuests( List<QuestSO> updatedQuests ) {
-        openQuests = updatedQuests;
         // Optionally, update the player object with the new quests
     }
 
