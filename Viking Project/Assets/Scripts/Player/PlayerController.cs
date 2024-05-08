@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public PlayerCombat playerCombat;
     public PlayerInteract playerInteract;
     [Header("Equipped weapon fields")]
-    public Weapon weapon;
+    public WeaponSO weapon;
+    public GameObject weaponObject;
     public Transform weaponHoldingPoint;
     public BlessingSO currentBlessing;
     // Spawn point of ability 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public bool isAlive = true;
     public bool isBlocking = false;
     public bool isFightMode = false;
+    public bool canWieldTwoHanded;
 
     [Header("Quests")]
     public QuestSO currentQuest; // Active quest for player
@@ -43,10 +45,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private void Awake() {
         UpdatePlayerObject();
     }
+
     private void Start() {
         isAlive = true;
         if (weapon) {
-            Weapon.SpawnWeapon(weapon.weaponSO, this, weapon.weaponSO.prefab.transform.rotation);
+            Weapon.SpawnWeapon(weapon, this, weapon.prefab.transform.rotation);
         }
     }
 
@@ -56,7 +59,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
-        if (currentQuest) { 
+        if (currentQuest) {
             openQuests = currentQuest.objectives;
         }
         if (isAlive) {
@@ -65,6 +68,11 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             UpdatePlayerAnimationMovement();
         } else {
             playerAnimations.enabled = false;
+        }
+        if (HasWeapon()) {
+            if (weapon.twoHanded && !canWieldTwoHanded) {
+                ClearWeapon();
+            }
         }
     }
     private void ActivateSpecialAbility() {
@@ -228,19 +236,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         if (currentQuest) { 
             currentQuest.OnQuestCompleted += RemoveCompletedQuest;
         }
-        // Loop through the list of open quests in reverse order.
-        /*for (int i = openQuests.Count - 1; i >= 0; i--) {
-            // Check if the current quest is completed.
-            if (openQuests[i].QuestCompleted) {
-                // If completed, remove it from the list of open quests.
-                Debug.Log("Quest completed, remove it from list of open quests");
-                RemoveCompletedQuest(openQuests[i]);
-            } else {
-                // If not completed, subscribe to its OnQuestCompleted event.
-                Debug.Log("Quest not completed subrsibing to event");
-                openQuests[i].OnQuestCompleted += RemoveCompletedQuest;
-            }
-        }*/
     }
 
     // Called automatically by Unity when the script instance is disabled.
@@ -253,19 +248,22 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         return weaponHoldingPoint;
     }
 
-    public void SetWeapon( Weapon weapon ) {
+    public void SetWeapon( WeaponSO weapon, GameObject weaponObject ) {
         this.weapon = weapon;
+        this.weaponObject = weaponObject;
     }
 
     public void ClearWeapon() {
-        this.weapon = null;
+        Destroy(weaponObject);
+        weapon = null;
+        weaponObject = null;
     }
 
     public bool HasWeapon() {
         return weapon != null;
     }
 
-    public Weapon GetWeapon() {
-        return weapon;
+    public GameObject GetWeapon() {
+        return weaponObject;
     }
 }

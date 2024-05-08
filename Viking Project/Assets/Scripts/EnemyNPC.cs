@@ -16,7 +16,7 @@ public class EnemyNpc : QuestItem {
     [SerializeField] private Slider easeHealthSlider;
     [SerializeField] private Transform weaponHoldingPoint;
     public SpellSO activeSpell;
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
     private PlayerController player;
     private Collider[] withinAggroColliders;
     private float lerpSpeed = 0.01f;
@@ -43,8 +43,15 @@ public class EnemyNpc : QuestItem {
                 StartCoroutine(fireballSpell.Burn(this));
                 coroutineStarted = true;
             }
+            IceSpikeSO iceSpell = activeSpell as IceSpikeSO;
+            if (iceSpell != null && !coroutineStarted) {
+                StartCoroutine(iceSpell.Slow(this));
+                coroutineStarted = true;
+            }
+
         } else {
             coroutineStarted = false;
+            navAgent.speed = enemyStats.movementSpeed;
         }
         if (npcAlive) { 
             //Set Aggro area with NPC aggro value and layer that is to be aggroed (player)

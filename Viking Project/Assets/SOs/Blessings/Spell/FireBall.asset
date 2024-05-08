@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   spellName: FireBall
-  spellPrefab: {fileID: 9196989299250413126, guid: 50e86df548518814ea6c482054c8f651, type: 3}
+  spellPrefab: {fileID: 0}
+  spellEffectPrefab: {fileID: 9196989299250413126, guid: 50e86df548518814ea6c482054c8f651, type: 3}
   spellCooldown: 3
+  spellLife: 3
+  spellSpeed: 2
   damage: 20
   burnDamage: 5
   burnTime: 3

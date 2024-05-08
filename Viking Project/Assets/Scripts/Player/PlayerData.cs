@@ -7,7 +7,7 @@ public class PlayerData : MonoBehaviour {
     public static PlayerData Instance { get; private set; }
 
     [Header("Weapon")]
-    public Weapon weapon;
+    public WeaponSO weapon;
 
     [Header("Player Quests")]
     public QuestSO currentQuest; // Active quest for player
@@ -31,7 +31,7 @@ public class PlayerData : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-    public void UpdateWeapon( Weapon newWeapon ) {
+    public void UpdateWeapon( WeaponSO newWeapon ) {
         weapon = newWeapon;
         // Optionally, update the player object with the new weapon
     }

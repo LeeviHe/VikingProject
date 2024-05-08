@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889bb03108ea029428ed929c3c55e840, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6476085107684224605, guid: d997a71391484b249b04e7890f3c8d3a, type: 3}
+  prefab: {fileID: 5950519251386725607, guid: d997a71391484b249b04e7890f3c8d3a, type: 3}
   objectName: Axe
   minDamage: 25
   maxDamage: 40
   attackSpeed: 2
   hitRange: 2
   blockingPower: 2
+  twoHanded: 1

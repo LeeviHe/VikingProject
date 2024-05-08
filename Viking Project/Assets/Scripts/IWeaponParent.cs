@@ -5,9 +5,9 @@ using UnityEngine;
 public interface IWeaponParent {
     public Transform GetWeaponFollowTransform();
 
-    public void SetWeapon( Weapon weapon );
+    public void SetWeapon( WeaponSO weapon, GameObject weaponObject);
 
-    public Weapon GetWeapon();
+    public GameObject GetWeapon();
 
     public void ClearWeapon();
 

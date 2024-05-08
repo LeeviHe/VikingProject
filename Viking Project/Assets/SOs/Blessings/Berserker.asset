@@ -15,4 +15,6 @@ MonoBehaviour:
   blessingName: Berserker
   movementSpeedModifier: -1
   healthModifier: 10
-  hasSpecialAbility: 1
+  canWieldTwoHanded: 1
+  specialAbilities:
+  - {fileID: 11400000, guid: a0b6a900c8e52c846a93f15f4e971882, type: 2}

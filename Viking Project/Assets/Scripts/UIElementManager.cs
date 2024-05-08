@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class UIElementManager : MonoBehaviour {
     public GameObject blessingSelectorUI;
     public GameObject weaponSelectorUI;
+    public Image axeImage;
+    public GameObject axeButton;
+    public TextMeshProUGUI axeButtonText;
     public GameObject questBoardUI;
     public GameObject questInfoUI;
     public TextMeshProUGUI questPageText;

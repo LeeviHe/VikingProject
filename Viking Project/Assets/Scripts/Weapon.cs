@@ -5,13 +5,13 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     public WeaponSO weaponSO; // The SO representing this weapon's values
     private IWeaponParent weaponParent; // Reference to the parent object (e.g., player's hand)
-    public PlayerCombat playerCombat;
 
     [HideInInspector] public int minDamage;
     [HideInInspector] public int maxDamage;
     [HideInInspector] public float hitRange;
     [HideInInspector] public float attackSpeed;
     [HideInInspector] public float blockingPower;
+    [HideInInspector] public bool twoHanded;
 
     //Set weaponSO values to the weapon
     private void Awake() {
@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour {
         hitRange = weaponSO.hitRange;
         attackSpeed = weaponSO.attackSpeed;
         blockingPower = weaponSO.blockingPower;
+        twoHanded = weaponSO.twoHanded;
     }
 
     //!!!POLISH!!! Questionable functionality
@@ -27,7 +28,7 @@ public class Weapon : MonoBehaviour {
     public void SetWeaponParent( IWeaponParent weaponParent ) {
         //Set the new parent (hand) for the weapon
         this.weaponParent = weaponParent;
-        weaponParent.SetWeapon(this);
+        weaponParent.SetWeapon(weaponSO, gameObject);
         transform.parent = weaponParent.GetWeaponFollowTransform();
         transform.localPosition = Vector3.zero;
     }
@@ -37,13 +38,13 @@ public class Weapon : MonoBehaviour {
         // Clear the weapon from the parent
         weaponParent.ClearWeapon();
         // Destroy the weapon game object
-        Destroy(gameObject);
+        Destroy(weaponSO.prefab.transform);
     }
 
     // Spawn a new weapon based on the provided WeaponSO and parent
     public static Weapon SpawnWeapon( WeaponSO weaponSO, IWeaponParent weaponParent, Quaternion rotation) {
         // Instantiate the weapon prefab
-        Transform weaponTransform = Instantiate(weaponSO.prefab);
+        Transform weaponTransform = Instantiate(weaponSO.prefab.transform);
         // Get the Weapon component from the instantiated object
         Weapon weapon = weaponTransform.GetComponent<Weapon>();
         // Set the weapon's parent

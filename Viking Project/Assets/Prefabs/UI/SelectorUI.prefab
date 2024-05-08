@@ -228,6 +228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blessingSelectorUI: {fileID: 3897932662241915972}
   weaponSelectorUI: {fileID: 952618486175763837}
+  axeImage: {fileID: 596142160212291497}
+  axeButton: {fileID: 3641503281666995691}
+  axeButtonText: {fileID: 4857199939712492718}
   questBoardUI: {fileID: 2244192353067226438}
   questInfoUI: {fileID: 1206551591462145321}
   questPageText: {fileID: 8786374262124976382}
@@ -454,6 +457,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a458fdc3af1cd4ea29cf29f3c74032, type: 3}
+--- !u!114 &596142160212291497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1150959550516349786, guid: e8a458fdc3af1cd4ea29cf29f3c74032, type: 3}
+  m_PrefabInstance: {fileID: 557579655839261939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3641503281666995691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3834212888972005656, guid: e8a458fdc3af1cd4ea29cf29f3c74032, type: 3}
+  m_PrefabInstance: {fileID: 557579655839261939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4857199939712492718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4959824533202927709, guid: e8a458fdc3af1cd4ea29cf29f3c74032, type: 3}
+  m_PrefabInstance: {fileID: 557579655839261939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7785763880334311786 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7759839879041410457, guid: e8a458fdc3af1cd4ea29cf29f3c74032, type: 3}

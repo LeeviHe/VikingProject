@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour {
     private float lastDamageTime; // Time when player last took damage
     private float damageCooldown = 2f; // Cooldown duration in seconds
     [Header("Weapon fields")]
-    public Weapon weapon; //Weapon of player
+    public WeaponSO weapon; //Weapon of player
     public GameObject weaponObject;
     public float attackDuration;
     [Header("Enemy layer")]
@@ -23,7 +23,7 @@ public class PlayerCombat : MonoBehaviour {
     private void LateUpdate() {
         weapon = playerController.weapon;
         if (weapon) {
-            weaponObject = weapon.gameObject;
+            weaponObject = weapon.prefab;
         }
     }
 

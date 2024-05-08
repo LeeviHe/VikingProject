@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889bb03108ea029428ed929c3c55e840, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5916247861741541481, guid: 94fbef19f62407848bf47005834f255e, type: 3}
+  prefab: {fileID: 6436044885135229651, guid: 94fbef19f62407848bf47005834f255e, type: 3}
   objectName: Hammer
   minDamage: 15
   maxDamage: 20
   attackSpeed: 4
   hitRange: 1
   blockingPower: 1.5
+  twoHanded: 0
