@@ -38,17 +38,7 @@ public class EnemyNpc : QuestItem {
     //FixedUpdate or normal update? Check performance
     public void Update() {
         if (activeSpell != null) {
-            FireballSO fireballSpell = activeSpell as FireballSO; // Assuming Fireball is a type of SpellSO
-            if (fireballSpell != null && !coroutineStarted) {
-                StartCoroutine(fireballSpell.Burn(this));
-                coroutineStarted = true;
-            }
-            IceSpikeSO iceSpell = activeSpell as IceSpikeSO;
-            if (iceSpell != null && !coroutineStarted) {
-                StartCoroutine(iceSpell.Slow(this));
-                coroutineStarted = true;
-            }
-
+            ApplySpellEffect();
         } else {
             coroutineStarted = false;
             navAgent.speed = enemyStats.movementSpeed;
@@ -81,6 +71,22 @@ public class EnemyNpc : QuestItem {
                 animator.SetTrigger("Running");
                 break;
         }
+    }
+
+    void ApplySpellEffect() {
+        FireballSO fireballSpell = activeSpell as FireballSO; // Assuming Fireball is a type of SpellSO
+        IceSpikeSO iceSpell = activeSpell as IceSpikeSO;
+
+        if (fireballSpell != null && !coroutineStarted) {
+            StartCoroutine(fireballSpell.Burn(this));
+            coroutineStarted = true;
+        }
+        
+        if (iceSpell != null && !coroutineStarted) {
+            StartCoroutine(iceSpell.Slow(this));
+            coroutineStarted = true;
+        }
+
     }
 
     //NPC takes damage, armor value is substracted and then damage is dealt. Perform death function after no more health

@@ -19,6 +19,9 @@ public class IceSpikeSO : SpellSO {
     public void ApplySlowEffect( Collider enemy ) {
         EnemyNpc enemyNPC = enemy.GetComponent<EnemyNpc>();
         enemyNPC.activeSpell = this;
+        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
+        var effect = Instantiate(spellEffectPrefab, enemy.transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
     }
 
     public IEnumerator Slow( EnemyNpc target ) {

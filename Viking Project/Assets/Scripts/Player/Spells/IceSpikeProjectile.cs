@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class IceSpikeProjectile : MonoBehaviour {
     public IceSpikeSO iceSpikeSO;
+    public bool hit;
 
-    void OnCollisionEnter( Collision collision ) {
-        iceSpikeSO.ApplySlowEffect(collision.collider);
-        //Instantiate( iceSpikeSO.spellEffectPrefab, collision.collider.transform, true);
-        Destroy(gameObject);
+    void OnTriggerEnter ( Collider other ) {
+        if (!hit) {
+            hit = true;
+            Destroy(gameObject);
+            Debug.Log("hit : " + other);
+            iceSpikeSO.ApplySlowEffect(other);
+        } else {
+            Debug.Log("aleradyy hit");
+        }
     }
 }
