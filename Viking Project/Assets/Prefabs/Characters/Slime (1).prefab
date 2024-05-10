@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a74f4a0289d6f745b5d0ffb5d7d1a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentQuest: {fileID: 0}
   objective: {fileID: 0}
   timeBetweenHitDetections: 0
   aggroLayerMask:
@@ -58,6 +59,7 @@ MonoBehaviour:
   easeHealthSlider: {fileID: 4594408167875946445}
   weaponHoldingPoint: {fileID: 4671555627537925959}
   activeSpell: {fileID: 0}
+  navAgent: {fileID: 0}
   coroutineStarted: 0
   animator: {fileID: 8422734207435584756}
 --- !u!195 &1993297424261481154
@@ -97,7 +99,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

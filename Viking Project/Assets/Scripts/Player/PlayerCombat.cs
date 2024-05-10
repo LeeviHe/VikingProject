@@ -76,7 +76,7 @@ public class PlayerCombat : MonoBehaviour {
             //Substract armor value from damage
             damage = damage - playerController.stats.armor;
             Debug.Log("Player took " + damage + " dmg");
-
+//
             //Perform death when health is depleted
             if (Time.time - lastDamageTime >= damageCooldown) {
                 playerController.currentHealth -= damage;
