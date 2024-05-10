@@ -82,27 +82,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5839758783444945743, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+    - {fileID: 6072446151652685331, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6655565670970556640, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     - {fileID: 2350499025131829836, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9155765363777273273, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8417444358873442197}
+      addedObject: {fileID: 696347899165510435}
+    - targetCorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737048121144543327}
   m_SourcePrefab: {fileID: 100100000, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
---- !u!1 &1830296104717274086 stripped
+--- !u!1 &7897886144476599066 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155765363777273273, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
   m_PrefabInstance: {fileID: 7379522420026160735}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8417444358873442197
+--- !u!114 &696347899165510435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830296104717274086}
+  m_GameObject: {fileID: 7897886144476599066}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9fa0274b8e323478d904f79885630f, type: 3}
@@ -110,3 +114,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: TutorialScene
   interactName: The Cave
+--- !u!65 &1737048121144543327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897886144476599066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.1, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}

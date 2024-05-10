@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1221396204061901968, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -56,28 +60,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitPortal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6072446151652685331, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6655565670970556640, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     - {fileID: 2350499025131829836, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9155765363777273273, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8959894595414635021}
+      addedObject: {fileID: 1419720133742533396}
+    - targetCorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7097558853094481869}
   m_SourcePrefab: {fileID: 100100000, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
---- !u!1 &6802206808232292804 stripped
+--- !u!1 &3069803530003441976 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155765363777273273, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 861235434002408773, guid: 1dc7b623e9b9e21458979e6ce2083f9f, type: 3}
   m_PrefabInstance: {fileID: 2407626018885536893}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8959894595414635021
+--- !u!114 &1419720133742533396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6802206808232292804}
+  m_GameObject: {fileID: 3069803530003441976}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b42e2a67b2e3e941b5c783d829622b6, type: 3}
@@ -85,3 +93,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: HomeHubScene
   hubName: The Village
+--- !u!65 &7097558853094481869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069803530003441976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.2, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}

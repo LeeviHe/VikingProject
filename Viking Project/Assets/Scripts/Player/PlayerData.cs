@@ -18,6 +18,7 @@ public class PlayerData : MonoBehaviour {
 
     [Header("Health")]
     public float activeMaxHealth;
+    public int healthPotions;
 
     [Header("Speed")]
     public float activeSpeed;
@@ -56,5 +57,9 @@ public class PlayerData : MonoBehaviour {
     public void UpdateSpeed( float newSpeed ) {
         activeSpeed = newSpeed;
         // Optionally, update the player object with the new health
+    }
+
+    public void UpdatePotions(int newAmount) {
+        healthPotions = newAmount;
     }
 }

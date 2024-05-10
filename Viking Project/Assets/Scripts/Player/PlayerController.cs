@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public GameObject weaponObject;
     public Transform weaponHoldingPoint;
     public BlessingSO currentBlessing;
+    public int healthPotions;
     // Spawn point of ability 
     // CHANGE!!
     public Transform abilityOrigin;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     private void Start() {
         isAlive = true;
         if (weapon) {
-            Weapon.SpawnWeapon(weapon, this, weapon.prefab.transform.rotation);
+            Weapon.SpawnWeapon(weapon, this, weapon.prefab.transform.rotation, this);
         }
     }
 
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             playerAnimations.enabled = false;
         }
         if (HasWeapon()) {
-            if (weapon.twoHanded && !canWieldTwoHanded) {
+            if (weapon.twoHanded && !canWieldTwoHanded && !currentBlessing.canWieldTwoHanded) {
                 ClearWeapon();
             }
         }
@@ -125,6 +126,27 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
             }
         }
     }
+
+    public void OnHeal( InputAction.CallbackContext value ) {
+        if (value.started) {
+            if (healthPotions > 0) {
+                if (currentHealth < PlayerData.Instance.activeMaxHealth) {
+                    float newHealth = currentHealth + 50;
+                    if (newHealth >= PlayerData.Instance.activeMaxHealth) {
+                        currentHealth = PlayerData.Instance.activeMaxHealth;
+                    } else { 
+                        currentHealth += 50;
+                    }
+                    healthPotions--;
+                } else {
+                    Debug.Log("Player has max health");
+                }
+            } else {
+                Debug.Log("No health potions");
+            }
+        }
+    }
+
     public void OnLook( InputAction.CallbackContext value ) {
         lookInput = value.ReadValue<Vector2>();
     }
@@ -202,6 +224,12 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         currentHealth = playerData.activeMaxHealth;
 
         currentMoveSpeed = playerData.activeSpeed;
+
+        if (currentBlessing) { 
+            canWieldTwoHanded = currentBlessing.canWieldTwoHanded;
+        }
+
+        healthPotions = playerData.healthPotions;
 
     }
 

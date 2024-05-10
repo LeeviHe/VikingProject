@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,12 +61,14 @@ public class UIManager : MonoBehaviour {
         healthSlider.maxValue = playerData.activeMaxHealth;
         easeHealthSlider.maxValue = playerData.activeMaxHealth;
         //If health value changes, update healthslider to new value
-        if (healthSlider.value != playerController.currentHealth) {
+        if (healthSlider.value > playerController.currentHealth) {
             healthSlider.value = playerController.currentHealth;
+        } else if (healthSlider.value < playerController.currentHealth) {
+            healthSlider.value = Mathf.Lerp(healthSlider.value, playerController.currentHealth, healthLerpSpeed * 2);
         }
         //For nice animation
         if (healthSlider.value != easeHealthSlider.value) {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, playerController.currentHealth, healthLerpSpeed);
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, playerController.currentHealth, healthLerpSpeed * 1.5f);
         }
     }
 }

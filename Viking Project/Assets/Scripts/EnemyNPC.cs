@@ -92,12 +92,18 @@ public class EnemyNpc : QuestItem {
     //NPC takes damage, armor value is substracted and then damage is dealt. Perform death function after no more health
     public void TakeDamage( float damage ) {
         if (npcAlive) {
+            StartCoroutine(TemporarilyDisableCharacterController(2f));
             damage = damage - enemyStats.armor;
             currentHealth -= damage;
             if (currentHealth <= 0) {
                 Die();
             }
         }
+    }
+    private IEnumerator TemporarilyDisableCharacterController( float duration ) {
+        GetComponent<CharacterController>().enabled = false;
+        yield return new WaitForSeconds(duration);
+        GetComponent<CharacterController>().enabled = true;
     }
 
     //Deal damage to player with NPC stat value

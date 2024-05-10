@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerCombat : MonoBehaviour {
     [SerializeField] private PlayerController playerController;
@@ -27,41 +28,24 @@ public class PlayerCombat : MonoBehaviour {
         }
     }
 
+    public void AttackHit( Collider hitCollider ) {
+        if (attackDuration > 0) {
+            int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
+            hitCollider.GetComponent<EnemyNpc>().TakeDamage(damage);
+        }
+        
+    }
+
     public IEnumerator PerformAttack() {
         playerController.playerAnimations.playerAnimator.speed = 1.0f / attackDuration;
-        yield return new WaitForSeconds(attackDuration * 0.8f);
         // Track enemies hit during the entire attack animation
-        List<Collider> allHitEnemies = new List<Collider>();
-        Debug.Log("start detection");
         while (attackDuration > 0) {
             playerController.playerAnimations.playerAnimator.SetBool("Block", false);
             playerController.isBlocking = false;
-            // Detect enemies in attack range
-            Collider[] potentialHitEnemies = Physics.OverlapSphere(playerController.weaponHoldingPoint.position, weapon.hitRange, enemyLayer);
-            foreach (Collider enemy in potentialHitEnemies) {
-                if (!allHitEnemies.Contains(enemy)) {
-                    // Apply damage to the enemy
-                    if (enemy.GetComponent<EnemyNpc>() != null) {
-                        // Damage dealt is randomly set on each hit, defined between weapon's damage stats
-                        int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
-                        Debug.Log("Applied " + damage + " to " + enemy);
-                        enemy.GetComponent<EnemyNpc>().TakeDamage(damage);
-                        allHitEnemies.Add(enemy);
-                    }
-                }
-            }
             attackDuration -= Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Stop detection");
         playerController.playerAnimations.playerAnimator.speed = 1f;
-    }
-
-    void OnDrawGizmosSelected() {
-        if (weapon != null) {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(playerController.weaponHoldingPoint.position, weapon.hitRange);
-        }
     }
 
     public void TakeDamage( float damage ) {

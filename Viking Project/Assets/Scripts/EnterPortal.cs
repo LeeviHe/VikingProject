@@ -8,8 +8,13 @@ public class EnterPortal : MonoBehaviour, IInteractable {
     [Header("Strings for Scene and UI")]
     [SerializeField] private string sceneName;
     [SerializeField] private string interactName;
-    public void SwitchToLevelScene() {
-        StartCoroutine(LoadLevelAsync(sceneName));
+    public void SwitchToLevelScene(PlayerController player) {
+        if (player.currentQuest) {
+            StartCoroutine(LoadLevelAsync(sceneName));
+        } else {
+            Debug.Log("You must have a quest to enter the Cave");
+        }
+        
     }
 
     private IEnumerator LoadLevelAsync( string levelName ) {
@@ -31,6 +36,6 @@ public class EnterPortal : MonoBehaviour, IInteractable {
     }
 
     public void Interact( PlayerController player ) {
-        SwitchToLevelScene();
+        SwitchToLevelScene(player);
     }
 }

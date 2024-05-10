@@ -86,18 +86,38 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eaf5c6e65ef905248aab373a5e0c33be, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5102984806358246198}
+      addedObject: {fileID: 1792399191134507646}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eaf5c6e65ef905248aab373a5e0c33be, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1792399191134507646}
+      addedObject: {fileID: 8506433835818717393}
   m_SourcePrefab: {fileID: 100100000, guid: eaf5c6e65ef905248aab373a5e0c33be, type: 3}
 --- !u!1 &6436044885135229651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eaf5c6e65ef905248aab373a5e0c33be, type: 3}
   m_PrefabInstance: {fileID: 6165433837678083970}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &-5102984806358246198
-MeshCollider:
+--- !u!114 &1792399191134507646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436044885135229651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e330ddd3b6f70d44b8cc9b04201fde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCombat: {fileID: 0}
+  weaponSO: {fileID: 11400000, guid: 2c72337441c196d439287f41f855b870, type: 2}
+  minDamage: 0
+  maxDamage: 0
+  hitRange: 0
+  attackSpeed: 0
+  blockingPower: 0
+  twoHanded: 0
+--- !u!65 &8506433835818717393
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -113,26 +133,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8164388750953057965, guid: eaf5c6e65ef905248aab373a5e0c33be, type: 3}
---- !u!114 &1792399191134507646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6436044885135229651}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e330ddd3b6f70d44b8cc9b04201fde1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSO: {fileID: 11400000, guid: 2c72337441c196d439287f41f855b870, type: 2}
-  minDamage: 0
-  maxDamage: 0
-  hitRange: 0
-  attackSpeed: 0
-  blockingPower: 0
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.25, z: 0.2}
+  m_Center: {x: 0, y: 0.3, z: 0.005}

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceSpikeSO: {fileID: 11400000, guid: a0b6a900c8e52c846a93f15f4e971882, type: 2}
+  hit: 0
 --- !u!54 &7089881716151449190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -90,7 +91,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 247
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

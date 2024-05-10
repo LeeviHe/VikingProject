@@ -63,6 +63,7 @@ MonoBehaviour:
   weaponObject: {fileID: 0}
   weaponHoldingPoint: {fileID: 8033730305092556532}
   currentBlessing: {fileID: 0}
+  healthPotions: 0
   abilityOrigin: {fileID: 3144889396278254992}
   currentHealth: 0
   currentMoveSpeed: 0
@@ -285,6 +286,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7849e2a7-a2f4-42ab-9511-e2fbfaf26dc5
     m_ActionName: Player/Spell 1[/Keyboard/g,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -199063091410215100}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnHeal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7534873c-300d-444e-99cf-a7c8607a7580
+    m_ActionName: Player/Heal[/Keyboard/q,/DualShock4GamepadHID/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

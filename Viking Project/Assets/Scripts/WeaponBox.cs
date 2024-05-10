@@ -33,7 +33,7 @@ public class WeaponBox : MonoBehaviour, IInteractable {
                 Debug.Log("Player can wield two-handed");
                 Debug.Log("player took " + weaponsList[weaponIteration]);
                 PlayerData.Instance.UpdateWeapon(weaponsList[weaponIteration]);
-                Weapon.SpawnWeapon(weaponsList[weaponIteration], playerController, weaponsList[weaponIteration].prefab.transform.rotation);
+                Weapon.SpawnWeapon(weaponsList[weaponIteration], playerController, weaponsList[weaponIteration].prefab.transform.rotation, playerController);
                 uiElementManager.ToggleScreen(uiElementManager.weaponSelectorUI);
                 Time.timeScale = 1f;
             } else {
@@ -43,7 +43,7 @@ public class WeaponBox : MonoBehaviour, IInteractable {
             Debug.Log("Weapon is not two-handed");
             Debug.Log("player took " + weaponsList[weaponIteration]);
             PlayerData.Instance.UpdateWeapon(weaponsList[weaponIteration]);
-            Weapon.SpawnWeapon(weaponsList[weaponIteration], playerController, weaponsList[weaponIteration].prefab.transform.rotation);
+            Weapon.SpawnWeapon(weaponsList[weaponIteration], playerController, weaponsList[weaponIteration].prefab.transform.rotation, playerController);
             uiElementManager.ToggleScreen(uiElementManager.weaponSelectorUI);
             Time.timeScale = 1f;
         }
