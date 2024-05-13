@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   spellName: FireBall
-  spellPrefab: {fileID: 0}
+  spellPrefab: {fileID: 4964893151717913429, guid: 0ce11d5891f372e4a86fdab2880d8beb, type: 3}
   spellEffectPrefab: {fileID: 9196989299250413126, guid: 50e86df548518814ea6c482054c8f651, type: 3}
-  spellCooldown: 3
-  spellLife: 3
-  spellSpeed: 2
+  spellCooldown: 5
+  spellLife: 15
+  spellSpeed: 7
   damage: 20
   burnDamage: 5
   burnTime: 3
   radius: 3
+  acceleration: 15
+  rotationSpeed: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 //Fireball spell
 [CreateAssetMenu(fileName = "New Fireball Spell", menuName = "Abilities/Fireball Spell")]
@@ -12,16 +13,24 @@ public class FireballSO : SpellSO {
     public int burnDamage;
     public int burnTime;
     public float radius;
+    public float acceleration;
+    public float rotationSpeed;
     public LayerMask enemyLayer; // Layer mask for enemies
 
-    public void ExecuteSpell() {
+    public void ExecuteSpell( Transform origin ) {
         Debug.Log("test fire ball execution");
+        Vector3 spawnPosition = origin.position + Vector3.up * 3;
+        GameObject spell = Instantiate(spellPrefab, spawnPosition, origin.rotation);
+        spell.transform.parent = origin;
+        Destroy(spell, spellLife);
     }
 
     public void Explosion( Transform origin ) {
         Debug.Log("Boom");
+        
         List<Collider> allHitEnemies = new List<Collider>();
-
+        var effect = Instantiate(spellEffectPrefab, origin.transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
         // Set aiming in playerCombat
         Collider[] potentialHitEnemies = Physics.OverlapSphere(origin.position, radius, enemyLayer);
         foreach (Collider enemy in potentialHitEnemies) {
@@ -61,53 +70,6 @@ public class FireballSO : SpellSO {
     }
     protected override void ExecuteAbility( Transform origin ) {
         // Execute the functionality of the Fireball spell
-        ExecuteSpell();
+        ExecuteSpell(origin);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-public class Blessing : MonoBehaviour {
-
-    public void EquipBlessing( BlessingSO blessingSO, PlayerController player ) {
-        // Remove effects of previously equipped blessing (if any)
-        RemoveBlessingEffects(player);
-
-        // Apply new blessing effects
-        blessingSO.ApplyBlessing(player);
-        PlayerData.Instance.UpdateBlessing(blessingSO);
-    }
-    public void EquipBlessing( BlessingSO blessingSO ) {
-        // Remove effects of previously equipped blessing (if any)
-        RemoveBlessingEffects();
-        // Apply new blessing effects
-        blessingSO.ApplyBlessing(this);
-        PlayerData.Instance.UpdateBlessing(blessingSO);
-    }
-    public void ModifyStat( float stat, float modifier ) {
-        stat += modifier;
-    }
-    private void RemoveBlessingEffects( PlayerController player ) {
-        // Reset stats to base values
-        player.currentMoveSpeed = player.stats.movementSpeed;
-        player.currentHealth = player.stats.maxHealth;
-    }
-}*/

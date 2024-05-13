@@ -15,7 +15,7 @@ MonoBehaviour:
   spellName: IceSpike
   spellPrefab: {fileID: 761103759351935978, guid: a41be1b68932bfb46882f4310ddc376a, type: 3}
   spellEffectPrefab: {fileID: 9196989299250413126, guid: ea06efe12eccee541a5445428b936dc4, type: 3}
-  spellCooldown: 1
+  spellCooldown: 5
   spellLife: 3
   spellSpeed: 10
   damage: 5
