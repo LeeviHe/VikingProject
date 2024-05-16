@@ -21,6 +21,8 @@ public class SelectorUIManager : MonoBehaviour {
     public Button navButtonBack;
     public TextMeshProUGUI questHeader;
     public TextMeshProUGUI questDescription;
+    public GameObject shopScreen;
+    public TextMeshProUGUI potionCountText;
     public GameObject inGameHud;
     public GameObject activeUI;
 

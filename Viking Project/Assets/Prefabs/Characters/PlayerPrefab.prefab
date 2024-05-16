@@ -64,6 +64,7 @@ MonoBehaviour:
   weaponHoldingPoint: {fileID: 8033730305092556532}
   currentBlessing: {fileID: 0}
   healthPotions: 0
+  maxHealthPotions: 3
   abilityOrigin: {fileID: 3144889396278254992}
   currentHealth: 0
   currentMoveSpeed: 0

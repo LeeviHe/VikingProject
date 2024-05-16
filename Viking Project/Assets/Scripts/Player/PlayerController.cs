@@ -18,8 +18,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public Transform weaponHoldingPoint;
     public BlessingSO currentBlessing;
     public int healthPotions;
-    // Spawn point of ability 
-    // CHANGE!!
+    public int maxHealthPotions = 3;
     public Transform abilityOrigin;
     [Header("Health Sliders")]
     public float currentHealth; //Handle player's health
@@ -63,6 +62,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     private void Update() {
         coins = PlayerData.Instance.coins;
+        healthPotions = PlayerData.Instance.healthPotions;
         if (currentQuest) {
             openQuests = currentQuest.objectives;
         }
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
                     } else { 
                         currentHealth += 50;
                     }
-                    healthPotions--;
+                    PlayerData.Instance.healthPotions--;
                 } else {
                     Debug.Log("Player has max health");
                 }
