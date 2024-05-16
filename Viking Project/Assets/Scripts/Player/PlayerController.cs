@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [Header("Health Sliders")]
     public float currentHealth; //Handle player's health
     public float currentMoveSpeed;
+    [Header("Coins")]
+    public int coins;
 
     [Header("States")]
     public bool isAlive = true;
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     [SerializeField] private float movementSmoothingSpeed;
 
     private void Update() {
+        coins = PlayerData.Instance.coins;
         if (currentQuest) {
             openQuests = currentQuest.objectives;
         }
@@ -163,6 +166,14 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         }
         
     }
+
+    public void OnTogglePause(InputAction.CallbackContext value) {
+        if (value.started) {
+            Debug.Log("Game pause input pressed");
+            //GameManager.Instance.TogglePauseState();
+        }
+    }
+
     private void EnterFightMode() {
         // Perform actions to enter fight mode
         playerAnimations.SwitchAttackModeAnimation();
@@ -222,6 +233,8 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
         // Update player's health
         currentHealth = playerData.activeMaxHealth;
+
+        coins = playerData.coins;
 
         currentMoveSpeed = playerData.activeSpeed;
 

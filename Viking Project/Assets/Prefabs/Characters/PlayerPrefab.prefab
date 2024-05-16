@@ -67,6 +67,7 @@ MonoBehaviour:
   abilityOrigin: {fileID: 3144889396278254992}
   currentHealth: 0
   currentMoveSpeed: 0
+  coins: 0
   isAlive: 1
   isBlocking: 0
   isFightMode: 0
@@ -302,6 +303,34 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7534873c-300d-444e-99cf-a7c8607a7580
     m_ActionName: Player/Heal[/Keyboard/q,/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -199063091410215100}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnTogglePause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 35d94e53-a04c-42d0-aa63-7bc910e78096
+    m_ActionName: Player/TogglePause[/Keyboard/escape,/DualShock4GamepadHID/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaaeeacb-8ed2-4003-a7fb-82bc2b0c56af
+    m_ActionName: Menu Controls/Navigate[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/dpad]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc1e4c85-d346-486e-937d-8be1ca9c72d3
+    m_ActionName: Menu Controls/TogglePause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 97460913-380b-4787-883c-9422f7fce9bb
+    m_ActionName: Menu Controls/Submit
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

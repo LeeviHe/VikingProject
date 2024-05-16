@@ -12,4 +12,5 @@ public class NPCStatsSO : ScriptableObject {
     public float attackCooldown;
     public float attackRange;
     public float aggroRange;
+    public int coinDrop;
 }

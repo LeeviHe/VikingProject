@@ -20,3 +20,4 @@ MonoBehaviour:
   attackCooldown: 3
   attackRange: 1.5
   aggroRange: 7
+  coinDrop: 3

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class WeaponBox : MonoBehaviour, IInteractable {
     [SerializeField] private List<WeaponSO> weaponsList = new List<WeaponSO>();
-    public UIElementManager uiElementManager;
+    public SelectorUIManager uiElementManager;
     public PlayerController playerController;
 
     private void InteractWeaponBox() {

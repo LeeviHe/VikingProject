@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class QuestBoard : MonoBehaviour, IInteractable {
     [SerializeField] private List<QuestSO> questList = new List<QuestSO>();
-    public UIElementManager elementManager;
+    public SelectorUIManager elementManager;
     string nextButtonName = "NextButton";
     string backButtonName = "PreviousButton";
     public int pageTotal;

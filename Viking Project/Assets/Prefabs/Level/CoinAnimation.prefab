@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.0203648
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7414436
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.78929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
       propertyPath: m_Name
-      value: Coin 1
+      value: CoinAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b15afc0740a56b845b596358ffede3ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

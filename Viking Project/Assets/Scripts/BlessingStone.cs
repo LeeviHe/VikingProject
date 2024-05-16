@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BlessingStone : MonoBehaviour, IInteractable {
     public List<BlessingSO> blessings = new List<BlessingSO>();
-    public UIElementManager uiElementManager;
+    public SelectorUIManager uiElementManager;
     public PlayerController playerController;
 
     private void InteractWithBlessingStone() {

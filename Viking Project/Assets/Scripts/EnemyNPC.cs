@@ -15,6 +15,7 @@ public class EnemyNpc : QuestItem {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider easeHealthSlider;
     [SerializeField] private Transform weaponHoldingPoint;
+    [SerializeField] private GameObject coinObject;
     public SpellSO activeSpell;
     public NavMeshAgent navAgent;
     private PlayerController player;
@@ -92,7 +93,7 @@ public class EnemyNpc : QuestItem {
     //NPC takes damage, armor value is substracted and then damage is dealt. Perform death function after no more health
     public void TakeDamage( float damage ) {
         if (npcAlive) {
-            StartCoroutine(TemporarilyDisableCharacterController(2f));
+            //StartCoroutine(TemporarilyDisableCharacterController(1f));
             damage = damage - enemyStats.armor;
             currentHealth -= damage;
             if (currentHealth <= 0) {
@@ -186,7 +187,12 @@ public class EnemyNpc : QuestItem {
         animator.ResetTrigger("Running");
         animator.ResetTrigger("Attack");
         CancelInvoke("EnemyAttack");
-        Destroy(gameObject, 5f);
+        if (enemyStats.coinDrop > 0) {
+            Debug.Log("Player acquired " + enemyStats.coinDrop + " coins");
+            coinObject.SetActive(true);
+            PlayerData.Instance.UpdateCoins(enemyStats.coinDrop);
+        }
+        Destroy(gameObject, 3f);
         // If NPC death is objective perform interaction with objective
         if (objective) { 
             ObjectiveInteraction();
