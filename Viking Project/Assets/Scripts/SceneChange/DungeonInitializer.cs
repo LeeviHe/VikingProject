@@ -4,21 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonInitializer : MonoBehaviour {
-
-    public PlayerData playerData;
     public List<Transform> spawnPoints; // List of available spawn points
 
     private List<Transform> availableSpawnPoints; // List of spawn points that are still available
-    private void Awake() {
-        playerData = PlayerData.Instance;
-    }
+
     void Start() {
         availableSpawnPoints = new List<Transform>(spawnPoints);
         InitializeObjectives();
     }
 
+    // Spawn objectives of the current quest to the list of possible spawn points
     private void InitializeObjectives() {
-        QuestSO activeQuest = playerData.currentQuest;
+        QuestSO activeQuest = PlayerData.Instance.currentQuest;
 
         if (activeQuest != null) {
             foreach (ObjectiveSO objective in activeQuest.objectives) {

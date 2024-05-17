@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour {
         ReadyToLeave,
         GameOver
     }
-    [SerializeField] private GameObject deathScreenUI;
-    [SerializeField] private GameObject winScreenUI;
+
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private Toggle toggleUI;
     [SerializeField] private GameObject portal;
@@ -32,17 +31,15 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    // Remnant of old demo, little functionality
     private void HandleGameState() {
         // Handle logic based on current state
         switch (gameState) {
             case GameState.Default:
-                //Cursor.visible = false;
                 break;
             case GameState.QuestActive:
-                //toggleUI.gameObject.SetActive(true);
                 break;
             case GameState.ReadyToLeave:
-                //toggleUI.isOn = true;
                 portal.gameObject.SetActive(true);
                 break;
             case GameState.GameOver:
@@ -71,6 +68,8 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.ReadyToLeave;
     }
 
+
+    // To be used for pausing the game
     public void TogglePauseState() {
         isPaused = !isPaused;
 
@@ -91,18 +90,5 @@ public class GameManager : MonoBehaviour {
         }
 
         Time.timeScale = newTimeScale;
-    }
-
-    public void RestartButtonClicked() {
-        // Unpause the game
-        Time.timeScale = 1f;
-
-        // Restart the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    public void QuitButtonClicked() {
-        // Implement quit button logic here, such as quitting the application
-        // Add your quit button logic here
-        Application.Quit();
     }
 }

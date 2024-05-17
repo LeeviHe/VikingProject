@@ -68,6 +68,7 @@ public class FireBallProjectile : MonoBehaviour {
         }
     }
 
+    // Handle hit when trigger is hit
     void OnTriggerEnter( Collider other ) {
         if (!hit) {
             hit = true;

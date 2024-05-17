@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectorUIManager : MonoBehaviour {
+    [Header("Blessing selection UI")]
     public GameObject blessingSelectorUI;
+    [Header("Weapon selection UI")]
     public GameObject weaponSelectorUI;
     public Image axeImage;
     public GameObject axeButton;
     public TextMeshProUGUI axeButtonText;
+    [Header("Quest board UI")]
     public GameObject questBoardUI;
     public GameObject questInfoUI;
     public TextMeshProUGUI questPageText;
@@ -19,16 +22,20 @@ public class SelectorUIManager : MonoBehaviour {
     public TextMeshProUGUI quest2Text;
     public Button navButtonNext;
     public Button navButtonBack;
+    [Header("Quest detail UI")]
     public TextMeshProUGUI questHeader;
     public TextMeshProUGUI questDescription;
+    [Header("Shop UI")]
     public GameObject shopScreen;
     public TextMeshProUGUI potionCountText;
+    [Header("Player HUD")]
     public GameObject inGameHud;
+    [Header("Active UI element")]
     public GameObject activeUI;
 
     public void ToggleScreen( GameObject selectorUI ) {
-        //When the selectorUI is active, toggle it as inactive, toggle player HUD off, continue game with timescale and clear activeUI since there isn't an active UI
-        //When the selectorUI is not active, toggle it as active, toggle player HUD on, pause game with timescale and set the selectorUI as the activeUI object
+        //Use for toggling UI screen such as weapon selection screen
+        //Set wanted UI GameObject from above fields as selectorUI
         bool isActive = selectorUI.activeSelf;
         selectorUI.SetActive(!isActive);
         activeUI = selectorUI.gameObject;
@@ -41,6 +48,7 @@ public class SelectorUIManager : MonoBehaviour {
         }
     }
 
+    //Button for universal back button on UI screens
     public void SelectorBackButton() {
         ToggleScreen(activeUI);
         Time.timeScale = 1f;

@@ -11,7 +11,7 @@ public class PlayerData : MonoBehaviour {
 
     [Header("Player Quests")]
     public QuestSO currentQuest; // Active quest for player
-    public List<ObjectiveSO> openQuests; //List of all quests set for player
+    public List<ObjectiveSO> objectives; //List of all objectives set for player from active quest
 
     [Header("Blessing")]
     public BlessingSO blessing;

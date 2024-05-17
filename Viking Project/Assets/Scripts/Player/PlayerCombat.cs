@@ -21,6 +21,7 @@ public class PlayerCombat : MonoBehaviour {
 
     public static event Action OnPlayerDeath;
 
+    // Update weapon info
     private void LateUpdate() {
         weapon = playerController.weapon;
         if (weapon) {
@@ -28,6 +29,7 @@ public class PlayerCombat : MonoBehaviour {
         }
     }
 
+    //Handling hit detection
     public void AttackHit( Collider hitCollider ) {
         if (attackDuration > 0) {
             int damage = UnityEngine.Random.Range(weapon.minDamage, weapon.maxDamage + 1);
@@ -36,9 +38,9 @@ public class PlayerCombat : MonoBehaviour {
         
     }
 
+    // Perform attack animation
     public IEnumerator PerformAttack() {
         playerController.playerAnimations.playerAnimator.speed = 1.0f / attackDuration;
-        // Track enemies hit during the entire attack animation
         while (attackDuration > 0) {
             playerController.playerAnimations.playerAnimator.SetBool("Block", false);
             playerController.isBlocking = false;
@@ -48,10 +50,9 @@ public class PlayerCombat : MonoBehaviour {
         playerController.playerAnimations.playerAnimator.speed = 1f;
     }
 
+    // Handle player taking damage
     public void TakeDamage( float damage ) {
         if (playerController.isAlive) {
-            //Check if cooldown for taking damage has passed
-
             //If player is blocking change the damage value based on player weapon blocking power
             if (playerController.isBlocking) {
                 damage /= weapon.blockingPower;
@@ -73,7 +74,6 @@ public class PlayerCombat : MonoBehaviour {
                 HandleDeath(playerController.playerAnimations);
             } else {
                 playerController.playerAnimations.PlayHitAnimation();
-                //PlayerData.Instance.UpdateHealth(playerController.currentHealth);
             }
             //Update last damage time
             lastDamageTime = Time.time;

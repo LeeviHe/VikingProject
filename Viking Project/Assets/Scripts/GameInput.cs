@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameInput : MonoBehaviour {
 
+    //This script is mostly obsolete, input is handled through editor and PlayerController
+
     private PlayerInputActions playerInputActions;
     //Enable new input system
     private void Awake() {

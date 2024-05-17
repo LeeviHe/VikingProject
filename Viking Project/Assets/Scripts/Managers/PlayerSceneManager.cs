@@ -8,6 +8,7 @@ public class PlayerSceneManager : MonoBehaviour {
     public Transform playerSpawnPoint;
     private GameObject playerInstance; // Reference to the instantiated player object
 
+    // Made for spawning player to level on scene change
     private void Start() {
         if (playerInstance == null && playerPrefab != null) {
             // Instantiate the player prefab

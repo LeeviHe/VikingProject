@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    // Turn player with movement direction
     public void TurnPlayer() {
         float rotationSpeed = 10f;
         if (moveDir.sqrMagnitude > 0.01f) {
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour {
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
+
+    //Turn player in fight mode according to look input if there is any
     public void TurnPlayerFightMode() {
         float rotationSpeed = 5f;
         Vector3 lookRotation = new Vector3(lookDir.x, 0f, lookDir.y);

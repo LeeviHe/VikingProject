@@ -32,7 +32,6 @@ public class QuestSO : ScriptableObject {
         foreach (var objective in objectives) {
             Debug.Log("Objectives : " + objective.description + " status : " + objective.Completed);
             // If iterated objective in the loop is required and is not completed set requirement value as false and break off from loop
-            // !!!IMPROVE LOGIC HERE!!!! Would like to check through every objective and see which ones are completed and which ones are not, and Debug.Log them at the end of the function
             if (objective.required && !objective.Completed) {
                 allRequiredObjectivesCompleted = false;
                 Debug.Log("Quest still active: " + questDescription);

@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
 
     [Header("Quests")]
     public QuestSO currentQuest; // Active quest for player
-    public List<ObjectiveSO> openQuests = new List<ObjectiveSO>(); //List of all quest set for player
+    public List<ObjectiveSO> objectives = new List<ObjectiveSO>(); //List of all quest set for player
 
     public PlayerStatsSO stats; //Player stats
     private float nextAttackTime = 0f; //Time when next attack is allowed
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         coins = PlayerData.Instance.coins;
         healthPotions = PlayerData.Instance.healthPotions;
         if (currentQuest) {
-            openQuests = currentQuest.objectives;
+            objectives = currentQuest.objectives;
         }
         if (isAlive) {
             CalculateMovementInputSmoothing();
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         } else {
             playerAnimations.enabled = false;
         }
+        // Check if player has a two-handed weapon and if player can wield it
         if (HasWeapon()) {
             if (weapon.twoHanded && !canWieldTwoHanded && !currentBlessing.canWieldTwoHanded) {
                 ClearWeapon();
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     public void OnAttack( InputAction.CallbackContext value ) {
+        // Set attack duration and set attack cooldown as that duration
         if (value.started && weapon != null && playerCombat.attackDuration <= 0 && isFightMode) {
             playerAnimations.PlayAttackAnimation();
             nextAttackTime = Time.time + attackDefaultCooldown / weapon.attackSpeed;
@@ -157,7 +159,6 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     public void OnToggleFightMode( InputAction.CallbackContext value ) {
         if (value.started) {
             isFightMode = !isFightMode;
-
             if (isFightMode) {
                 EnterFightMode();
             } else {
@@ -206,6 +207,7 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
         currentMoveSpeed = stats.movementSpeed;
         currentHealth = stats.maxHealth;
     }
+
     void CalculateMovementInputSmoothing() {
         smoothInputMovement = Vector3.Lerp(smoothInputMovement, rawInputMovement, Time.deltaTime * movementSmoothingSpeed);
     }
@@ -219,12 +221,13 @@ public class PlayerController : MonoBehaviour, IWeaponParent {
     }
 
     // Method to update the player object with data from PlayerData script
+    // Purpose is to update the player prefab data when spawned
     private void UpdatePlayerObject() {
         PlayerData playerData = PlayerData.Instance;
         // Update player's weapon
         weapon = playerData.weapon;
         // Update player's quests
-        openQuests = playerData.openQuests;
+        objectives = playerData.objectives;
 
         currentQuest = playerData.currentQuest;
 

@@ -30,11 +30,9 @@ public class Weapon : MonoBehaviour {
     }
 
     public void OnTriggerEnter( Collider other ) {
-        Debug.Log("hit");
         playerCombat.AttackHit(other);
     }
 
-    //!!!POLISH!!! Questionable functionality
     //Set Weapon to a parent object (players hand)
     public void SetWeaponParent( IWeaponParent weaponParent ) {
         //Set the new parent (hand) for the weapon

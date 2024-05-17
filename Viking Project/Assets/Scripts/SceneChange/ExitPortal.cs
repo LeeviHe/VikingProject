@@ -8,6 +8,8 @@ public class ExitPortal : MonoBehaviour, IInteractable {
     [SerializeField] private string sceneName;
     [SerializeField] private string hubName;
 
+    //Script for exiting a dungeon
+
     public void SwitchToHubScene() {
         StartCoroutine(LoadLevelAsync(sceneName));
     }

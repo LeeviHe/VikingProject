@@ -27,6 +27,7 @@ public class HUDManager : MonoBehaviour {
         UpdateHealthUI();
     }
 
+    // Set current active quest info on played hud
     void SetObjectiveUI() {
         for (int i = 0; i < objectives.Count; i++) {
             objectiveUIs[i].gameObject.SetActive(true);
@@ -55,6 +56,8 @@ public class HUDManager : MonoBehaviour {
         questTitle.text = header;
         questDescription.text = description;
     }
+
+    // Health bar sliders
     void UpdateHealthUI() {
         PlayerData playerData = PlayerData.Instance;
         float healthLerpSpeed = 0.01f; //Value for healthbar animation speed

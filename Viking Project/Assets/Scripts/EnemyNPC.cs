@@ -75,7 +75,7 @@ public class EnemyNpc : QuestItem {
     }
 
     void ApplySpellEffect() {
-        FireballSO fireballSpell = activeSpell as FireballSO; // Assuming Fireball is a type of SpellSO
+        FireballSO fireballSpell = activeSpell as FireballSO;
         IceSpikeSO iceSpell = activeSpell as IceSpikeSO;
 
         if (fireballSpell != null && !coroutineStarted) {

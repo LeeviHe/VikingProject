@@ -15,6 +15,10 @@ public class QuestBoard : MonoBehaviour, IInteractable {
     int questIteration = 0;
     int inspectedQuestIteration = 0;
 
+    // This code mostly handling the UI of the quest board
+    // If this is to be modified make sure to change everything with unity editor and UIElementManager script accordingly
+
+    // Check how many pages are to be set according to set quest amount
     public void Awake() {
         CountPages();
         SetQuestsToPage(questIteration);
@@ -31,6 +35,7 @@ public class QuestBoard : MonoBehaviour, IInteractable {
         }
     }
 
+    // Navigating through quest pages
     public void Navigation( Button buttonObject ) {
         if (buttonObject == elementManager.quest1) {
             inspectedQuestIteration = questIteration;
@@ -65,6 +70,7 @@ public class QuestBoard : MonoBehaviour, IInteractable {
         }
     }
 
+    //Set quest info on quest detail page
     private void SetQuestInfo(int i) {
         elementManager.questHeader.text = questList[i].name;
         elementManager.questDescription.text = questList[i].questDescription;

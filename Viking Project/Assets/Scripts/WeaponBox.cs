@@ -12,6 +12,9 @@ public class WeaponBox : MonoBehaviour, IInteractable {
 
     private void InteractWeaponBox() {
         uiElementManager.ToggleScreen(uiElementManager.weaponSelectorUI);
+
+        //Checking if player can wield two-handed weapons
+        //Change UI elements accordingly
         if (!playerController.canWieldTwoHanded) {
             uiElementManager.axeImage.color = Color.grey;
             uiElementManager.axeButton.GetComponent<Button>().interactable = false;

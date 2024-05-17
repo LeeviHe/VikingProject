@@ -18,20 +18,16 @@ public class FireballSO : SpellSO {
     public LayerMask enemyLayer; // Layer mask for enemies
 
     public void ExecuteSpell( Transform origin ) {
-        Debug.Log("test fire ball execution");
         Vector3 spawnPosition = origin.position + Vector3.up * 3;
         GameObject spell = Instantiate(spellPrefab, spawnPosition, origin.rotation);
         spell.transform.parent = origin;
         Destroy(spell, spellLife);
     }
 
-    public void Explosion( Transform origin ) {
-        Debug.Log("Boom");
-        
+    public void Explosion( Transform origin ) {  
         List<Collider> allHitEnemies = new List<Collider>();
         var effect = Instantiate(spellEffectPrefab, origin.transform.position, Quaternion.identity);
         Destroy(effect, 5f);
-        // Set aiming in playerCombat
         Collider[] potentialHitEnemies = Physics.OverlapSphere(origin.position, radius, enemyLayer);
         foreach (Collider enemy in potentialHitEnemies) {
             if (!allHitEnemies.Contains(enemy)) {
@@ -57,6 +53,7 @@ public class FireballSO : SpellSO {
     }
 
     public IEnumerator Burn( EnemyNpc target ) {
+        // Coroutine to perform burn to target
         int timeBurned = burnTime;
         Debug.Log(target);
         Debug.Log(burnDamage);
