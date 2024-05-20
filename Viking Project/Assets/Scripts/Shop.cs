@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour, IInteractable {
 
     public void Update() {
         uiElementManager.potionCountText.text = playerController.healthPotions + "/" + playerController.maxHealthPotions;
+        uiElementManager.playerMoneyScreenText.text = "You have " + playerController.coins;
     }
 
     public void OpenShop() {

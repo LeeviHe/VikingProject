@@ -27,6 +27,7 @@ public class SelectorUIManager : MonoBehaviour {
     public TextMeshProUGUI questDescription;
     [Header("Shop UI")]
     public GameObject shopScreen;
+    public TextMeshProUGUI playerMoneyScreenText;
     public TextMeshProUGUI potionCountText;
     [Header("Player HUD")]
     public GameObject inGameHud;
