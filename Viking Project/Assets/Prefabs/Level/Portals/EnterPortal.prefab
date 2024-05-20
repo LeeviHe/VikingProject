@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9fa0274b8e323478d904f79885630f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: TutorialScene
-  interactName: The Cave
+  sceneName: TutorialSceneV2
+  interactName: The Skull Isle
 --- !u!65 &1737048121144543327
 BoxCollider:
   m_ObjectHideFlags: 0

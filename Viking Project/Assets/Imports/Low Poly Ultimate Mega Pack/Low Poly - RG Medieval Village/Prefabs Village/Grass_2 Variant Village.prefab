@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}
@@ -65,13 +66,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9f6dc087a3d620745b29265823e39d8a, type: 2}
     - target: {fileID: 919132149155446097, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}
       propertyPath: m_Name
-      value: Grass_2 Variant
+      value: Grass_2 Variant Village
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2778145296047605856}
   m_SourcePrefab: {fileID: 100100000, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}
 --- !u!1 &1111289255941614630 stripped
 GameObject:
@@ -86,9 +93,17 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111289255941614630}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1652133789245434421, guid: e5480fbc823d6994ba524852cde9e20e, type: 3}

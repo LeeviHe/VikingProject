@@ -74,7 +74,7 @@ MonoBehaviour:
   isFightMode: 0
   canWieldTwoHanded: 0
   currentQuest: {fileID: 0}
-  openQuests: []
+  objectives: []
   stats: {fileID: 11400000, guid: c713c5a0390e3b94bac837b30a323aed, type: 2}
   movementSmoothingSpeed: 8
 --- !u!114 &1992507361934904343

@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager Instance { get; private set; }
     private enum GameState { 
         Default,
         QuestActive,
@@ -14,8 +13,6 @@ public class GameManager : MonoBehaviour {
         GameOver
     }
 
-    [SerializeField] private GameObject playerHUD;
-    [SerializeField] private Toggle toggleUI;
     [SerializeField] private GameObject portal;
     GameState gameState;
     public float screenDelay;
@@ -43,7 +40,7 @@ public class GameManager : MonoBehaviour {
                 portal.gameObject.SetActive(true);
                 break;
             case GameState.GameOver:
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                StartCoroutine(LoadLevelAsync("HomeHubScene"));
                 break;
         }
     }
@@ -68,6 +65,16 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.ReadyToLeave;
     }
 
+    private IEnumerator LoadLevelAsync( string levelName ) {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelName);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone) {
+            float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f); // 0.9f is the maximum progress value
+            Debug.Log("Loading progress: " + (progress * 100) + "%");
+            yield return null;
+        }
+    }
 
     // To be used for pausing the game
     public void TogglePauseState() {
